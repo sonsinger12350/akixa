@@ -416,6 +416,10 @@
 	.body .seek-tabs .content .seek-tab .right .title {
 		margin-top: 24px;
 	}
+
+	.body .seek-tabs .content .seek-tab .desc {
+		padding-bottom: 12px;
+	}
 }
 
 @media (max-width: 350px) {

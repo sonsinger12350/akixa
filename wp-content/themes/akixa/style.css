@@ -468,14 +468,13 @@ header .menu-mobile .open-menu-mobile.active .fa-bars {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: end;
-}
-
-.body .seek-tabs .content .seek-tab .right {
+	border-radius: 0px 16px 16px 0px;
 	background-color: #1B1B1B;
 }
 
-.body .seek-tabs .content .seek-tab .right {
-	border-radius: 0px 16px 16px 0px;
+.body .seek-tabs .content .seek-tab.tab-2 .right,
+.body .seek-tabs .content .seek-tab.tab-4 .right {
+	background-color: var(--main-green);
 }
 
 .body .seek-tabs .bg-overlay {
