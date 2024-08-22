@@ -218,7 +218,8 @@ header .menu-collapse:not(.show) {
 .body .about {
 	display: flex;
 	width: 80%;
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
 	column-gap: 60px;
 }
 
@@ -318,6 +319,7 @@ header .menu-collapse:not(.show) {
 	width: 148px;
 	position: relative;
 	font-weight: 300;
+	margin-bottom: 0px;
 }
 
 .body .seek-tabs .head .center span {

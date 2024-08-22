@@ -97,6 +97,7 @@
 @media (max-width: 768px) {
 	.page {
 		margin-top: 130px;
+		padding-top: 0px;
 	}
 
 	.body .invitation .title {
@@ -209,6 +210,14 @@
 	footer .logo img {
 		width: 80px;
 	}
+
+	footer p {
+		font-size: 14px;
+	}
+
+	footer a {
+		font-size: 13px;
+	}
 }
 
 @media (max-width: 576px) {
@@ -280,6 +289,10 @@
 	.body .seek-tabs .content .seek-tab .right {
 		padding: 24px;
 	}
+
+	footer .copy-right {
+		margin-top: 24px;
+	}
 }
 
 @media (max-width: 450px) {
@@ -300,7 +313,7 @@
 	}
 
 	.body .seek-tabs .head .center span {
-		height: 80px;
+		height: 60px;
 	}
 
 	.body .project .project-gallery img {

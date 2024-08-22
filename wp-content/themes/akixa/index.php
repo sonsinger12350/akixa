@@ -32,6 +32,8 @@
 <html lang="en">
 
 <head>
+	<title>Akixa</title>
+	<link rel="shortcut icon" href="<?= get_template_directory_uri(); ?>/assets/images/logo.png" sizes=32x32/>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"/>
@@ -72,7 +74,7 @@
 <body>
 	<header>
 		<div class="logo">
-			<img src="wp-content\themes\akixa\assets\images\logo.png" alt="">
+			<img src="<?= get_template_directory_uri(); ?>/assets/images/logo.png" alt="">
 		</div>
 		<div class="main-menu">
 			<?php
@@ -274,7 +276,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="copy-right d-flex justify-content-between">
+		<div class="copy-right d-flex justify-content-between gap-3">
 			<p>AKIXA © 2024, All Rights Reserved</p>
 			<p>Designed by DuocViec Agency</p>
 		</div>
