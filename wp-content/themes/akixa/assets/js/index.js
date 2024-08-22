@@ -26,6 +26,7 @@ $(document).ready(function () {
 	});
 
 	$('.open-menu-mobile').on('click', function() {
-		$('.menu-collapse').toggleClass('show');
+		$(this).toggleClass('active');
+		$('.menu-collapse').toggleClass('active');
 	});
 });

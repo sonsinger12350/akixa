@@ -101,6 +101,17 @@ header .main-menu ul li a {
 	font-weight: 600;
 }
 
+header .menu-mobile .open-menu-mobile {
+	border: 1px solid;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+	text-decoration: none;
+}
+
 header .menu-collapse {
 	height: 270px;
 	width: 95%;
@@ -132,8 +143,20 @@ header .menu-collapse .menu li a {
 	font-weight: 600;
 }
 
-header .menu-collapse:not(.show) {
+header .menu-collapse:not(.active) {
 	height: 0px;
+}
+
+header .menu-mobile .open-menu-mobile:not(.active) .fa-xmark {
+	display: none;
+}
+
+header .menu-mobile .open-menu-mobile.active .fa-xmark {
+	display: block;
+}
+
+header .menu-mobile .open-menu-mobile.active .fa-bars {
+	display: none;
 }
 
 .body .head {

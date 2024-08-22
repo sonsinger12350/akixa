@@ -90,6 +90,7 @@
 		<div class="menu-mobile">
 			<a href="javascript:void(0)" class="open-menu-mobile d-lg-none">
 				<i class="fa-solid fa-bars"></i>
+				<i class="fa-solid fa-xmark"></i>
 			</a>
 		</div>
 		<div class="menu-collapse">
