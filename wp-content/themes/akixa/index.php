@@ -46,8 +46,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
 	<title>Document</title>
-	<link rel="stylesheet" href="wp-content\themes\akixa\style.css?v=<?=time()?>">
-	<link rel="stylesheet" href="wp-content\themes\akixa\assets\css\responsive.css?v=<?=time()?>">
+	<link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/style.css?v=<?=time()?>">
+	<link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/responsive.css?v=<?=time()?>">
 	<style>
 		.body .seek-tabs .content .seek-tab.tab-1 .left {
 			background-image: url("<?= get_template_directory_uri(); ?>/assets/images/seak-tab-1.png");
@@ -88,7 +88,7 @@
 			?>
 		</div>
 		<div class="menu-mobile">
-			<a href="javascript:void(0)" class="open-menu-mobile">
+			<a href="javascript:void(0)" class="open-menu-mobile d-lg-none">
 				<i class="fa-solid fa-bars"></i>
 			</a>
 		</div>
@@ -117,13 +117,13 @@
 			<div class="slide position-relative">
 				<div class="owl-carousel owl-theme">
 					<div>
-						<img src="wp-content\themes\akixa\assets\images\home-page-bg-1.png" alt="">
+						<img src="<?= get_template_directory_uri(); ?>/assets/images/home-page-bg-1.png" alt="">
 					</div>
 					<div>
-						<img src="wp-content\themes\akixa\assets\images\home-page-bg-1.png" alt="">
+						<img src="<?= get_template_directory_uri(); ?>/assets/images/home-page-bg-1.png" alt="">
 					</div>
 					<div>
-						<img src="wp-content\themes\akixa\assets\images\home-page-bg-1.png" alt="">
+						<img src="<?= get_template_directory_uri(); ?>/assets/images/home-page-bg-1.png" alt="">
 					</div>
 				</div>
 				<button type="button" class="btn btn-success btn-sm btn-explore">KHÁM PHÁ AKIXA <i class="fa-solid fa-angle-right"></i></button>
@@ -137,15 +137,15 @@
 			</div>
 			<div class="project margin-section">
 				<div class="project-gallery">
-					<img src="wp-content\themes\akixa\assets\images\project-1.png" alt="">
-					<img src="wp-content\themes\akixa\assets\images\project-2.png" alt="">
-					<img src="wp-content\themes\akixa\assets\images\project-3.png" alt="">
-					<img src="wp-content\themes\akixa\assets\images\project-4.png" alt="">
-					<img src="wp-content\themes\akixa\assets\images\project-5.png" alt="">
-					<img src="wp-content\themes\akixa\assets\images\project-6.png" alt="">
-					<img src="wp-content\themes\akixa\assets\images\project-7.png" alt="">
-					<img src="wp-content\themes\akixa\assets\images\project-8.png" alt="">
-					<img src="wp-content\themes\akixa\assets\images\project-9.png" alt="">
+					<img src="<?= get_template_directory_uri(); ?>/assets/images/project-1.png" alt="">
+					<img src="<?= get_template_directory_uri(); ?>/assets/images/project-2.png" alt="">
+					<img src="<?= get_template_directory_uri(); ?>/assets/images/project-3.png" alt="">
+					<img src="<?= get_template_directory_uri(); ?>/assets/images/project-4.png" alt="">
+					<img src="<?= get_template_directory_uri(); ?>/assets/images/project-5.png" alt="">
+					<img src="<?= get_template_directory_uri(); ?>/assets/images/project-6.png" alt="">
+					<img src="<?= get_template_directory_uri(); ?>/assets/images/project-7.png" alt="">
+					<img src="<?= get_template_directory_uri(); ?>/assets/images/project-8.png" alt="">
+					<img src="<?= get_template_directory_uri(); ?>/assets/images/project-9.png" alt="">
 				</div>
 				<div class="content">
 					<h3>Cùng khám phá những <span class="text-green">dự án tuyệt vời</span> mà chúng tôi đã đồng hành.</h3>
@@ -282,6 +282,6 @@
 		</div>
 	</footer>
 </body>
-<script src="wp-content\themes\akixa\assets\js\index.js?v=<?=time()?>"></script>
+<script src="<?= get_template_directory_uri(); ?>/assets/js/index.js?v=<?=time()?>"></script>
 
 </html>
