@@ -185,7 +185,12 @@
 		right: unset;
 		left: 50%;
     	transform: translate(-50%, 0);
-		bottom: 20px;
+		bottom: 10px;
+	}
+
+	.body .owl-carousel .owl-nav button {
+		width: 25px;
+		height: 25px;
 	}
 
 	.body .owl-carousel .owl-nav .owl-prev {

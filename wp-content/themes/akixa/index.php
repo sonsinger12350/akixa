@@ -88,7 +88,7 @@
 			?>
 		</div>
 		<div class="menu-mobile">
-			<a href="javascript:void(0)" class="open-menu-mobile d-lg-none">
+			<a href="javascript:void(0)" class="open-menu-mobile d-md-none">
 				<i class="fa-solid fa-bars"></i>
 				<i class="fa-solid fa-xmark"></i>
 			</a>
