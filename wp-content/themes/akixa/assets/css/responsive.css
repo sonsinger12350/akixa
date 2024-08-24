@@ -20,7 +20,7 @@
 	}
 
 	.body .seek-tabs .head {
-		width: 80%;
+		width: 85%;
 	}
 
 	.body .seek-tabs .content {
@@ -51,7 +51,7 @@
 	}
 
 	.body .seek-tabs .seek-tab-menu .item.active .menu-title {
-		top: 50px;
+		top: 20px;
 		right: 0px;
 	}
 
@@ -521,9 +521,25 @@
 		left: 20%;
 	}
 
+	.body .owl-carousel .owl-nav button {
+		width: 20px;
+		height: 20px;
+		font-size: 13px;
+		top: -23px;
+	}
+
+	.body .owl-carousel .owl-nav .owl-prev {
+		left: -75px;
+	}
+
+	.body .owl-carousel .owl-nav .owl-next {
+		right: -75px;
+	}
+
 	.body .slide .btn-explore {
 		transform: unset;
 		right: 0%;
+		padding: 5px;
 	}
 
 	footer .content .menu-footer .btn-explore {

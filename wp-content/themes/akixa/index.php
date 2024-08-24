@@ -138,7 +138,7 @@
 			</div>
 			<div class="about margin-section">
 				<h3 class="flex-1 block-title">Nền tảng thiết kế <span class="text-green">vì sức khỏe</span> của bạn và gia đình.</h3>
-				<div class="flex-1 content bullet-point">
+				<div class="content bullet-point">
 					<p class="block-desc text-white">Với AKIXA, kiến trúc là phải hòa hợp với thiên nhiên và con người; hình thức bên ngoài chịu ảnh hưởng bởi địa hình; khí hậu, tính bản địa; hình thức bên trong ảnh hưởng nhiều bởi nhu cầu tiện nghi của con người gồm nhiệt độ, độ ẩm, âm thanh, ánh sáng; Và người kiến trúc sư muốn tạo ra được hình thức công trình thì bắt buộc phải giải quyết các vấn đề nảy sinh của bối cảnh khu đất và nhu cầu sử dụng;</p>
 					<button type="button" class="btn btn-success btn-sm btn-explore">xem thêm <i class="fa-solid fa-angle-right"></i></button>
 				</div>

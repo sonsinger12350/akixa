@@ -280,10 +280,10 @@ header .menu-mobile .open-menu-mobile.active .fa-bars {
 
 .body .about {
 	display: flex;
-	width: 80%;
+	width: 85%;
 	margin-left: auto;
 	margin-right: auto;
-	column-gap: 60px;
+	column-gap: 10px;
 }
 
 .body .about .content {
@@ -291,6 +291,8 @@ header .menu-mobile .open-menu-mobile.active .fa-bars {
 	background-color: var(--main-green);
 	padding: 50px 50px 50px 120px;
 	position: relative;
+	width: 528px;
+	margin: 0 auto;
 }
 
 .body .about .content::before {
@@ -316,7 +318,7 @@ header .menu-mobile .open-menu-mobile.active .fa-bars {
 .body .project .project-gallery {
 	display: grid;
 	grid-template-columns: auto auto auto;
-	gap: 10px;
+	gap: 4px;
 }
 
 .body .project .project-gallery img {
@@ -344,9 +346,22 @@ header .menu-mobile .open-menu-mobile.active .fa-bars {
 	margin-top: 120px;
 }
 
+.body .seek-tabs {
+	position: relative;
+}
+
 .body .seek-tabs .head {
 	width: 70%;
 	margin: 0 auto;
+}
+
+.body .seek-tabs .video-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
 }
 
 .body .seek-tabs .head .center {
@@ -525,8 +540,8 @@ header .menu-mobile .open-menu-mobile.active .fa-bars {
 	position: absolute;
     width: max-content;
     top: 0px;
-    right: -40%;
-	transform: translate(40%, 0px);
+    right: -30%;
+	transform: translate(30%, 0px);
 	opacity: 1;
 	text-align: center;
 	font-style: normal;
@@ -612,12 +627,16 @@ header .menu-mobile .open-menu-mobile.active .fa-bars {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position-x: center;
-	background-position-y: 100px;
+	background-position-y: 0px;
 }
 
 .body .invitation .content {
 	width: 50%;
     margin: 0 auto;
+}
+
+.body .invitation .content .block-desc {
+	padding-right: 150px;
 }
 
 .body .invitation .bullet-point::before {
