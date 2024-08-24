@@ -9,15 +9,15 @@
 		],
 		2 => [
 			'desc1' => 'Trái Đất gieo mầm cho các khu vực với khí hậu khác nhau từ đất đai, độ ẩm và không khí riêng biệt. Vậy “sự sống” sẽ thay đổi như thế nào ở mỗi khu vực?',
-			'desc2' => 'Hành trình sống của chúng ta giống như gieo trồng một cái cây, thu hoạch quả ngọt hay đắng còn tùy thuộc và hạt mầm và cách ta chăm sóc nó. Để gieo những hạt mầm tích cực đầu tiên cho không gian sống của bạn - Hãy để AKIXA song hành nhé!',
+			'desc2' => 'Hành trình sống của chúng ta giống như gieo trồng một cái cây, thu hoạch quả ngọt hay đắng còn tùy thuộc và hạt mầm và cách ta chăm sóc nó. Để gieo những hạt mầm tích cực đầu tiên cho không gian sống của bạn - Hãy để ConNest song hành nhé!',
 		],
 		3 => [
 			'desc1' => 'Sự tỏa sáng của Mặt trời, Mặt trăng hay các Ngôi sao...như gửi tới thông điệp “luôn có ánh sáng phía cuối con đường – chỉ cần có niềm tin và hành động là sẽ thấy”.',
-			'desc2' => 'AKIXA tin rằng khi bạn hiểu mình, hiểu sứ mệnh, năng lượng tiềm ẩn bên trong cũng như kiên trì ươm mầm cho không gian sống, rồi sẽ đến lúc nơi đó tỏa sáng với vầng hào quang rực rỡ nhất.',
+			'desc2' => 'ConNest tin rằng khi bạn hiểu mình, hiểu sứ mệnh, năng lượng tiềm ẩn bên trong cũng như kiên trì ươm mầm cho không gian sống, rồi sẽ đến lúc nơi đó tỏa sáng với vầng hào quang rực rỡ nhất.',
 		],
 		4 => [
 			'desc1' => 'Bạn có biết: Vũ trụ không bao giờ đứng yên mà luôn luôn thay đổi, cũng như chúng ta luôn luôn vận động để trở thành phiên bản tốt nhất - chuyển hóa theo hướng tích cực và lan tỏa năng lượng tới mọi người.',
-			'desc2' => '“Hành trình vạn dặm bắt đầu từ một bước chân”, nếu bạn chưa biết nên bắt đầu từ đâu, thì AKIXA luôn ở đây lắng nghe và đồng hành cùng bạn dựng xây những nét vẽ, viên gạch đầu tiên cho không gian sống an hòa của bạn.',
+			'desc2' => '“Hành trình vạn dặm bắt đầu từ một bước chân”, nếu bạn chưa biết nên bắt đầu từ đâu, thì ConNest luôn ở đây lắng nghe và đồng hành cùng bạn dựng xây những nét vẽ, viên gạch đầu tiên cho không gian sống an hòa của bạn.',
 		]
 	];
 
@@ -39,7 +39,7 @@
 <html lang="en">
 
 <head>
-	<title>Akixa</title>
+	<title>ConNest</title>
 	<link rel="shortcut icon" href="<?= get_template_directory_uri(); ?>/assets/images/logo.png" sizes=32x32/>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,7 +81,7 @@
 <body>
 	<header>
 		<div class="logo">
-			<img src="<?= get_template_directory_uri(); ?>/assets/images/logo.png" alt="">
+			<img src="<?= get_template_directory_uri(); ?>/assets/images/logo-white.png" alt="">
 		</div>
 		<div class="main-menu">
 			<?php
@@ -119,7 +119,7 @@
 			<div class="header">
 				<div class="head">
 					<h1 class="title block-title">Thiết kế kiến trúc vi khí hậu</h1>
-					<p class="text-grey block-desc">Nơi không chỉ thiết kế những công trình kiến trúc có giá trị thẩm mỹ tinh tế, mà còn tạo môi trường sống lí tưởng cho sức khỏe thể chất và tinh thần của bạn và gia đình.</p>
+					<p class="text-grey block-desc">Nơi không chỉ thiết kế những công trình kiến trúc có <b>giá trị thẩm mỹ</b> tinh tế, mà còn tạo <b>môi trường sống lí tưởng</b> cho sức khỏe thể chất và tinh thần của bạn và gia đình.</p>
 				</div>
 			</div>
 			<div class="slide position-relative">
@@ -134,12 +134,12 @@
 						<img src="<?= get_template_directory_uri(); ?>/assets/images/home-page-bg-1.png" alt="">
 					</div>
 				</div>
-				<button type="button" class="btn btn-success btn-sm btn-explore">KHÁM PHÁ AKIXA <i class="fa-solid fa-angle-right"></i></button>
+				<button type="button" class="btn btn-success btn-sm btn-explore">KHÁM PHÁ ConNest <i class="fa-solid fa-angle-right"></i></button>
 			</div>
 			<div class="about margin-section">
 				<h3 class="flex-1 block-title">Nền tảng thiết kế <span class="text-green">vì sức khỏe</span> của bạn và gia đình.</h3>
 				<div class="content bullet-point">
-					<p class="block-desc text-white">Với AKIXA, kiến trúc là phải hòa hợp với thiên nhiên và con người; hình thức bên ngoài chịu ảnh hưởng bởi địa hình; khí hậu, tính bản địa; hình thức bên trong ảnh hưởng nhiều bởi nhu cầu tiện nghi của con người gồm nhiệt độ, độ ẩm, âm thanh, ánh sáng; Và người kiến trúc sư muốn tạo ra được hình thức công trình thì bắt buộc phải giải quyết các vấn đề nảy sinh của bối cảnh khu đất và nhu cầu sử dụng;</p>
+					<p class="block-desc text-white">Với ConNest, kiến trúc là phải hòa hợp với thiên nhiên và con người; hình thức bên ngoài chịu ảnh hưởng bởi địa hình; khí hậu, tính bản địa; hình thức bên trong ảnh hưởng nhiều bởi nhu cầu tiện nghi của con người gồm nhiệt độ, độ ẩm, âm thanh, ánh sáng; Và người kiến trúc sư muốn tạo ra được hình thức công trình thì bắt buộc phải giải quyết các vấn đề nảy sinh của bối cảnh khu đất và nhu cầu sử dụng;</p>
 					<button type="button" class="btn btn-success btn-sm btn-explore">xem thêm <i class="fa-solid fa-angle-right"></i></button>
 				</div>
 			</div>
@@ -158,8 +158,8 @@
 				<div class="content">
 					<h3 class="block-title">Cùng khám phá những <span class="text-green">dự án tuyệt vời</span> mà chúng tôi đã đồng hành.</h3>
 					<div class="detail bullet-point">
-						<p class="text-grey block-desc">Ngôi nhà của chúng ta không chỉ dừng lại là một nơi để ở. Với triết lý ”Kiến trúc vi khí hậu - Thiết kế kiến trúc phải kết hợp nghệ thuật và khoa học thực tiễn” chúng tôi mong muốn mọi công trình kiến trúc của mình sẽ giúp bạn hạnh phúc cả về tinh thần và thể chất. Đó cũng chính là điều khiến AKIXA trở nên độc đáo và đặc biệt.</p>
-						<p class="text-grey block-desc mb-4">Chúng tôi tin rằng, người kể truyện không chỉ đến từ AKIXA. Hãy cùng khám phá những dự án tuyệt vời mà chúng tôi đã cùng đồng hành.</p>
+						<p class="text-grey block-desc">Ngôi nhà của chúng ta không chỉ dừng lại là một nơi để ở. Với triết lý ”Kiến trúc vi khí hậu - Thiết kế kiến trúc phải kết hợp nghệ thuật và khoa học thực tiễn” chúng tôi mong muốn mọi công trình kiến trúc của mình sẽ giúp bạn hạnh phúc cả về tinh thần và thể chất. Đó cũng chính là điều khiến ConNest trở nên độc đáo và đặc biệt.</p>
+						<p class="text-grey block-desc mb-4">Chúng tôi tin rằng, người kể truyện không chỉ đến từ ConNest. Hãy cùng khám phá những dự án tuyệt vời mà chúng tôi đã cùng đồng hành.</p>
 						<button type="button" class="btn btn-success btn-sm btn-explore">Đăng ký <i class="fa-solid fa-angle-right"></i></button>
 					</div>
 				</div>
@@ -204,12 +204,12 @@
 				</div>
 			</div>
 			<div class="invitation margin-section">
-				<h3 class="title block-title">Hãy để <span class="text-green">AKIXA</span><br>trở thành người đồng hành<br>trong hành trình của bạn!</h3>
+				<h3 class="title block-title">Hãy để <span class="text-green">ConNest</span><br>trở thành người đồng hành<br>trong hành trình của bạn!</h3>
 				<div class="position-relative">
 					<div class="bullet-point">
 						<div class="content">
-							<p class="block-desc text-grey">Vì cuộc đời là của chính mình, nên hãy trải nghiệm sự khác biệt, để nâng cao bản thân mình lên một tầng cao mới, cùng <b class="text-black">thiết kế kiến trúc vi khí hậu đến từ AKIXA.</b></p>
-							<button type="button" class="btn btn-success btn-sm btn-explore">KHÁM PHÁ AKIXA <i class="fa-solid fa-angle-right"></i></button>
+							<p class="block-desc text-grey">Vì cuộc đời là của chính mình, nên hãy trải nghiệm sự khác biệt, để nâng cao bản thân mình lên một tầng cao mới, cùng <b class="text-black">thiết kế kiến trúc vi khí hậu đến từ ConNest.</b></p>
+							<button type="button" class="btn btn-success btn-sm btn-explore">KHÁM PHÁ ConNest <i class="fa-solid fa-angle-right"></i></button>
 						</div>
 					</div>
 				</div>
@@ -227,7 +227,7 @@
 					<div class="d-flex justify-content-between align-items-start">
 						<div class="row">
 							<div class="col-lg-3 col-6">
-								<p class="fw-bold">Về Akixa</p>
+								<p class="fw-bold">Về ConNest</p>
 								<a href="#">Thông điệp nhà sáng lập</a>
 								<a href="#">Tầm nhìn - Sứ mệnh</a>
 								<a href="#">Đội ngũ</a>
@@ -287,7 +287,7 @@
 			</div>
 		</div>
 		<div class="copy-right d-flex justify-content-between gap-3">
-			<p>AKIXA © 2024, All Rights Reserved</p>
+			<p>ConNest © 2024, All Rights Reserved</p>
 			<p>Designed by DuocViec Agency</p>
 		</div>
 	</footer>

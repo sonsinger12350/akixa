@@ -116,6 +116,7 @@
 
 	.body .about .content {
 		padding: 48px;
+		width: auto;
 	}
 
 	.body .about .content::before {
@@ -134,16 +135,17 @@
 
 	.body .project .content .detail {
 		padding: 30px;
-		padding-left: 60px;
+		padding-left: 85px;
+		padding-bottom: 0px;
 	}
 
 	.body .project .content .detail::before {
-		width: 40px;
+		width: 63px;
 		top: 39px;
 	}
 
 	.body .project .content .detail::after {
-		left: 40px;
+		left: 63px;
 		top: 35px;
 	}
 
@@ -260,7 +262,7 @@
 	}
 
 	.body .owl-carousel .owl-item img {
-		height: 400px;
+		height: 350px;
 	}
 
 	.body .owl-carousel .owl-nav .owl-prev {
@@ -317,6 +319,18 @@
 
 	.page {
 		margin-top: 110px;
+		padding: 0px;
+	}
+
+	.header,
+	.slide,
+	.about,
+	.project .content .block-title,
+	.seek-tabs .head .left,
+	.seek-tabs .head .right,
+	.invitation .title
+	{
+		padding: 0 24px;
 	}
 
 	header .logo img {
@@ -334,8 +348,8 @@
 	}
 
 	.body .project .project-gallery img {
-		width: 120px;
-		height: 120px;
+		width: 130px;
+		height: 130px;
 	}
 
 	.body .seek-tabs .head .center .d-flex {
@@ -389,7 +403,7 @@
 	}
 
 	.body .owl-carousel .owl-item img {
-		height: 250px;
+		height: 220px;
 	}
 
 	.body .seek-tabs .content .seek-tab {
@@ -479,19 +493,7 @@
         height: 24px;
 	}
 
-	.body .seek-tabs .seek-tab-menu .item[data-tab="1"] .dot {
-		top: 10%;
-	}
-
-	.body .seek-tabs .seek-tab-menu .item[data-tab="2"] .dot {
-		top: 9%;
-	}
-
-	.body .seek-tabs .seek-tab-menu .item[data-tab="3"] .dot {
-		top: 8%;
-	}
-
-	.body .seek-tabs .seek-tab-menu .item[data-tab="4"] .dot {
+	.body .seek-tabs .seek-tab-menu .item .dot {
 		top: 7%;
 	}
 
@@ -538,7 +540,7 @@
 
 	.body .slide .btn-explore {
 		transform: unset;
-		right: 0%;
+		right: 5%;
 		padding: 5px;
 	}
 
@@ -606,8 +608,8 @@
 	}
 
 	.body .project .project-gallery img {
-		width: 90px;
-		height: 90px;
+		width: 100px;
+		height: 100px;
 	}
 
 	.body .slide .btn-explore {
@@ -649,6 +651,46 @@
 	.body .seek-tabs .content .seek-tab .desc {
 		padding-bottom: 12px;
 	}
+
+	.body .owl-carousel .owl-item img {
+		height: 200px;
+	}
+
+	.body .owl-carousel .owl-dots button span {
+		width: 25px;
+	}
+
+	.body .owl-carousel .owl-nav .owl-next {
+		right: -65px;
+	}
+
+	.body .owl-carousel .owl-nav .owl-prev {
+		left: -65px;
+	}
+
+	.body .invitation .content .block-desc {
+		padding-right: 16px;
+	}
+
+	.body .invitation {
+		background-position-y: 100px;
+	}
+
+	.margin-section {
+		margin-top: 60px !important;
+	}
+
+	.body .invitation .bullet-point::before {
+		width: 80px;
+	}
+
+	.body .invitation .bullet-point::after {
+		left: 80px;
+	}
+
+	.body .invitation .bullet-point {
+		padding-left: 100px;
+	}
 }
 
 @media (max-width: 350px) {
@@ -678,28 +720,6 @@
 
 	.body .seek-tabs .seek-tab-menu .item .menu-title {
 		font-size: 14px;
-	}
-
-	.body .seek-tabs .head .center .border-left::before {
-		top: 26px;
-		width: 80px;
-	}
-
-	.body .seek-tabs .head .center .border-right::before {
-		bottom: 26px;
-		width: 80px;
-	}
-
-	.body .project .content .detail {
-		padding-left: 40px;
-	}
-
-	.body .project .content .detail::after {
-		left: 25px;
-	}
-
-	.body .project .content .detail::before {
-		width: 25px;
 	}
 
 	.body .seek-tabs .content .seek-tab .title,
