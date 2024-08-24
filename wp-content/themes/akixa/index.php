@@ -27,6 +27,13 @@
 		3 => 'Tỏa sáng',
 		4 => 'Sẻ chia',
 	];
+
+	$seekTabsMenuMobile = [
+		1 => 'Seek',
+		2 => 'Sow',
+		3 => 'Shine',
+		4 => 'Share',
+	];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -109,10 +116,10 @@
 	</header>
 	<div class="page container-fluid">
 		<div class="body">
-			<div class="header container">
+			<div class="header">
 				<div class="head">
-					<h1 class="title">Thiết kế kiến trúc vi khí hậu</h1>
-					<p class="text-grey">Nơi không chỉ thiết kế những công trình kiến trúc có giá trị thẩm mỹ tinh tế, mà còn tạo môi trường sống lí tưởng cho sức khỏe thể chất và tinh thần của bạn và gia đình.</p>
+					<h1 class="title block-title">Thiết kế kiến trúc vi khí hậu</h1>
+					<p class="text-grey block-desc">Nơi không chỉ thiết kế những công trình kiến trúc có giá trị thẩm mỹ tinh tế, mà còn tạo môi trường sống lí tưởng cho sức khỏe thể chất và tinh thần của bạn và gia đình.</p>
 				</div>
 			</div>
 			<div class="slide position-relative">
@@ -130,10 +137,10 @@
 				<button type="button" class="btn btn-success btn-sm btn-explore">KHÁM PHÁ AKIXA <i class="fa-solid fa-angle-right"></i></button>
 			</div>
 			<div class="about margin-section">
-				<h3 class="flex-1">Nền tảng thiết kế <span class="text-green">vì sức khỏe</span> của bạn và gia đình.</h3>
+				<h3 class="flex-1 block-title">Nền tảng thiết kế <span class="text-green">vì sức khỏe</span> của bạn và gia đình.</h3>
 				<div class="flex-1 content bullet-point">
-					<p>Với AKIXA, kiến trúc là phải hòa hợp với thiên nhiên và con người; hình thức bên ngoài chịu ảnh hưởng bởi địa hình; khí hậu, tính bản địa; hình thức bên trong ảnh hưởng nhiều bởi nhu cầu tiện nghi của con người gồm nhiệt độ, độ ẩm, âm thanh, ánh sáng; Và người kiến trúc sư muốn tạo ra được hình thức công trình thì bắt buộc phải giải quyết các vấn đề nảy sinh của bối cảnh khu đất và nhu cầu sử dụng;</p>
-					<button type="button" class="btn btn-success btn-sm btn-explore">KHÁM PHÁ AKIXA <i class="fa-solid fa-angle-right"></i></button>
+					<p class="block-desc text-white">Với AKIXA, kiến trúc là phải hòa hợp với thiên nhiên và con người; hình thức bên ngoài chịu ảnh hưởng bởi địa hình; khí hậu, tính bản địa; hình thức bên trong ảnh hưởng nhiều bởi nhu cầu tiện nghi của con người gồm nhiệt độ, độ ẩm, âm thanh, ánh sáng; Và người kiến trúc sư muốn tạo ra được hình thức công trình thì bắt buộc phải giải quyết các vấn đề nảy sinh của bối cảnh khu đất và nhu cầu sử dụng;</p>
+					<button type="button" class="btn btn-success btn-sm btn-explore">xem thêm <i class="fa-solid fa-angle-right"></i></button>
 				</div>
 			</div>
 			<div class="project margin-section">
@@ -149,11 +156,11 @@
 					<img src="<?= get_template_directory_uri(); ?>/assets/images/project-9.png" alt="">
 				</div>
 				<div class="content">
-					<h3>Cùng khám phá những <span class="text-green">dự án tuyệt vời</span> mà chúng tôi đã đồng hành.</h3>
+					<h3 class="block-title">Cùng khám phá những <span class="text-green">dự án tuyệt vời</span> mà chúng tôi đã đồng hành.</h3>
 					<div class="detail bullet-point">
-						<p class="text-grey">Ngôi nhà của chúng ta không chỉ dừng lại là một nơi để ở. Với triết lý ”Kiến trúc vi khí hậu - Thiết kế kiến trúc phải kết hợp nghệ thuật và khoa học thực tiễn” chúng tôi mong muốn mọi công trình kiến trúc của mình sẽ giúp bạn hạnh phúc cả về tinh thần và thể chất. Đó cũng chính là điều khiến AKIXA trở nên độc đáo và đặc biệt.</p>
-						<p class="text-grey mb-4">Chúng tôi tin rằng, người kể truyện không chỉ đến từ AKIXA. Hãy cùng khám phá những dự án tuyệt vời mà chúng tôi đã cùng đồng hành.</p>
-						<button type="button" class="btn btn-success btn-sm btn-explore">KHÁM PHÁ AKIXA <i class="fa-solid fa-angle-right"></i></button>
+						<p class="text-grey block-desc">Ngôi nhà của chúng ta không chỉ dừng lại là một nơi để ở. Với triết lý ”Kiến trúc vi khí hậu - Thiết kế kiến trúc phải kết hợp nghệ thuật và khoa học thực tiễn” chúng tôi mong muốn mọi công trình kiến trúc của mình sẽ giúp bạn hạnh phúc cả về tinh thần và thể chất. Đó cũng chính là điều khiến AKIXA trở nên độc đáo và đặc biệt.</p>
+						<p class="text-grey block-desc mb-4">Chúng tôi tin rằng, người kể truyện không chỉ đến từ AKIXA. Hãy cùng khám phá những dự án tuyệt vời mà chúng tôi đã cùng đồng hành.</p>
+						<button type="button" class="btn btn-success btn-sm btn-explore">Đăng ký <i class="fa-solid fa-angle-right"></i></button>
 					</div>
 				</div>
 			</div>
@@ -174,6 +181,7 @@
 						<?php foreach ($seekTabs as $k => $tab):?>
 							<div class="seek-tab tab-<?=$k?> <?= $k == 1 ? 'active' : ''?>">
 								<div class="left">
+									<p class="title-mobile d-sm-none"><?=$seekTabsMenuMobile[$k]?></p>
 									<p class="title">Hành trình<br>của thiên nhiên</p>
 									<p class="desc"><?=$tab['desc1']?></p>
 								</div>
@@ -196,11 +204,11 @@
 				</div>
 			</div>
 			<div class="invitation margin-section">
-				<p class="title">Hãy để <span class="text-green">AKIXA</span><br>trở thành người đồng hành<br>trong hành trình của bạn!</p>
+				<h3 class="title block-title">Hãy để <span class="text-green">AKIXA</span><br>trở thành người đồng hành<br>trong hành trình của bạn!</h3>
 				<div class="position-relative">
 					<div class="bullet-point">
 						<div class="content">
-							<p>Vì cuộc đời là của chính mình, nên hãy trải nghiệm sự khác biệt, để nâng cao bản thân mình lên một tầng cao mới, cùng <b>thiết kế kiến trúc vi khí hậu đến từ AKIXA.</b></p>
+							<p class="block-desc text-grey">Vì cuộc đời là của chính mình, nên hãy trải nghiệm sự khác biệt, để nâng cao bản thân mình lên một tầng cao mới, cùng <b class="text-black">thiết kế kiến trúc vi khí hậu đến từ AKIXA.</b></p>
 							<button type="button" class="btn btn-success btn-sm btn-explore">KHÁM PHÁ AKIXA <i class="fa-solid fa-angle-right"></i></button>
 						</div>
 					</div>
@@ -212,28 +220,29 @@
 		<div class="footer-content">
 			<div class="logo">
 				<img src="<?= get_template_directory_uri(); ?>/assets/images/logo_white.png" alt="">
+				<button type="button" class="btn btn-success btn-sm btn-explore">ĐĂNG KÝ <i class="fa-solid fa-angle-right"></i></button>
 			</div>
 			<div class="content">
 				<div class="menu-footer">
 					<div class="d-flex justify-content-between align-items-start">
 						<div class="row">
-							<div class="col-lg-3 col-sm-6">
+							<div class="col-lg-3 col-6">
 								<p class="fw-bold">Về Akixa</p>
 								<a href="#">Thông điệp nhà sáng lập</a>
 								<a href="#">Tầm nhìn - Sứ mệnh</a>
 								<a href="#">Đội ngũ</a>
 							</div>
-							<div class="col-lg-3 col-sm-6">
+							<div class="col-lg-3 col-6">
 								<p class="fw-bold">Dịch vụ</p>
 								<a href="#">Thiết kế vi khi hậu</a>
 							</div>
-							<div class="col-lg-3 col-sm-6">
+							<div class="col-lg-3 col-6">
 								<p class="fw-bold">Dự án</p>
 								<a href="#">Thiết kế sân vườn</a>
 								<a href="#">Thiết kế nhà 1 tầng</a>
 								<a href="#">Thiết kế nhà 2 tầng</a>
 							</div>
-							<div class="col-lg-3 col-sm-6">
+							<div class="col-lg-3 col-6">
 								<p class="fw-bold">Tin tức</p>
 								<a href="#">Blog</a>
 								<a href="#">Tuyển dụng</a>
@@ -246,18 +255,18 @@
 				<div class="info">
 					<div class="d-flex justify-content-between align-items-end">
 						<div class="row">
-							<div class="col-lg-3 col-sm-6">
+							<div class="col-lg-3 col-12">
 								<p class="fw-bold">CÔNG TY CỔ PHẦN TOKI</p>
 							</div>
-							<div class="col-lg-3 col-sm-6">
+							<div class="col-lg-3 col-6">
 								<p class="fw-bold">Văn phòng Hà Nội</p>
 								<a href="#">DM5-12A Vạn Phúc - Hà Đông - Hà Nội</a>
 							</div>
-							<div class="col-lg-3 col-sm-6">
+							<div class="col-lg-3 col-6">
 								<p class="fw-bold">Văn phòng Đà Nẵng</p>
 								<a href="#">B3.11-16 Trương Minh Giảng - KĐT Phú Mỹ An - Hòa Hải - Ngũ Hành Sơn - Đà Nẵng</a>
 							</div>
-							<div class="col-lg-3 col-sm-6">
+							<div class="col-lg-3 col-6">
 								<p class="fw-bold">Kết nối với chúng tôi</p>
 								<a href="tel: 0988870288">Hotline: 0988 870 288</a>
 							</div>
