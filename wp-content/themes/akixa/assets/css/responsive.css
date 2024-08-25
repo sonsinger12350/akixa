@@ -297,6 +297,10 @@
 	.body .slide .btn-explore {
 		bottom: 15px;
 	}
+
+	.body .invitation {
+		background-position-y: 100px;
+	}
 }
 
 @media (max-width: 670px) {
@@ -688,10 +692,6 @@
 
 	.body .invitation .content .block-desc {
 		padding-right: 16px;
-	}
-
-	.body .invitation {
-		background-position-y: 100px;
 	}
 
 	.margin-section {
