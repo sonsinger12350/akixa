@@ -1,3 +1,9 @@
+@media (min-width: 576px) {
+	.body .seek-tabs .seek-tab-menu .item.hide {
+		opacity: 0;
+	}
+}
+
 @media (max-width: 1500px) {
 	.body .seek-tabs .head .center .border-left::before {
 		width: 120px;
@@ -733,9 +739,15 @@
 	}
 }
 
-@media (max-width: 400px) {
+@media (max-width: 420px) {
 	.body .slide .bg-blur-mobile {
         width: 88%;
+    }
+}
+
+@media (max-width: 380px) {
+	.body .slide .bg-blur-mobile {
+        width: 87%;
     }
 }
 

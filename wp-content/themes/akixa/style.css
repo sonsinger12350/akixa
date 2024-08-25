@@ -668,10 +668,6 @@ header .hamburger .open-menu-mobile.active .fa-bars {
 	justify-content: end;
 }
 
-.body .seek-tabs .seek-tab-menu .item.hide {
-	opacity: 0;
-}
-
 .body .seek-tabs .seek-tab-menu .item .menu-title {
 	color: #fff;
 	opacity: 0.2;
