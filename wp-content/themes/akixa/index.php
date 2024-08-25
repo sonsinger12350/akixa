@@ -83,6 +83,10 @@
 		<div class="logo">
 			<img src="<?= get_template_directory_uri(); ?>/assets/images/logo-white.png" alt="">
 		</div>
+		<div class="content">
+			<h1 class="title">Thiết kế kiến trúc<br>vi khí hậu</h1>
+			<p class="text-grey block-desc">Nơi không chỉ thiết kế những công trình kiến trúc có <b>giá trị thẩm mỹ</b> tinh tế, mà còn tạo <b>môi trường sống lí tưởng</b> cho sức khỏe thể chất và tinh thần của bạn và gia đình.</p>
+		</div>
 		<div class="main-menu">
 			<?php
 				wp_nav_menu(
@@ -94,13 +98,17 @@
 				);
 			?>
 		</div>
-		<div class="menu-mobile">
-			<a href="javascript:void(0)" class="open-menu-mobile d-md-none">
+		<div class="hamburger">
+			<a href="javascript:void(0)" class="open-menu-desktop d-sm-flex d-none">
+				<i class="fa-solid fa-bars"></i>
+				<i class="fa-solid fa-xmark"></i>
+			</a>
+			<a href="javascript:void(0)" class="open-menu-mobile d-sm-none">
 				<i class="fa-solid fa-bars"></i>
 				<i class="fa-solid fa-xmark"></i>
 			</a>
 		</div>
-		<div class="menu-collapse">
+		<div class="menu-collapse-mobile d-sm-none">
 			<div class="card card-body">
 				<?php
 					wp_nav_menu(
@@ -116,13 +124,10 @@
 	</header>
 	<div class="page container-fluid">
 		<div class="body">
-			<div class="header">
-				<div class="head">
-					<h1 class="title block-title">Thiết kế kiến trúc vi khí hậu</h1>
-					<p class="text-grey block-desc">Nơi không chỉ thiết kế những công trình kiến trúc có <b>giá trị thẩm mỹ</b> tinh tế, mà còn tạo <b>môi trường sống lí tưởng</b> cho sức khỏe thể chất và tinh thần của bạn và gia đình.</p>
-				</div>
-			</div>
 			<div class="slide position-relative">
+				<h3 class="title-mobile d-sm-none">Thiết kế kiến trúc vi khí hậu</h3>
+				<div class="bg-mobile d-sm-none"></div>
+				<div class="bg-blur-mobile d-sm-none"></div>
 				<div class="owl-carousel owl-theme">
 					<div>
 						<img src="<?= get_template_directory_uri(); ?>/assets/images/home-page-bg-1.png" alt="">
@@ -135,6 +140,9 @@
 					</div>
 				</div>
 				<button type="button" class="btn btn-success btn-sm btn-explore">KHÁM PHÁ ConNest <i class="fa-solid fa-angle-right"></i></button>
+			</div>
+			<div class="content-slide-mobile bullet-point d-sm-none">
+				<p class="text-grey block-desc">Nơi không chỉ thiết kế những công trình kiến trúc có <b>giá trị thẩm mỹ</b> tinh tế, mà còn tạo <b>môi trường sống lí tưởng</b> cho sức khỏe thể chất và tinh thần của bạn và gia đình.</p>
 			</div>
 			<div class="about margin-section">
 				<h3 class="flex-1 block-title">Nền tảng thiết kế <span class="text-green">vì sức khỏe</span> của bạn và gia đình.</h3>
@@ -165,6 +173,10 @@
 				</div>
 			</div>
 			<div class="seek-tabs margin-section">
+				<video autoplay muted loop class="video-background">
+					<source src="<?= get_template_directory_uri(); ?>/assets/images/video-bg-seek-tab.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
 				<div class="head d-flex justify-content-between mb-4">
 					<div class="left">HÀNH TRÌNH<br>CỦA THIÊN NHIÊN</div>
 					<div class="center d-flex justify-content-center">
@@ -193,7 +205,7 @@
 						<?php endforeach?>
 						<div class="seek-tab-menu">
 							<?php foreach ($seekTabsMenu as $k => $v):?>
-								<div class="item <?= $k == 1 ? 'active' : ''?>" data-tab="<?=$k?>">
+								<div class="item <?= $k == 1 ? 'active' : ''?> <?= $k > 2 ? 'hide' : ''?>" data-tab="<?=$k?>">
 									<p class="menu-title"><?=$v?></p>
 									<p class="dot"><span></span></p>
 								</div>
@@ -219,7 +231,7 @@
 	<footer>
 		<div class="footer-content">
 			<div class="logo">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/logo_white.png" alt="">
+				<img src="<?= get_template_directory_uri(); ?>/assets/images/logo-white.png" alt="">
 				<button type="button" class="btn btn-success btn-sm btn-explore">ĐĂNG KÝ <i class="fa-solid fa-angle-right"></i></button>
 			</div>
 			<div class="content">

@@ -22,11 +22,26 @@ $(document).ready(function () {
 			$('.seek-tab-menu .item').removeClass('active');
 			$(`.seek-tab.tab-${tab}`).addClass('active');
 			$(`.seek-tab-menu .item[data-tab="${tab}"]`).addClass('active');
+
+			$('.seek-tab-menu .item').each(function() {
+				if (Number($(this).attr('data-tab')) > Number(tab)+1) {
+					$(this).addClass('hide');
+				}
+				else {
+					$(this).removeClass('hide');
+				}
+			});
 		}
 	});
 
 	$('.open-menu-mobile').on('click', function() {
 		$(this).toggleClass('active');
-		$('.menu-collapse').toggleClass('active');
+		$('.menu-collapse-mobile').toggleClass('active');
+	});
+
+	$('.open-menu-desktop').on('click', function() {
+		$(this).toggleClass('active');
+		$('.main-menu').toggleClass('active');
+		$('header .content').toggleClass('d-none');
 	});
 });
