@@ -464,8 +464,7 @@
 		gap: 5px;
 	}
 
-	.body .seek-tabs .seek-tab-menu .item::before {
-		content: "";
+	.body .seek-tabs .seek-tab-menu .item .process-line {
 		position: absolute;
 		left: 11px;
         top: 65px;
@@ -474,8 +473,8 @@
 		height: 100%;
 	}
 
-	.body .seek-tabs .seek-tab-menu .item:last-child::before {
-		content: none;
+	.body .seek-tabs .seek-tab-menu .item:last-child .process-line {
+		display: none;
 	}
 
 	.body .seek-tabs .seek-tab-menu .item .menu-title {
@@ -716,7 +715,7 @@
 		top: 6%;
 	}
 
-	.body .seek-tabs .seek-tab-menu .item::before {
+	.body .seek-tabs .seek-tab-menu .item .process-line {
 		top: 60px;
 	}
 

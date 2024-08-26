@@ -1,0 +1,34 @@
+header {
+    min-height: unset;
+}
+
+header .content {
+    display: none;
+}
+
+.banner {
+    height: 616px;
+    position: relative;
+    margin-top: 95px;
+    padding: 24px;
+}
+
+.banner .bg-header {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 95px;
+    background: linear-gradient(90deg, #111F12 0%, #1B2C1A 100%);
+    z-index: -1;
+}
+
+.banner .content {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 95px;
+    background: linear-gradient(90deg, #111F12 0%, #1B2C1A 100%);
+    z-index: -1;
+}
