@@ -145,7 +145,7 @@
 				<p class="text-grey block-desc">Nơi không chỉ thiết kế những công trình kiến trúc có <b>giá trị thẩm mỹ</b> tinh tế, mà còn tạo <b>môi trường sống lí tưởng</b> cho sức khỏe thể chất và tinh thần của bạn và gia đình.</p>
 			</div>
 			<div class="about margin-section">
-				<h3 class="flex-1 block-title">Nền tảng thiết kế <span class="text-green">vì sức khỏe</span> của bạn và gia đình.</h3>
+				<h3 class="flex-1 block-title">Nền tảng thiết kế<br><span class="text-green">vì sức khỏe</span> của<br>bạn và gia đình.</h3>
 				<div class="content bullet-point">
 					<p class="block-desc text-white">Với ConNest, kiến trúc là phải hòa hợp với thiên nhiên và con người; hình thức bên ngoài chịu ảnh hưởng bởi địa hình; khí hậu, tính bản địa; hình thức bên trong ảnh hưởng nhiều bởi nhu cầu tiện nghi của con người gồm nhiệt độ, độ ẩm, âm thanh, ánh sáng; Và người kiến trúc sư muốn tạo ra được hình thức công trình thì bắt buộc phải giải quyết các vấn đề nảy sinh của bối cảnh khu đất và nhu cầu sử dụng;</p>
 					<button type="button" class="btn btn-success btn-sm btn-explore">xem thêm <i class="fa-solid fa-angle-right"></i></button>
@@ -164,7 +164,7 @@
 					<img src="<?= get_template_directory_uri(); ?>/assets/images/project-9.png" alt="">
 				</div>
 				<div class="content">
-					<h3 class="block-title">Cùng khám phá những <span class="text-green">dự án tuyệt vời</span> mà chúng tôi đã đồng hành.</h3>
+					<h3 class="block-title">Cùng khám phá<br>những <span class="text-green">dự án tuyệt vời</span><br>mà chúng tôi đã<br>đồng hành.</h3>
 					<div class="detail bullet-point">
 						<p class="text-grey block-desc">Ngôi nhà của chúng ta không chỉ dừng lại là một nơi để ở. Với triết lý ”Kiến trúc vi khí hậu - Thiết kế kiến trúc phải kết hợp nghệ thuật và khoa học thực tiễn” chúng tôi mong muốn mọi công trình kiến trúc của mình sẽ giúp bạn hạnh phúc cả về tinh thần và thể chất. Đó cũng chính là điều khiến ConNest trở nên độc đáo và đặc biệt.</p>
 						<p class="text-grey block-desc mb-4">Chúng tôi tin rằng, người kể truyện không chỉ đến từ ConNest. Hãy cùng khám phá những dự án tuyệt vời mà chúng tôi đã cùng đồng hành.</p>

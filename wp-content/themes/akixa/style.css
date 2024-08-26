@@ -98,6 +98,7 @@ header {
 	background: linear-gradient(90deg, #111F12 0%, #1B2C1A 100%);
 	z-index: 4;
 	column-gap: 16px;
+	min-height: 154px;
 }
 
 header .content {
@@ -421,6 +422,10 @@ header .hamburger .open-menu-mobile.active .fa-bars {
 	padding: 50px 50px 50px 220px;
 }
 
+.body .project .content .detail p {
+	width: 292px;
+}
+
 .body .project .content .detail::before {
 	width: 191px;
 }
@@ -726,6 +731,7 @@ header .hamburger .open-menu-mobile.active .fa-bars {
 
 .body .invitation .content .block-desc {
 	padding-right: 150px;
+	width: 740px;
 }
 
 .body .invitation .bullet-point::before {
