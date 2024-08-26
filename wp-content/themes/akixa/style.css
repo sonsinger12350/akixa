@@ -721,7 +721,7 @@ header .hamburger .open-menu-mobile.active .fa-bars {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position-x: center;
-	background-position-y: 0px;
+	background-position-y: 100px;
 }
 
 .body .invitation .content {

@@ -42,6 +42,14 @@ $(document).ready(function () {
 	$('.open-menu-desktop').on('click', function() {
 		$(this).toggleClass('active');
 		$('.main-menu').toggleClass('active');
-		$('header .content').toggleClass('d-none');
+
+		if ($('header .content').hasClass('d-none')) {
+			setTimeout(() => {
+				$('header .content').toggleClass('d-none');
+			}, 300);
+		}
+		else {
+			$('header .content').toggleClass('d-none');
+		}		
 	});
 });
