@@ -83,23 +83,22 @@ $(document).ready(function () {
 				}
 
 				if (currentTab == 3) {
-					let height = seekTabHeight();
-					let lastElementHeight = $('.seek-tab.tab-3').outerHeight();
-					let nextHeight = 120-Math.round(height*100/lastElementHeight)+'%';
+					let height = calculateVerticalDistance($('.seek-tab-menu .item[data-tab="3"]'), $('.seek-tab-menu .item[data-tab="4"]'));
 
-					$('.seek-tab-menu .item .process-line').css('height', nextHeight);
+					$('.seek-tab-menu .item .process-line').css('height', height+'px');
 				}
             }
         });
     });
-	function seekTabHeight() {
-		let $lastElement = $('.seek-tab.tab-4');
-		let windowHeight = $(window).height();
-		let lastElementOffsetTop = $lastElement.offset().top;
-		let scrollTop = $(window).scrollTop();
-		let lastElementHeight = $lastElement.outerHeight();
-		let visibleHeight = Math.min(windowHeight, lastElementOffsetTop + lastElementHeight - scrollTop) - Math.max(0, lastElementOffsetTop - scrollTop);
 
-		return Math.max(0, Math.min(visibleHeight, lastElementHeight));
+	function calculateVerticalDistance($element1, $element2) {
+		// Lấy tọa độ của hai phần tử
+		const offset1 = $element1.offset();
+		const offset2 = $element2.offset();
+	
+		// Tính khoảng cách theo chiều dọc (top)
+		const verticalDistance = Math.abs(offset2.top - offset1.top);
+	
+		return verticalDistance;
 	}
 });
