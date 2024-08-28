@@ -67,7 +67,7 @@
 	}
 
 	.body .seek-tabs .head {
-		width: 100%;
+		width: 95%;
 	}
 
 	.body .seek-tabs .content .seek-tab .desc {
@@ -416,6 +416,11 @@
 		display: block;
 	}
 
+	.body .seek-tabs {
+		margin-left: 0px;
+    	margin-right: 0px;
+	}
+
 	.body .seek-tabs .content .seek-tab .left,
 	.body .seek-tabs .content .seek-tab .right {
 		height: 393px;
@@ -588,6 +593,10 @@
 	.body .seek-tabs .head .center .border-right::before,
 	.body .seek-tabs .head .center .border-left::before {
 		width: 130px;
+	}
+
+	.body .seek-tabs .bg-gif {
+		display: none;
 	}
 }
 

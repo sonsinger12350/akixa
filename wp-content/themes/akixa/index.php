@@ -54,6 +54,10 @@
 	.body .invitation {
 		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/invitation.png");
 	}
+
+	.body .seek-tabs .bg-gif {
+		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/video-bg-seek-tab.gif?v=1");
+	}
 </style>
 <div class="page container-fluid">
 	<div class="body">
@@ -106,10 +110,12 @@
 			</div>
 		</div>
 		<div class="seek-tabs margin-section">
-			<video autoplay muted loop class="video-background">
+			<!-- <video autoplay muted loop class="video-background">
 				<source src="<?= get_template_directory_uri(); ?>/assets/images/video-bg-seek-tab.mp4" type="video/mp4">
 				Your browser does not support the video tag.
-			</video>
+			</video> -->
+			<div class="bg-gif">
+			</div>
 			<div class="head d-flex justify-content-between">
 				<div class="left">HÀNH TRÌNH<br>CỦA THIÊN NHIÊN</div>
 				<div class="center d-flex justify-content-center">
