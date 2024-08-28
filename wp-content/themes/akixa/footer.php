@@ -55,13 +55,13 @@
 						</div>
 						<div class="social-icon gap-3">
 							<a href="#">
-								<img src="<?= get_template_directory_uri(); ?>/assets/images/zalo-logo.png" alt="Zalo">
+								<img src="<?= get_template_directory_uri(); ?>/assets/images/zalo-logo.svg" alt="Zalo">
 							</a>
 							<a href="#">
-								<img src="<?= get_template_directory_uri(); ?>/assets/images/facebook-logo.png" alt="Zalo">
+								<img src="<?= get_template_directory_uri(); ?>/assets/images/facebook-logo.svg" alt="Zalo">
 							</a>
 							<a href="#">
-								<img src="<?= get_template_directory_uri(); ?>/assets/images/youtube-logo.png" alt="Zalo">
+								<img src="<?= get_template_directory_uri(); ?>/assets/images/youtube-logo.svg" alt="Zalo">
 							</a>
 						</div>
 					</div>

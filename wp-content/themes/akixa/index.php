@@ -1,4 +1,4 @@
-<?php get_header(); ?>tab-1
+<?php get_header(); ?>
 <?php 
 	$websiteName = get_bloginfo('name');
 	$seekTabs = [
@@ -78,7 +78,7 @@
 			<p class="text-grey block-desc">Nơi không chỉ thiết kế những công trình kiến trúc có <b>giá trị thẩm mỹ</b> tinh tế, mà còn tạo <b>môi trường sống lí tưởng</b> cho sức khỏe thể chất và tinh thần của bạn và gia đình.</p>
 		</div>
 		<div class="about margin-section">
-			<h3 class="flex-1 block-title">Nền tảng thiết kế<br><span class="text-green">vì sức khỏe</span> của<br>bạn và gia đình.</h3>
+			<h3 class="block-title">Nền tảng thiết kế<br><span class="text-green">vì sức khỏe</span> của<br>bạn và gia đình.</h3>
 			<div class="content bullet-point">
 				<p class="block-desc text-white">Với <?= $websiteName ?>, kiến trúc là phải hòa hợp với thiên nhiên và con người; hình thức bên ngoài chịu ảnh hưởng bởi địa hình; khí hậu, tính bản địa; hình thức bên trong ảnh hưởng nhiều bởi nhu cầu tiện nghi của con người gồm nhiệt độ, độ ẩm, âm thanh, ánh sáng; Và người kiến trúc sư muốn tạo ra được hình thức công trình thì bắt buộc phải giải quyết các vấn đề nảy sinh của bối cảnh khu đất và nhu cầu sử dụng;</p>
 				<button type="button" class="btn btn-success btn-sm btn-explore">xem thêm <i class="fa-solid fa-angle-right"></i></button>
@@ -110,7 +110,7 @@
 				<source src="<?= get_template_directory_uri(); ?>/assets/images/video-bg-seek-tab.mp4" type="video/mp4">
 				Your browser does not support the video tag.
 			</video>
-			<div class="head d-flex justify-content-between mb-4">
+			<div class="head d-flex justify-content-between">
 				<div class="left">HÀNH TRÌNH<br>CỦA THIÊN NHIÊN</div>
 				<div class="center d-flex justify-content-center">
 					<div class="d-flex align-items-center">
