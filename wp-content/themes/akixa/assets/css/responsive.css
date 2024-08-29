@@ -410,6 +410,7 @@
 	.body .seek-tabs .content .seek-tab {
 		flex-direction: column;
 		height: 100%;
+		z-index: 1;
 	}
 
 	.body .seek-tabs .seek-tab:not(.active) {
