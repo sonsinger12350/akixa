@@ -21,7 +21,7 @@ Text Domain: akixa
 	--grey: #E2E2E2;
 }
 
-body {
+body * {
 	font-family: "Plus Jakarta Sans";
 }
 

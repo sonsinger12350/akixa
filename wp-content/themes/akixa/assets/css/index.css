@@ -220,6 +220,7 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	z-index: -1;
+	opacity: 0.4;
 }
 
 .body .seek-tabs .head {
@@ -500,6 +501,11 @@
 	background-position-y: 100px;
 	margin-left: -24px;
     margin-right: -24px;
+}
+
+.body .invitation .block-title {
+	margin-left: 24px;
+    margin-right: 24px;
 }
 
 .body .invitation .content {
