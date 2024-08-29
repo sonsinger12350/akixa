@@ -45,6 +45,10 @@
 		font-size: 40px;
 	}
 
+	header .content .block-desc {
+		width: 330px;
+	}
+
 	.body .about {
 		flex-direction: column;
 	}
@@ -113,10 +117,6 @@
 		width: 250px;
 	}
 
-	header .main-menu.active {
-		width: 80%;
-	}
-
 	header .main-menu ul li a {
 		font-size: 14px;
 	}
@@ -126,7 +126,7 @@
 	}
 
 	.page {
-		margin-top: 130px;
+		margin-top: 170px;
 		padding-top: 0px;
 	}
 
@@ -145,12 +145,12 @@
 
 	.body .about .content::before {
 		width: 30px;
-		top: 57px;
+		top: 46px;
 	}
 
 	.body .about .content::after {
 		left: 30px;
-		top: 53px;
+		top: 42px;
 	}
 
 	.body .about .content p {
@@ -164,12 +164,12 @@
 
 	.body .project .content .detail::before {
 		width: 63px;
-		top: 39px;
+		top: 10px;
 	}
 
 	.body .project .content .detail::after {
 		left: 63px;
-		top: 35px;
+		top: 6px;
 	}
 
 	.margin-section {
@@ -315,6 +315,10 @@
 		min-height: unset;
 	}
 
+	header .center {
+		display: none;
+	}
+
 	header .logo img {
 		width: 50px;
 		height: 50px;
@@ -370,6 +374,8 @@
 
 	.body .invitation .title {
 		font-size: 40px;
+		margin-left: 0px;
+		margin-right: 0px;
 	}
 
 	.body .invitation .content .block-desc {
@@ -535,6 +541,14 @@
 		opacity: 0.4;
 	}
 
+	.body .seek-tabs .head .center .border-left::before {
+		top: 42px;
+	}
+
+	.body .seek-tabs .head .center .border-right::before {
+		top: 79px;
+	}
+
 	.body .owl-carousel .owl-dots {
 		right: 50%;
 		transform: translate(50%, 0);
@@ -598,13 +612,6 @@
 
 	.body .seek-tabs .bg-gif {
 		display: none;
-	}
-}
-
-@media (max-width: 500px) {
-	.body .slide .bg-blur-mobile {
-		left: 23px;
-		width: 90%;
 	}
 }
 
@@ -757,11 +764,6 @@
 		width: 60%;
 	}
 
-	.body .slide .bg-blur-mobile {
-        width: 93%;
-		left: 16px;
-    }
-
 	.body .content-slide-mobile {
 		padding-left: 120px;
 	}
@@ -792,10 +794,6 @@
 }
 
 @media (max-width: 380px) {
-	.body .slide .bg-blur-mobile {
-        width: 92%;
-    }
-
 	.body .invitation .title {
 		font-size: 31px;
 	}
@@ -875,10 +873,6 @@
 	.body .owl-carousel .owl-item img {
 		height: 350px;
 	}
-
-	.body .slide .bg-blur-mobile {
-        width: 91%;
-    }
 
 	.body .owl-carousel .owl-nav {
 		width: 50%;

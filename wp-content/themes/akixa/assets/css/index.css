@@ -75,9 +75,9 @@
 .body .slide .bg-blur-mobile {
 	position: absolute;
 	top: 1px;
-	left: 4%;
+	left: 0px;
 	height: 100%;
-	width: 92%;
+	width: 100%;
 	background: rgba(0, 0, 0, 0.47);
 	z-index: 2;
 	border-radius: 16px;

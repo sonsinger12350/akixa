@@ -56,7 +56,7 @@
 	}
 
 	.body .seek-tabs .bg-gif {
-		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/video-bg-seek-tab.gif?v=1");
+		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/video-bg-seek-tab.gif?v=3");
 	}
 </style>
 <div class="page container-fluid">
@@ -67,13 +67,13 @@
 			<div class="bg-blur-mobile d-sm-none"></div>
 			<div class="owl-carousel owl-theme">
 				<div>
-					<img src="<?= get_template_directory_uri(); ?>/assets/images/home-page-bg-1.png" alt="">
+					<img src="<?= get_template_directory_uri(); ?>/assets/images/home-page-bg-1.png" alt="" loading="lazy">
 				</div>
 				<div>
-					<img src="<?= get_template_directory_uri(); ?>/assets/images/home-page-bg-1.png" alt="">
+					<img src="<?= get_template_directory_uri(); ?>/assets/images/home-page-bg-1.png" alt="" loading="lazy">
 				</div>
 				<div>
-					<img src="<?= get_template_directory_uri(); ?>/assets/images/home-page-bg-1.png" alt="">
+					<img src="<?= get_template_directory_uri(); ?>/assets/images/home-page-bg-1.png" alt="" loading="lazy">
 				</div>
 			</div>
 			<button type="button" class="btn btn-success btn-sm btn-explore">KHÁM PHÁ <?= $websiteName ?> <i class="fa-solid fa-angle-right"></i></button>
@@ -90,15 +90,15 @@
 		</div>
 		<div class="project margin-section">
 			<div class="project-gallery">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-1.png" alt="">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-2.png" alt="">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-3.png" alt="">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-4.png" alt="">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-5.png" alt="">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-6.png" alt="">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-7.png" alt="">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-8.png" alt="">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-9.png" alt="">
+				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-1.png" alt="" loading="lazy">
+				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-2.png" alt="" loading="lazy">
+				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-3.png" alt="" loading="lazy">
+				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-4.png" alt="" loading="lazy">
+				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-5.png" alt="" loading="lazy">
+				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-6.png" alt="" loading="lazy">
+				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-7.png" alt="" loading="lazy">
+				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-8.png" alt="" loading="lazy">
+				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-9.png" alt="" loading="lazy">
 			</div>
 			<div class="content">
 				<h3 class="block-title">Cùng khám phá<br>những <span class="text-green">dự án tuyệt vời</span><br>mà chúng tôi đã<br>đồng hành.</h3>
@@ -110,12 +110,7 @@
 			</div>
 		</div>
 		<div class="seek-tabs margin-section">
-			<!-- <video autoplay muted loop class="video-background">
-				<source src="<?= get_template_directory_uri(); ?>/assets/images/video-bg-seek-tab.mp4" type="video/mp4">
-				Your browser does not support the video tag.
-			</video> -->
-			<div class="bg-gif">
-			</div>
+			<div class="bg-gif"></div>
 			<div class="head d-flex justify-content-between">
 				<div class="left">HÀNH TRÌNH<br>CỦA THIÊN NHIÊN</div>
 				<div class="center d-flex justify-content-center">

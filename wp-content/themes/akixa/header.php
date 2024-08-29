@@ -35,46 +35,48 @@
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <img src="<?= get_template_directory_uri(); ?>/assets/images/logo-white.png" alt="">
-        </div>
-        <div class="content">
-            <h1 class="title">Thiết kế kiến trúc<br>vi khí hậu</h1>
-            <p class="text-grey block-desc">Nơi không chỉ thiết kế những công trình kiến trúc có <b>giá trị thẩm mỹ</b> tinh tế, mà còn tạo <b>môi trường sống lí tưởng</b> cho sức khỏe thể chất và tinh thần của bạn và gia đình.</p>
-        </div>
-        <div class="main-menu">
-            <?php
-                wp_nav_menu(
-                    array(
-                        'container'  => '',
-                        'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                        'theme_location' => 'primary',
-                    )
-                );
-            ?>
-        </div>
-        <div class="hamburger">
-            <a href="javascript:void(0)" class="open-menu-desktop d-sm-flex d-none">
-                <i class="fa-solid fa-bars"></i>
-                <i class="fa-solid fa-xmark"></i>
-            </a>
-            <a href="javascript:void(0)" class="open-menu-mobile d-sm-none">
-                <i class="fa-solid fa-bars"></i>
-                <i class="fa-solid fa-xmark"></i>
-            </a>
-        </div>
-        <div class="menu-collapse-mobile d-sm-none">
-            <div class="card card-body">
-                <?php
-                    wp_nav_menu(
-                        array(
-                            'container'  => '',
-                            'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                            'theme_location' => 'primary',
-                        )
-                    );
-                ?>
-            </div>
-        </div>
-    </header>
+	<header>
+		<div class="logo">
+			<img src="<?= get_template_directory_uri(); ?>/assets/images/logo-white.png" alt="">
+		</div>
+		<div class="center">
+			<div class="main-menu">
+				<?php
+					wp_nav_menu(
+						array(
+							'container'  => '',
+							'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+							'theme_location' => 'primary',
+						)
+					);
+				?>
+			</div>
+			<div class="content">
+				<h1 class="title">Thiết kế kiến trúc<br>vi khí hậu</h1>
+				<p class="text-grey block-desc">Nơi không chỉ thiết kế những công trình kiến trúc có <b>giá trị thẩm mỹ</b> tinh tế, mà còn tạo <b>môi trường sống lí tưởng</b> cho sức khỏe thể chất và tinh thần của bạn và gia đình.</p>
+			</div>
+		</div>
+		<div class="hamburger">
+			<a href="javascript:void(0)" class="open-menu-desktop d-sm-flex d-none">
+				<i class="fa-solid fa-bars"></i>
+				<i class="fa-solid fa-xmark"></i>
+			</a>
+			<a href="javascript:void(0)" class="open-menu-mobile d-sm-none">
+				<i class="fa-solid fa-bars"></i>
+				<i class="fa-solid fa-xmark"></i>
+			</a>
+		</div>
+		<div class="menu-collapse-mobile d-sm-none">
+			<div class="card card-body">
+				<?php
+					wp_nav_menu(
+						array(
+							'container'  => '',
+							'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+							'theme_location' => 'primary',
+						)
+					);
+				?>
+			</div>
+		</div>
+	</header>

@@ -13,12 +13,19 @@ Text Domain: akixa
 	.btn-success {
 		--bs-btn-bg: #8EBC43;
 		--bs-btn-border-color: #8EBC43;
+		--bs-btn-font-family: "Plus Jakarta Sans";
 	}
 
 	--main-black: #272727;
 	--main-green: #48684B;
 	--light-green: #8EBC43;
 	--grey: #E2E2E2;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body * {
@@ -86,7 +93,6 @@ body * {
 .btn-explore {
 	padding: 5px 5px 5px 16px;
 	border-radius: 6px;
-	font-family: Manrope;
 	font-size: 13px;
 	font-style: normal;
 	font-weight: 500;
@@ -123,6 +129,12 @@ header {
 	min-height: 154px;
 }
 
+header .center {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 header .content {
 	display: flex;
 	align-items: center;
@@ -155,13 +167,16 @@ header .logo img {
 }
 
 header .main-menu {
-	width: 0px;
+	width: 100%;
+	height: 0px;
 	overflow: hidden;
-	transition: width 500ms;
+	transition: height 500ms;
+	display: flex;
+    align-items: end;
 }
 
 header .main-menu.active {
-	width: 70%;
+	height: 122px;
 }
 
 header .main-menu ul {
