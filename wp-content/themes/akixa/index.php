@@ -104,7 +104,7 @@
 				<h3 class="block-title">Cùng khám phá<br>những <span class="text-green">dự án tuyệt vời</span><br>mà chúng tôi đã<br>đồng hành.</h3>
 				<div class="detail bullet-point">
 					<p class="text-grey block-desc">Ngôi nhà của chúng ta không chỉ dừng lại là một nơi để ở. Với triết lý ”Kiến trúc vi khí hậu - Thiết kế kiến trúc phải kết hợp nghệ thuật và khoa học thực tiễn” chúng tôi mong muốn mọi công trình kiến trúc của mình sẽ giúp bạn hạnh phúc cả về tinh thần và thể chất. Đó cũng chính là điều khiến <?= $websiteName ?> trở nên độc đáo và đặc biệt.</p>
-					<p class="text-grey block-desc mb-4">Chúng tôi tin rằng, người kể truyện không chỉ đến từ <?= $websiteName ?>. Hãy cùng khám phá những dự án tuyệt vời mà chúng tôi đã cùng đồng hành.</p>
+					<p class="text-grey block-desc">Chúng tôi tin rằng, người kể truyện không chỉ đến từ <?= $websiteName ?>. Hãy cùng khám phá những dự án tuyệt vời mà chúng tôi đã cùng đồng hành.</p>
 					<button type="button" class="btn btn-success btn-sm btn-explore">Đăng ký <i class="fa-solid fa-angle-right"></i></button>
 				</div>
 			</div>

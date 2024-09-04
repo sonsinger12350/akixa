@@ -38,25 +38,6 @@ $(document).ready(function () {
 		}
 	});
 
-	$('.open-menu-mobile').on('click', function() {
-		$(this).toggleClass('active');
-		$('.menu-collapse-mobile').toggleClass('active');
-	});
-
-	$('.open-menu-desktop').on('click', function() {
-		$(this).toggleClass('active');
-		$('.main-menu').toggleClass('active');
-
-		if ($('header .content').hasClass('d-none')) {
-			setTimeout(() => {
-				$('header .content').toggleClass('d-none');
-			}, 500);
-		}
-		else {
-			$('header .content').toggleClass('d-none');
-		}		
-	});
-
 	var $contents = $('.seek-tab');
     var $window = $(window);
 
@@ -92,21 +73,6 @@ $(document).ready(function () {
 				}
             }
         });
-
-		if ($(window).scrollTop() > 100) {
-           	$('header .open-menu-desktop').addClass('active');
-           	$('header .main-menu').addClass('active');
-			$('header .content').addClass('d-none');
-        }
-		else {
-			if ($('header .open-menu-desktop').hasClass('active')) {
-				$('header .open-menu-desktop').removeClass('active');
-				$('header .main-menu').removeClass('active');
-				setTimeout(() => {
-					$('header .content').removeClass('d-none');
-				}, 500);
-			}
-        }
     });
 
 	function calculateVerticalDistance($element1, $element2) {

@@ -78,8 +78,10 @@
 	global $post;
 	$jsFiles = [
 		'trang-chu' => get_template_directory_uri().'/assets/js/index.js?v='.time(),
+		'du-an' => get_template_directory_uri().'/assets/js/projects.js?v='.time(),
 	];
 ?>
+<script src="<?= get_template_directory_uri().'/assets/js/main.js?v='.time() ?>"></script>
 <?php if (!empty($jsFiles[$post->post_name])): ?>
 	<script src="<?= $jsFiles[$post->post_name] ?>"></script>
 <?php endif ?>

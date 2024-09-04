@@ -8,6 +8,15 @@
 		'trang-chu' => get_template_directory_uri().'/assets/css/index.css?v='.time(),
 		'dich-vu' => get_template_directory_uri().'/assets/css/services.css?v='.time()
 	];
+
+	$pageHeader2 = [
+		'dich-vu',
+		'du-an'
+	];
+
+	$isHeader2 = in_array($post->post_name, $pageHeader2) ? true : false;
+	$logo = get_template_directory_uri()."/assets/images/logo.png";
+	if ($isHeader2) $logo = get_template_directory_uri()."/assets/images/logo-white.png";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,10 +44,10 @@
 </head>
 
 <body>
-	<header>
-		<div class="logo">
-			<img src="<?= get_template_directory_uri(); ?>/assets/images/logo-white.png" alt="">
-		</div>
+	<header class="<?= $isHeader2 ? 'scroll-down header-2' : ''?>">
+		<a class="logo d-block" href="<?= home_url() ?>">
+			<img src="<?= $logo ?>" alt="<?= $websiteName ?>" data-black="<?= get_template_directory_uri(); ?>/assets/images/logo.png" data-white="<?= get_template_directory_uri(); ?>/assets/images/logo-white.png">
+		</a>
 		<div class="center">
 			<div class="main-menu">
 				<?php
@@ -51,10 +60,12 @@
 					);
 				?>
 			</div>
-			<div class="content">
-				<h1 class="title">Thiết kế kiến trúc<br>vi khí hậu</h1>
-				<p class="text-grey block-desc">Nơi không chỉ thiết kế những công trình kiến trúc có <b>giá trị thẩm mỹ</b> tinh tế, mà còn tạo <b>môi trường sống lí tưởng</b> cho sức khỏe thể chất và tinh thần của bạn và gia đình.</p>
-			</div>
+			<?php if (!$isHeader2): ?>
+				<div class="content">
+					<h1 class="title">Thiết kế kiến trúc<br>vi khí hậu</h1>
+					<p class="text-grey block-desc">Nơi không chỉ thiết kế những công trình kiến trúc có <b>giá trị thẩm mỹ</b> tinh tế, mà còn tạo <b>môi trường sống lí tưởng</b> cho sức khỏe thể chất và tinh thần của bạn và gia đình.</p>
+				</div>
+			<?php endif ?>
 		</div>
 		<div class="hamburger">
 			<a href="javascript:void(0)" class="open-menu-desktop d-sm-flex d-none">
