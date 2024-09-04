@@ -64,7 +64,7 @@ array_unshift($categories, $all_category);
 			<div class="list-category">
 				<?php if (!empty($categories)): ?>
 					<?php foreach ($categories as $k => $cat): ?>
-						<a class="item <?= $k ==0 ? 'active' : ''?>" href="<?= $cat->slug ?>"><?= $cat->name ?></a>
+						<a class="item <?= $k ==0 ? 'active' : ''?>" href="javascript:void(0)"><?= $cat->name ?></a>
 					<?php endforeach ?>
 				<?php endif ?>
 			</div>
