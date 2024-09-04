@@ -24,20 +24,26 @@ $(document).ready(function () {
 		activeMenu();
 	});
 
-    var $window = $(window);
+	var $window = $(window);
 
-    $window.on('scroll', function() {
-		if ($(window).scrollTop() > 100) {
-           	$('header').addClass('scroll-down');
-        }
-		else {
-			if ($('header').hasClass('scroll-down')) {
-				$('header').removeClass('scroll-down');
+	if (screen.width > 576) {
+		$window.on('scroll', function() {
+			if ($(window).scrollTop() > 100) {
+				$('header').addClass('scroll-down');
 			}
-        }
-
+			else {
+				if ($('header').hasClass('scroll-down')) {
+					$('header').removeClass('scroll-down');
+				}
+			}
+	
+			activeMenu();
+		});
+	}
+	else {
+		$('header').addClass('scroll-down');
 		activeMenu();
-    });
+	}
 
 	function activeMenu() {
 		if ($('header').hasClass('active-menu')) {

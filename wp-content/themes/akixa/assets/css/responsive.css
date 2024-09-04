@@ -313,7 +313,7 @@
 	header {
 		padding: 8px 16px;
 		min-height: unset;
-		background-color: var(--header-bg-color);
+		background: var(--header-bg-color);
 	}
 
 	header .center {
