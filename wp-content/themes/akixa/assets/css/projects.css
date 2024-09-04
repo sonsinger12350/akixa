@@ -2,6 +2,10 @@ header {
 	min-height: unset;
 }
 
+.page {
+	margin-top: 60px;
+}
+
 .slide {
 	position: relative;
 	margin-top: 78px;
@@ -291,20 +295,12 @@ header {
 		height: 370px;
 	}
 
-	.page {
-		margin-top: 120px;
-	}
-
 	.form-contact form .input input {
 		width: 350px;
 	}
 }
 
 @media (max-width: 991px) {
-	.page {
-		margin-top: 80px;
-	}
-
 	.slide .content .owl-carousel .owl-item img {
 		height: 500px;
 	}
@@ -399,7 +395,7 @@ header {
     }
 
 	.page {
-		margin-top: 50px;
+		margin-top: 80px;
 	}
 
 	.slide {
