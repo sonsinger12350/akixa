@@ -1,6 +1,7 @@
 <?php
 	global $post;
 	$websiteName = get_bloginfo('name');
+	$title = $post->post_name == 'trang-chu' ? $websiteName : $post->post_title . ' - '.$websiteName;
 	$description = get_bloginfo('description');
 	$menu_locations = get_nav_menu_locations();
 	$primary_menu_items = wp_get_nav_menu_items($menu_locations['primary']);
@@ -17,12 +18,13 @@
 	$isHeader2 = in_array($post->post_name, $pageHeader2) ? true : false;
 	$logo = get_template_directory_uri()."/assets/images/logo.png";
 	if ($isHeader2) $logo = get_template_directory_uri()."/assets/images/logo-white.png";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title><?= $websiteName ?></title>
+	<title><?= $title ?></title>
 	<meta name="description" content="<?= $description ?>">
 	<link rel="shortcut icon" href="<?= get_template_directory_uri(); ?>/assets/images/logo.png" sizes=32x32/>
 	<meta charset="UTF-8">
