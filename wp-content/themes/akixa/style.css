@@ -8,7 +8,7 @@ Requires PHP: 7.0
 Version: 1
 Text Domain: akixa
 */
-
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
 :root {
 	.btn-success {
 		--bs-btn-bg: #8EBC43;
@@ -21,6 +21,7 @@ Text Domain: akixa
 	--light-green: #8EBC43;
 	--gray: #E2E2E2;
 	--body-color: #7F7F7F;
+	--header-bg-color: linear-gradient(90deg, #111F12 0%, #1B2C1A 100%);
 }
 
 * {
@@ -132,7 +133,7 @@ header {
 
 header.scroll-down,
 header.header-2 {
-	background: linear-gradient(90deg, #111F12 0%, #1B2C1A 100%);
+	background: var(--header-bg-color);
 	min-height: unset;
 }
 
@@ -304,7 +305,7 @@ header .hamburger .open-menu-mobile.active .fa-bars {
 }
 
 footer {
-	background: linear-gradient(90deg, #111F12 0%, #1B2C1A 100%);
+	background: var(--header-bg-color);
 	padding: 24px;	
 }
 

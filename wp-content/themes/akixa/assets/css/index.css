@@ -89,7 +89,7 @@
 	left: 0px;
 	height: 66px;
 	width: 100%;
-	background: linear-gradient(90deg, #111F12 0%, #1B2C1A 100%);
+	background: var(--header-bg-color);
 }
 
 .body .content-slide-mobile {
