@@ -5,8 +5,10 @@
  */
 
 get_header();
+$websiteName = get_bloginfo('name');
+$limit = 10;
 $args = array(
-    'limit' => 10
+    'limit' => $limit
 );
 
 $products = wc_get_products($args);
@@ -68,9 +70,10 @@ array_unshift($categories, $all_category);
 			</div>
 		</div>
 		<div class="list-product margin-section">
-			<div class="first-product">
+			<div class="first-product product">
 				<div class="image">
 					<?= $first_product->get_image() ?>
+					<a class="bg-detail" href="javascript:void(0)">Chi tiết</a>
 				</div>
 				<div class="content">
 					<div>
@@ -91,9 +94,10 @@ array_unshift($categories, $all_category);
 						$col = 'col-lg-4';
 						if (in_array($k, [2,6])) $col = 'col-lg-8';
 					?>
-					<div class="item <?= $col ?>">
+					<div class="item <?= $col ?> product">
 						<div class="image">
 							<?= $product->get_image() ?>
+							<a class="bg-detail" href="javascript:void(0)">Chi tiết</a>
 						</div>
 						<div class="content">
 							<div>
@@ -108,8 +112,23 @@ array_unshift($categories, $all_category);
 					</div>
 				<?php endforeach ?>
 			</div>
+			<div class="text-center mt-4 mb-4">
+				<button class="btn btn-load-more">XEM THÊM DỰ ÁN</button>
+			</div>
 		</div>
 	</div>
+</div>
+<div class="form-contact margin-section d-none d-md-flex">
+	<h3 class="title">Để lại thông tin nhận<br>tư vấn miễn phí</h3>
+	<form action="post">
+		<div class="input">
+			<input type="text" class="d-block mb-2" placeholder="Họ và tên">
+		</div>
+		<div class="input">
+			<input type="text" class="d-block" placeholder="Số điện thoại">
+		</div>
+	</form>
+	<button class="btn btn-success btn-explore">Gửi cho <?= $websiteName ?> <i class="fa-solid fa-angle-right"></i></button>
 </div>
 	
 <?php
