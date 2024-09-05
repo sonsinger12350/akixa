@@ -110,6 +110,7 @@
 			</div>
 		</div>
 		<div class="seek-tabs margin-section">
+			<div class="bg-blur-gif"></div>
 			<div class="bg-gif"></div>
 			<div class="head d-flex justify-content-between">
 				<div class="left">HÀNH TRÌNH<br>CỦA THIÊN NHIÊN</div>

@@ -75,6 +75,27 @@ header {
 	position: relative;
 }
 
+.page .about::before {
+	content: "";
+	width: 52%;
+	height: 1px;
+	background-color: var(--gray);
+	position: absolute;
+	bottom: 58px;
+	right: 0px;
+}
+
+.page .about::after {
+	content: "";
+	width: 10px;
+	height: 10px;
+	background-color: var(--gray);
+	position: absolute;
+	bottom: 54px;
+	right: 52%;
+	border-radius: 50%;
+}
+
 .page .about .block-title {
 	position: relative;
 	width: max-content;
@@ -283,6 +304,14 @@ header {
 	.list-product .list .item.col-lg-8 .image img {
 		height: 430px;
 	}
+
+	.page .about::before {
+		width: 46%;
+	}
+
+	.page .about::after {
+		right: 46%;
+	}
 }
 
 @media (max-width: 1199px) {
@@ -297,6 +326,14 @@ header {
 
 	.form-contact form .input input {
 		width: 350px;
+	}
+
+	.page .about::before {
+		width: 37%;
+	}
+
+	.page .about::after {
+		right: 37%;
 	}
 }
 
@@ -339,6 +376,17 @@ header {
 
 	.page .about .block-desc {
 		bottom: -5px;
+		right: -10px;
+	}
+
+	.page .about::before {
+		bottom: 43px;
+		width: 41%;
+	}
+
+	.page .about::after {
+		bottom: 39px;
+		right: 41%;
 	}
 
 	.categories .list-category {
@@ -352,7 +400,7 @@ header {
 
 @media (max-width: 767px) {
 	.slide {
-		margin-top: 96px;
+		margin-top: 95px;
 	}
 
 	.page .about .block-desc {
@@ -382,6 +430,14 @@ header {
 	.list-product .list .item.col-lg-4 .image img,
 	.list-product .list .item.col-lg-8 .image img {
 		height: 300px;
+	}
+
+	.page .about::before {
+		content: none;
+	}
+
+	.page .about::after {
+		content: none;
 	}
 }
 

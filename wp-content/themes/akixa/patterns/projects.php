@@ -50,17 +50,16 @@ array_unshift($categories, $all_category);
 	</div>
 </div>
 <div class="page">
-	<div class="container">
-		<div class="about">
+	<div class="about">
+		<div class="container">
 			<h3 class="block-title">
 				Bạn vừa mở ra cánh cửa<br>đến không gian kiến trúc<br><span class="text-green">Vi Khí Hậu</span>
-				<p class="block-desc">Không gian sống mà ở đó<br>mỗi khách hàng của AKIXA đều khỏe mạnh<br>và hạnh phúc</p>
+				<p class="block-desc">Không gian sống mà ở đó<br>mỗi khách hàng của <?=  $websiteName ?> đều khỏe mạnh<br>và hạnh phúc</p>
 			</h3>
 		</div>
+	</div>
+	<div class="container">
 		<div class="categories margin-section">
-			<a class="filter" href="javascript:void(0)">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/icon/filter.svg" alt="Filter">
-			</a>
 			<div class="list-category">
 				<?php if (!empty($categories)): ?>
 					<?php foreach ($categories as $k => $cat): ?>

@@ -30,10 +30,18 @@ $(document).ready(function () {
 		$window.on('scroll', function() {
 			if ($(window).scrollTop() > 100) {
 				$('header').addClass('scroll-down');
+
+				if (!$('header').hasClass('active-menu')) {
+					$('.open-menu-desktop').click();
+				}
 			}
 			else {
 				if ($('header').hasClass('scroll-down')) {
 					$('header').removeClass('scroll-down');
+				}
+
+				if ($('header').hasClass('active-menu')) {
+					$('.open-menu-desktop').click();
 				}
 			}
 	
