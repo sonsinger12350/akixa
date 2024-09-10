@@ -7,18 +7,20 @@
 	$primary_menu_items = wp_get_nav_menu_items($menu_locations['primary']);
 	$cssFiles = [
 		'trang-chu' => get_template_directory_uri().'/assets/css/index.css?v='.time(),
-		'dich-vu' => get_template_directory_uri().'/assets/css/services.css?v='.time()
+		'dich-vu' => get_template_directory_uri().'/assets/css/services.css?v='.time(),
+		'du-an' => get_template_directory_uri().'/assets/css/projects.css?v='.time(),
+		'product' => get_template_directory_uri().'/assets/css/single-product.css?v='.time(),
 	];
 
 	$pageHeader2 = [
 		'dich-vu',
-		'du-an'
+		'du-an',
+		'product',
 	];
 
-	$isHeader2 = in_array($post->post_name, $pageHeader2) ? true : false;
+	$isHeader2 = (in_array($post->post_name, $pageHeader2) || in_array($post->post_type, $pageHeader2)) ? true : false;
 	$logo = get_template_directory_uri()."/assets/images/logo.png";
 	if ($isHeader2) $logo = get_template_directory_uri()."/assets/images/logo-white.png";
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +43,12 @@
 	<link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/style.css?v=<?=time()?>">
 	<?php if (!empty($cssFiles[$post->post_name])): ?>
 		<link rel="stylesheet" href="<?= $cssFiles[$post->post_name] ?>">
+	<?php else:?>
+		<?php if (!empty($cssFiles[$post->post_type])): ?>
+			<link rel="stylesheet" href="<?= $cssFiles[$post->post_type] ?>">
+		<?php endif ?>
 	<?php endif ?>
+	
 	<link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/responsive.css?v=<?=time()?>">
 </head>
 

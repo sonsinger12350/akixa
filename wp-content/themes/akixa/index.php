@@ -1,5 +1,6 @@
-<?php get_header(); ?>
 <?php 
+	get_header();
+
 	$websiteName = get_bloginfo('name');
 	$seekTabs = [
 		1 => [

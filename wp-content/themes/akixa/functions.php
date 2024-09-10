@@ -17,3 +17,18 @@ function register_my_menus() {
     ));
 }
 add_action('init', 'register_my_menus');
+
+function save_recently_viewed_product() {
+    if (is_product()) {
+        global $post;
+
+        $product_id = $post->ID;
+        if (!isset($_SESSION['product_recently'])) $_SESSION['product_recently'] = [];
+        if (($key = array_search($product_id, $_SESSION['product_recently'])) !== false) unset($_SESSION['product_recently'][$key]);
+        array_unshift($_SESSION['product_recently'], $product_id);
+
+        // Giới hạn danh sách sản phẩm đã xem gần đây
+        $_SESSION['product_recently'] = array_slice($_SESSION['product_recently'], 0, 10);
+    }
+}
+add_action('template_redirect', 'save_recently_viewed_product');

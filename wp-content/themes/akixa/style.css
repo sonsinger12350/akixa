@@ -34,6 +34,20 @@ body * {
 	font-family: "Plus Jakarta Sans";
 }
 
+.custom-scrollbar::-webkit-scrollbar {
+	width: 6px;
+	height: 6px
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+	background: var(--gray);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+	background: var(--main-black);
+}
+
+
 .block-title {
 	font-size: 67px;
 	font-style: normal;

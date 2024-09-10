@@ -1,37 +1,33 @@
 <?php
+	/**
+	 * Template Name: Dự án
+	 */
 
-/**
- * Template Name: Dự án
- */
+	get_header();
+	$websiteName = get_bloginfo('name');
+	$limit = 10;
+	$args = array(
+		'limit' => $limit
+	);
 
-get_header();
-$websiteName = get_bloginfo('name');
-$limit = 10;
-$args = array(
-    'limit' => $limit
-);
+	$products = wc_get_products($args);
+	$first_product = !empty($products[0]) ? $products[0] : [];
+	$cf_first_product = get_post_meta($first_product->id);
 
-$products = wc_get_products($args);
-$first_product = !empty($products[0]) ? $products[0] : [];
-$cf_first_product = get_post_meta($first_product->id);
-// echo '<pre>';print_r($first_product);exit;
+	$categories = get_terms(array(
+		'taxonomy' => 'product_cat',
+		'hide_empty' => false,
+		'orderby' => 'menu_order',
+		'order' => 'ASC',
+	));
+	$all_category = (object) array(
+		'term_id' => 0,
+		'name' => 'Tất cả',
+		'slug' => 'tat-ca',
+	);
 
-$categories = get_terms(array(
-    'taxonomy' => 'product_cat',
-    'hide_empty' => false,
-	'orderby' => 'menu_order',
-    'order' => 'ASC',
-));
-$all_category = (object) array(
-    'term_id' => 0,
-    'name' => 'Tất cả',
-    'slug' => 'tat-ca',
-);
-
-array_unshift($categories, $all_category);
-
+	array_unshift($categories, $all_category);
 ?>
-<link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/projects.css?v=<?= time() ?>">
 
 <div class="slide">
 	<div class="bg-header"></div>
@@ -72,7 +68,7 @@ array_unshift($categories, $all_category);
 			<div class="first-product product">
 				<div class="image">
 					<?= $first_product->get_image() ?>
-					<a class="bg-detail" href="javascript:void(0)">Chi tiết</a>
+					<a class="bg-detail" href="<?= $first_product->get_permalink() ?>">Chi tiết</a>
 				</div>
 				<div class="content">
 					<div>
@@ -96,7 +92,7 @@ array_unshift($categories, $all_category);
 					<div class="item <?= $col ?> product">
 						<div class="image">
 							<?= $product->get_image() ?>
-							<a class="bg-detail" href="javascript:void(0)">Chi tiết</a>
+							<a class="bg-detail" href="<?= $product->get_permalink() ?>">Chi tiết</a>
 						</div>
 						<div class="content">
 							<div>
