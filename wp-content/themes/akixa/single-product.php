@@ -71,7 +71,6 @@
 				<?php if (!empty($images)): ?>
 					<?php foreach ($images as $k => $image): ?>
 						<div class="item gallery-<?= $k+1 ?>"><img src="<?= $image ?>" alt="gallery-<?= $k ?>" loading="lazy"></div>
-						<div class="item gallery-<?= $k+1 ?>"><img src="<?= $image ?>" alt="gallery-<?= $k ?>" loading="lazy"></div>
 					<?php endforeach ?>
 				<?php endif ?>
 			</div>
