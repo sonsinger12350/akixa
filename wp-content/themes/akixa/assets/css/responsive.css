@@ -570,7 +570,12 @@
 	}
 
 	.body .seek-tabs .head .center .border-right::before {
-		top: 79px;
+		top: 80px;
+	}
+
+	.body .seek-tabs .head .center .border-right::before,
+	.body .seek-tabs .head .center .border-left::before {
+		width: 120px;
 	}
 
 	.body .owl-carousel .owl-dots {
@@ -627,11 +632,6 @@
 
 	footer .logo .btn-explore {
 		display: block;
-	}
-
-	.body .seek-tabs .head .center .border-right::before,
-	.body .seek-tabs .head .center .border-left::before {
-		width: 130px;
 	}
 
 	.body .seek-tabs .bg-gif {
@@ -936,13 +936,13 @@
 	}
 
 	.body .seek-tabs .head .center .border-left::before {
-		width: 90px;
-		top: 28px;
+		width: 75px;
+		top: 26px;
 	}
 
 	.body .seek-tabs .head .center .border-right::before {
-		width: 90px;
-		bottom: 28px;
+		width: 75px;
+		bottom: 26px;
 	}
 
 	.body .project .block-title {
