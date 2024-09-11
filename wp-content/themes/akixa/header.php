@@ -19,8 +19,10 @@
 	];
 
 	$isHeader2 = (in_array($post->post_name, $pageHeader2) || in_array($post->post_type, $pageHeader2)) ? true : false;
-	$logo = get_template_directory_uri()."/assets/images/logo.png";
-	if ($isHeader2) $logo = get_template_directory_uri()."/assets/images/logo-white.png";
+	$logoBlack = get_template_directory_uri()."/assets/images/logo.png?v=1";
+	$logoWhite = get_template_directory_uri()."/assets/images/logo-white.png?v=1";
+	$logo = $logoBlack;
+	if ($isHeader2) $logo = $logoWhite;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +30,7 @@
 <head>
 	<title><?= $title ?></title>
 	<meta name="description" content="<?= $description ?>">
-	<link rel="shortcut icon" href="<?= get_template_directory_uri(); ?>/assets/images/logo.png" sizes=32x32/>
+	<link rel="shortcut icon" href="<?= $logoBlack ?>" sizes=32x32/>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"/>
@@ -55,7 +57,7 @@
 <body>
 	<header class="<?= $isHeader2 ? 'scroll-down header-2' : ''?>">
 		<a class="logo d-block" href="<?= home_url() ?>">
-			<img src="<?= $logo ?>" alt="<?= $websiteName ?>" data-black="<?= get_template_directory_uri(); ?>/assets/images/logo.png" data-white="<?= get_template_directory_uri(); ?>/assets/images/logo-white.png">
+			<img src="<?= $logo ?>" alt="<?= $websiteName ?>" data-black="<?= $logoBlack ?>" data-white="<?= $logoWhite ?>">
 		</a>
 		<div class="center">
 			<div class="main-menu">

@@ -38,6 +38,10 @@ $(document).ready(function () {
 		}
 	});
 
+	$('.seek-tab-menu .item .dot').on('click', function() {
+		$(this).parent().find('.menu-title').click();
+	});
+
 	var $contents = $('.seek-tab');
     var $window = $(window);
 

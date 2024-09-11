@@ -217,6 +217,10 @@
 		height: 150px;
 	}
 
+	.body .invitation .block-title {
+		font-size: 45px;
+	}
+
 	.body .invitation .content {
 		width: 100%;
 	}
@@ -242,6 +246,7 @@
 	header .logo img {
 		width: 80px;
 		height: 80px;
+		scale: 1.5;
 	}
 
 	footer .logo img {
@@ -349,13 +354,29 @@
 		padding: 0 24px;
 	}
 
+	.body .seek-tabs .bg-blur-gif {
+		display: none;
+	}
+
 	.body .about.margin-section {
 		margin-top: 20px !important;
+	}
+
+	.body .project .block-title {
+		font-size: 43px;
 	}
 
 	.body .project .project-gallery img {
 		width: 145px;
         height: 145px;
+	}
+
+	.body .project .content .detail {
+		padding-right: 0px;
+	}
+
+	.body .project .btn-explore i {
+		margin-left: 12px;
 	}
 
 	.body .seek-tabs .head .center .d-flex {
@@ -371,16 +392,18 @@
 		margin-right: 0px;
 		background-size: 150%;
 		background-position-y: 150%;
+		background-position-x: 25%;
 	}
 
 	.body .invitation .title {
-		font-size: 40px;
+		font-size: 35px;
 		margin-left: 0px;
 		margin-right: 0px;
 	}
 
 	.body .invitation .content .block-desc {
-		padding-right: 100px;
+		padding-right: 0px;
+		width: 235px;
 	}
 
 	.body p {
@@ -616,6 +639,12 @@
 	}
 }
 
+@media (max-width: 480px) {
+	.body .invitation {
+        height: 550px;
+    }
+}
+
 @media (max-width: 450px) {
 	.margin-section {
 		margin-top: 60px !important;
@@ -670,6 +699,10 @@
 		width: 7px;
     	height: 7px;
 		right: -2px;
+	}
+
+	.body .project .block-title {
+		font-size: 40px;
 	}
 
 	.body .project .project-gallery img {
@@ -734,7 +767,7 @@
 	}
 
 	.body .invitation .title {
-		font-size: 36px;
+		font-size: 32px;
 	}
 
 	.body .invitation .content .block-desc {
@@ -779,13 +812,16 @@
 }
 
 @media (max-width: 420px) {
-	.body .invitation .title {
-		font-size: 34px;
+	.body .about .block-title {
+		font-size: 45px;
 	}
 
-	.body .invitation {
-		background-position-y: 100%;
-		background-size: 180%;
+	.body .invitation .title {
+		font-size: 31px;
+	}
+
+	.body .project .block-title {
+		font-size: 37px;
 	}
 
 	.body .project .project-gallery img {
@@ -795,13 +831,29 @@
 }
 
 @media (max-width: 380px) {
+	.body .about .block-title {
+		font-size: 42px;
+	}
+
+	.body .invitation {
+        height: 500px;
+    }
+
 	.body .invitation .title {
-		font-size: 31px;
+		font-size: 28px;
+	}
+
+	.body .project .block-title {
+		font-size: 34px;
 	}
 
 	.body .project .project-gallery img {
 		width: 110px;
 		height: 110px;
+	}
+
+	.body .content-slide-mobile .block-desc {
+		width: auto;
 	}
 }
 
@@ -810,12 +862,16 @@
 		font-size: 46px;
 	}
 
+	.body .about .block-title {
+		font-size: 38px;
+	}
+
 	.body .invitation {
-		height: 550px;
+		height: 480px;
 	}
 
 	.body .invitation .title {
-		font-size: 29px;
+		font-size: 26px;
 	}
 
 	.body .owl-carousel .owl-dots,
@@ -887,6 +943,10 @@
 	.body .seek-tabs .head .center .border-right::before {
 		width: 90px;
 		bottom: 28px;
+	}
+
+	.body .project .block-title {
+		font-size: 31px;
 	}
 
 	.body .project .project-gallery img {

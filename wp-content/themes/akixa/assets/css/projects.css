@@ -99,6 +99,8 @@ header {
 .page .about .block-title {
 	position: relative;
 	width: max-content;
+	line-height: 122%;
+	letter-spacing: -0.72px;
 }
 
 .page .about .block-desc {
@@ -243,8 +245,10 @@ header {
 	text-align: center;
 	line-height: 100%;
 	background: #F7F7F7;
+	color: #7F7F7F;
 	border: 1px solid #DCDCDC;
 	border-radius: 6px;
+	font-size: 12px;
 }
 
 .form-contact {
@@ -433,11 +437,13 @@ header {
 	}
 
 	.page .about::before {
-		content: none;
+		bottom: 47px;
+        width: 57%;
 	}
 
 	.page .about::after {
-		content: none;
+		bottom: 43px;
+        right: 57%;
 	}
 }
 
@@ -506,8 +512,16 @@ header {
 
 	.page .about .block-title {
 		width: auto;
+		font-size: 34px;
 	}
-	
+
+	.page .about::before {
+        width: 48%;
+	}
+
+	.page .about::after {
+        right: 48%;
+	}
 }
 
 @media (max-width: 450px) {
@@ -523,6 +537,18 @@ header {
 		padding: 0px;
 	}
 
+	.page .about::before {
+        width: 43%;
+	}
+
+	.page .about::after {
+        right: 43%;
+	}
+
+	.page .about .block-title {
+		font-size: 32px;
+	}
+
 	.list-product .first-product .image img,
 	.list-product .list .item.col-lg-4 .image img,
 	.list-product .list .item.col-lg-8 .image img {
@@ -530,7 +556,7 @@ header {
 	}
 
 	.list-product .btn-load-more {
-		width: 80%;
+		width: 100%;
 	}
 }
 
@@ -541,7 +567,7 @@ header {
 
 	.block-desc,
 	.list-product .content .short-desc {
-		font-size: 14px;
+		font-size: 13px;
 	}
 
 	.slide .content .owl-carousel .owl-item img {
@@ -551,5 +577,17 @@ header {
 	.slide .owl-carousel .owl-nav {
 		width: 60%;
         left: 20%;
+	}
+
+	.page .about .block-title {
+		font-size: 27px;
+	}
+
+	.page .about::before {
+        width: 40%;
+	}
+
+	.page .about::after {
+        right: 40%;
 	}
 }

@@ -1,7 +1,7 @@
     <footer>
 		<div class="footer-content">
 			<div class="logo">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/logo-white.png" alt="">
+				<img src="<?= get_template_directory_uri(); ?>/assets/images/logo-white.png?v=1" alt="">
 				<button type="button" class="btn btn-success btn-sm btn-explore">ĐĂNG KÝ <i class="fa-solid fa-angle-right"></i></button>
 			</div>
 			<div class="content">
