@@ -546,6 +546,11 @@ header .logo img {
 		padding: 0px;
 	}
 
+	header .hamburger .open-menu-desktop,
+	header .hamburger .open-menu-mobile {
+		color: #fff;
+	}
+
 	.product-info {
 		display: block;
 	}
@@ -610,21 +615,48 @@ header .logo img {
 	.product-info .left .slide img {
 		height: 350px;
 	}
+
+	.product-content .left .general-info .block-title {
+		font-size: 45px;
+	}
 }
 
 @media (max-width: 380px) {
+	.page {
+		padding: 12px !important;
+	}
+
 	.product-content .left .general-info {
-		flex-direction: column;
-		gap: 16px;
+		/* flex-direction: column; */
+		gap: 4px;
 		align-items: start;
 	}
 
 	.product-content .left .general-info .detail {
-		border: 0px;
-		padding: 0px;
+		padding: 4px;
 	}
 
 	.product-info .left .slide img {
 		height: 200px;
+	}
+
+	.product-content .left .general-info .block-title {
+		font-size: 38px;
+	}
+
+	.product-content .left .general-info .detail .title {
+		font-size: 12px;
+	}
+
+	.product-content .left .general-info .detail .info {
+		font-size: 11px;
+	}
+
+	.product-info .left .content .title {
+		font-size: 14px;
+	}
+
+	.product-info .left .content .info {
+		font-size: 15px;
 	}
 }
