@@ -11,6 +11,7 @@
 		'du-an' => get_template_directory_uri().'/assets/css/projects.css?v='.time(),
 		'product' => get_template_directory_uri().'/assets/css/single-product.css?v='.time(),
 		'blog' => get_template_directory_uri().'/assets/css/blog.css?v='.time(),
+		've-'.strtolower($websiteName) => get_template_directory_uri().'/assets/css/about.css?v='.time(),
 	];
 
 	$pageHeader2 = [
@@ -18,6 +19,7 @@
 		'du-an',
 		'product',
 		'blog',
+		've-'.strtolower($websiteName),
 	];
 
 	$isHeader2 = (in_array($post->post_name, $pageHeader2) || in_array($post->post_type, $pageHeader2)) ? true : false;
