@@ -217,6 +217,10 @@ header .logo img {
 	overflow: hidden;
 }
 
+.product.first-product .image {
+	overflow: visible;
+}
+
 .product .image .bg-detail {
 	position: absolute;
 	top: 0px;
