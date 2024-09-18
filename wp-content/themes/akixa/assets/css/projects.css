@@ -190,8 +190,8 @@ header .logo img {
 }
 
 .list-product .list .item.col-lg-4 .image img {
-	width: 100%;
-    height: auto;
+	width: 415px;
+	height: 415px;
 	object-fit: cover;
 	object-position: center;
 }
@@ -214,6 +214,7 @@ header .logo img {
 
 .product .image {
 	position: relative;
+	overflow: hidden;
 }
 
 .product .image .bg-detail {
@@ -310,6 +311,11 @@ header .logo img {
 		width: 650px;
 	}
 
+	.list-product .list .item.col-lg-4 .image img {
+		width: 355px;
+		height: 355px;
+	}
+
 	.list-product .list .item.col-lg-8 .image img {
 		height: 430px;
 	}
@@ -328,6 +334,11 @@ header .logo img {
         height: 462px;
         width: 550px;
     }
+
+	.list-product .list .item.col-lg-4 .image img {
+		width: 295px;
+		height: 295px;
+	}
 
 	.list-product .list .item.col-lg-8 .image img {
 		height: 370px;

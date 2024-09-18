@@ -78,7 +78,7 @@
 							<li>Diện tích xây dựng: <?= $cf_first_product['construction_area'][0] ?></li>
 						</ul>
 					</div>
-					<p class="short-desc"><?= nl2br($first_product->short_description) ?></p>
+					<p class="short-desc"><?= nl2br(wp_strip_all_tags($first_product->short_description)) ?></p>
 				</div>
 			</div>
 			<div class="list row mt-4">
@@ -102,7 +102,7 @@
 									<li>Diện tích xây dựng: <?= $cf_product['construction_area'][0] ?></li>
 								</ul>
 							</div>
-							<p class="short-desc"><?= nl2br($product->short_description) ?></p>
+							<p class="short-desc"><?= nl2br(wp_strip_all_tags($product->short_description)) ?></p>
 						</div>
 					</div>
 				<?php endforeach ?>
