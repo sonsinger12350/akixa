@@ -67,7 +67,7 @@
 		<div class="list-product margin-section">
 			<div class="first-product product">
 				<div class="image">
-					<?= $first_product->get_image() ?>
+					<?= $first_product->get_image('full') ?>
 					<a class="bg-detail" href="<?= $first_product->get_permalink() ?>">Chi tiết</a>
 				</div>
 				<div class="content">
@@ -91,7 +91,7 @@
 					?>
 					<div class="item <?= $col ?> product">
 						<div class="image">
-							<?= $product->get_image() ?>
+							<?= $product->get_image('full') ?>
 							<a class="bg-detail" href="<?= $product->get_permalink() ?>">Chi tiết</a>
 						</div>
 						<div class="content">
