@@ -37,6 +37,11 @@
         ),
     );
 	$related_products = new WP_Query( $args );
+	// $description = nl2br(get_the_content( null, false, $product_id ));
+	// echo '<pre>';print_r($description);exit;
+	$description = nl2br($product->description);
+	// $description = preg_replace('/<div[^>]*>/i', '', $description);
+	// $description = preg_replace('/<\/div>/i', '', $description);
 ?>
 
 <div class="page">
@@ -95,7 +100,7 @@
 			</div>
 			<div class="hr"></div>
 			<div class="product-description">
-				<?= nl2br($product->description) ?>
+				<?= $description ?>
 			</div>
 		</div>
 		<div class="right">
@@ -118,7 +123,7 @@
 						<?php 
 							$related_products->the_post();
 							$data = wc_get_product( get_the_ID() );
-							$image = get_the_post_thumbnail_url( get_the_ID(), 'thumbnail' );
+							$image = get_the_post_thumbnail_url( get_the_ID(), 'full' );
 						?>
 						<div class="item product">
 							<div class="image">
@@ -144,7 +149,7 @@
 					<?php 
 						foreach ($_SESSION['product_recently'] as $id): 
 						$data = wc_get_product($id);
-						$image = get_the_post_thumbnail_url($id, 'thumbnail');
+						$image = get_the_post_thumbnail_url($id, 'full');
 					?>
 						<div class="item">
 							<div class="image">
