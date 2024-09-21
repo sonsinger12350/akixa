@@ -158,6 +158,7 @@
 	display: grid;
 	grid-template-columns: auto auto auto;
 	gap: 4px;
+	overflow: hidden;
 }
 
 .body .project .project-gallery img {
