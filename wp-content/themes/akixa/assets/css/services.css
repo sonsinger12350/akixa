@@ -803,6 +803,9 @@ header .logo img {
 
     .workflow .title {
         font-size: 51px;
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .workflow {
@@ -820,6 +823,9 @@ header .logo img {
 
     .price-list .title {
         font-size: 50px;
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .partner .title {
@@ -830,6 +836,12 @@ header .logo img {
 @media (max-width: 450px) {
     .banner .content {
         height: 500px;
+        padding: 24px;
+        margin: 0px 16px;
+    }
+
+    .banner .content .desc p {
+        font-size: 14px;
     }
 
     .vision {
@@ -857,6 +869,7 @@ header .logo img {
     }
 
     .workflow .title {
+        width: 350px;
         font-size: 45px;
     }
 
@@ -898,15 +911,12 @@ header .logo img {
 
     .banner .content {
         height: 450px;
-        margin: 0px 12px;
-    }
-
-    .banner .content {
-        padding: 24px;
+        margin: 0px 10px;
+        padding: 14px 10px;
     }
 
     .banner .content .desc p {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .vision {
@@ -959,6 +969,7 @@ header .logo img {
     .workflow .title {
         font-size: 35px;
         margin-bottom: 36px;
+        width: 270px;
     }
 
     .workflow .list {
@@ -990,6 +1001,7 @@ header .logo img {
 
     .price-list .title {
         font-size: 38px;
+        width: 220px;
     }
 
     .price-list .table-price-list table tbody tr.highlight td {
