@@ -64,7 +64,7 @@
 				<?php if (!empty($images)): ?>
 					<div class="owl-carousel owl-theme position-relative">
 						<?php foreach ($images as $k => $image): ?>
-							<div><img src="<?= $image ?>" alt="slide-<?= $k ?>" loading="lazy"></div>
+							<a data-fancybox="gallery" href="<?= $image ?>"><img src="<?= $image ?>" alt="slide-<?= $k ?>" loading="lazy"></a>
 						<?php endforeach ?>
 					</div>
 					<span class="owl-dot-number"></span>
@@ -75,7 +75,7 @@
 			<div class="list-image custom-scrollbar">
 				<?php if (!empty($images)): ?>
 					<?php foreach ($images as $k => $image): ?>
-						<div class="item gallery-<?= $k+1 ?>"><img src="<?= $image ?>" alt="gallery-<?= $k ?>" loading="lazy"></div>
+						<div class="item gallery-<?= $k+1 ?>" data-slide="<?= $k ?>"><img src="<?= $image ?>" alt="gallery-<?= $k ?>" loading="lazy"></div>
 					<?php endforeach ?>
 				<?php endif ?>
 			</div>
@@ -127,7 +127,7 @@
 						?>
 						<div class="item product">
 							<div class="image">
-								<img src="<?= $image ?>" alt="<?= $data->name ?>">
+								<img src="<?= $image ?>" alt="<?= $data->name ?>" loading="lazy">
 								<a class="bg-detail" href="<?= $data->get_permalink() ?>">Chi tiết</a>
 							</div>
 							<div class="content">
@@ -153,7 +153,7 @@
 					?>
 						<div class="item">
 							<div class="image">
-								<img src="<?= $image ?>" alt="<?= $data->name ?>">
+								<img src="<?= $image ?>" alt="<?= $data->name ?>" loading="lazy">
 								<div class="name"><?= $data->name ?></div>
 							</div>
 						</div>

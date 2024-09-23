@@ -4,14 +4,14 @@ $(document).ready(function () {
 		$('.owl-dot-number').appendTo('.slide .owl-carousel');
 	});
 	slide.owlCarousel({
-		loop: true,
+		loop: false,
 		margin: 0,
 		nav: true,
 		navText: ['<i class="fa-solid fa-angle-left"></i>', '<i class="fa-solid fa-angle-right"></i>'],
 		dots: false,
 		onInitialized: updateCurrentCount,
 		onChanged: updateCurrentCount,
-		autoplay: true,
+		autoplay: false,
 		autoplayTimeout: 5000,
 		responsive: {
 			0: {
@@ -20,15 +20,20 @@ $(document).ready(function () {
 		}
 	});
 
-	function updateCurrentCount(event) {
-		let totalItems = event.item.count;
-		let currentItem = (event.item.index + 1) - event.relatedTarget._clones.length / 2;
-		let galleryImage = $(`.product-info .right .list-image .item.gallery-${currentItem}`);
-	
-		if (currentItem > totalItems) currentItem = currentItem - totalItems;
-		$('.owl-dot-number').text(currentItem + '/' + totalItems);
-
-		$('.product-info .right .list-image .item').removeClass('active');
-		if (!galleryImage.hasClass('active')) galleryImage.addClass('active');
-	}
+	$(".product-info .list-image .item").on('click', function(){
+		var slideIndex = $(this).data('slide');
+		slide.trigger('to.owl.carousel', [slideIndex, 300]); // Chuyển tới slide tương ứng
+	});
 });
+
+function updateCurrentCount(event) {
+	let totalItems = event.item.count;
+	let currentItem = (event.item.index + 1) - event.relatedTarget._clones.length / 2;
+	let galleryImage = $(`.product-info .right .list-image .item.gallery-${currentItem}`);
+
+	if (currentItem > totalItems) currentItem = currentItem - totalItems;
+	$('.owl-dot-number').text(currentItem + '/' + totalItems);
+
+	$('.product-info .right .list-image .item').removeClass('active');
+	if (!galleryImage.hasClass('active')) galleryImage.addClass('active');
+}
