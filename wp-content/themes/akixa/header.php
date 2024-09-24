@@ -12,6 +12,7 @@
 		'product' => get_template_directory_uri().'/assets/css/single-product.css?v='.time(),
 		'blog' => get_template_directory_uri().'/assets/css/blog.css?v='.time(),
 		've-'.strtolower($websiteName) => get_template_directory_uri().'/assets/css/about.css?v='.time(),
+		'post' => get_template_directory_uri().'/assets/css/single-post.css?v='.time(),
 	];
 
 	$pageHeader2 = [
@@ -20,6 +21,7 @@
 		'product',
 		'blog',
 		've-'.strtolower($websiteName),
+		'post',
 	];
 
 	$isHeader2 = (in_array($post->post_name, $pageHeader2) || in_array($post->post_type, $pageHeader2)) ? true : false;

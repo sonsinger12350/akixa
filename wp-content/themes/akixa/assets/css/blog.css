@@ -93,6 +93,10 @@ header .logo img {
 	letter-spacing: 0.15px;
 }
 
+.news .new {
+	text-decoration: none;
+}
+
 .news .first-news {
 	display: flex;
 	gap: 24px;
@@ -183,7 +187,7 @@ header .logo img {
 .news .list-news {
 	margin-top: 48px;
 	display: flex;
-	justify-content: space-between;
+	gap: 48px;
 }
 
 .news .list-news .left {
@@ -365,6 +369,11 @@ header .logo img {
 	.news .first-news .right .new .image img {
 		height: 123px;
 	}
+
+	.news .list-news {
+        gap: 0;
+		justify-content: space-between;
+    }
 
 	.news .list-news .left {
         width: 743px;

@@ -68,7 +68,7 @@
 		<?php if ($list_first_news->have_posts()) : ?>
 			<div class="first-news">
 				<div class="left">
-					<article class="new" style="background-image: url('<?= !empty($first_news_img) ? $first_news_img : $default_img ?>')">
+					<a class="new" href="<?= $first_news->post_name ?>" style="background-image: url('<?= !empty($first_news_img) ? $first_news_img : $default_img ?>')">
 						<div class="content">
 							<h5 class="title"><?= $first_news->post_title ?></h5>
 							<div class="d-flex justify-content-between align-items-center">
@@ -82,7 +82,7 @@
 								</div>
 							</div>
 						</div>
-					</article>
+					</a>
 				</div>
 				<div class="right">
 					<?php 
@@ -91,7 +91,7 @@
 						$news_img = get_the_post_thumbnail_url($news->ID, 'full');
 						$cat = get_the_category($news->ID);
 					?>
-						<article class="new">
+						<a class="new" href="<?= $first_news->post_name ?>">
 							<div class="image">
 								<img src="<?= !empty($news_img) ? $news_img : $default_img ?>" alt="<?= $news->post_title ?>">
 							</div>
@@ -102,7 +102,7 @@
 								<p class="title"><?= $news->post_title ?></p>
 								<p class="post-date"><?= date('d/m/Y', strtotime($news->post_date)) ?></p>
 							</div>
-						</article>
+						</a>
 					<?php endforeach ?>				
 				</div>
 			</div>
@@ -116,7 +116,7 @@
 								$new_img = get_the_post_thumbnail_url($new->ID, 'full');
 								$cat = get_the_category($new->ID);
 							?>
-								<article class="new">
+								<a class="new" href="<?= $first_news->post_name ?>">
 									<div class="image">
 										<img src="<?= !empty($new_img) ? $new_img : $default_img ?>" alt="<?= $new->post_title ?>">
 									</div>
@@ -127,7 +127,7 @@
 										<p class="title"><?= $new->post_title ?></p>
 										<p class="post-date"><?= date('d/m/Y', strtotime($new->post_date)) ?></p>
 									</div>
-								</article>
+								</a>
 							<?php endforeach ?>
 						</div>
 						<div class="pagination">
