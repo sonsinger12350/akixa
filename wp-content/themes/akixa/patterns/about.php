@@ -29,7 +29,7 @@
 	<div class="content">
         <p class="title-mini">Về <?= $websiteName ?></p>
         <p class="title">Shining<br>tomorrow<br>now</p>
-		<div class="scope">
+		<div class="scope" id="tam-nhin">
 			<div class="scope-content">
 				<p class="desc-1">Sứ mệnh chúng tôi<br>đem đến thế giới</p>
 				<span></span>
@@ -38,7 +38,7 @@
 		</div>
 	</div>
 	<div class="desire">
-		<p class="title"><span class="border"></span>Chúng tôi khao khát kết nối<br>với thế giới bằng tầm nhìn<br><span>rộng mở</span></span>
+		<p class="title"><span class="border"></span>Chúng tôi khao khát<br class="d-block d-sm-none"> kết nối<br class="d-none d-sm-block"> với thế giới<br class="d-block d-sm-none"> bằng tầm nhìn <br><span>rộng mở</span></span>
 		<div class="content-1">
 			<p class="desc">Được sáng lập từ năm 2012, thông qua những trải nghiệm cuộc sống và kinh nghiệm nhiều năm thực hành kiến trúc; cùng khát khao kiến tạo một xã hội tốt đẹp hơn, chúng tôi đã định vị lại vai trò của mình trong cách tiếp cận kiến trúc hiện đại bằng những sản phẩm độc đáo; vừa có nét quen của vật liệu tự nhiên lại vừa có nét lạ với xu hướng tương lai mà bạn chưa từng thấy.</p>
 			<img src="<?= get_template_directory_uri(); ?>/assets/images/about-1.gif" alt="about-1">
@@ -75,7 +75,7 @@
 		</div>
 	</div>
 </div>
-<div class="founder-message">
+<div class="founder-message" id="thong-diep">
 	<div class="message-1 bullet-point">
 		<p class="title-mini">Thông điệp của</p>
 		<p class="title">Người sáng lập</p>
@@ -106,7 +106,7 @@
 		<div class="hr"></div>
 	</div>
 </div>
-<div class="team margin-section">
+<div class="team margin-section" id="doi-ngu">
 	<div class="founder">
 		<p class="title d-block d-md-none">Đội ngũ<br><span><?= $websiteName ?></span></p>
 		<div class="image">

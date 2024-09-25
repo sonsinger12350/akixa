@@ -82,7 +82,7 @@ header .logo img {
 
 .page .about::before {
 	content: "";
-	width: 52%;
+	width: 50%;
 	height: 1px;
 	background-color: var(--gray);
 	position: absolute;
@@ -97,7 +97,7 @@ header .logo img {
 	background-color: var(--gray);
 	position: absolute;
 	bottom: 54px;
-	right: 52%;
+	right: 50%;
 	border-radius: 50%;
 }
 

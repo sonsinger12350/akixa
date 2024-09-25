@@ -562,7 +562,15 @@ header .logo img {
     }
 
 	.page .margin-section {
-		margin-top: 60px !important;
+		margin-top: 24px !important;
+	}
+
+	.product-related {
+		margin-bottom: 60px;
+	}
+
+	.product-related .title {
+		font-size: 18px;
 	}
 
 	.page .slide {

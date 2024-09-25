@@ -10,24 +10,24 @@
 						<div class="row">
 							<div class="col-lg-3 col-6">
 								<p class="fw-bold">Về ConNest</p>
-								<a href="#">Thông điệp nhà sáng lập</a>
-								<a href="#">Tầm nhìn - Sứ mệnh</a>
-								<a href="#">Đội ngũ</a>
+								<a href="<?= home_url( '/ve-connest' ) ?>#thong-diep">Thông điệp nhà sáng lập</a>
+								<a href="<?= home_url( '/ve-connest' ) ?>#tam-nhin">Tầm nhìn - Sứ mệnh</a>
+								<a href="<?= home_url( '/ve-connest' ) ?>#doi-ngu">Đội ngũ</a>
 							</div>
 							<div class="col-lg-3 col-6">
 								<p class="fw-bold">Dịch vụ</p>
-								<a href="#">Thiết kế vi khi hậu</a>
+								<a href="<?= home_url( '/dich-vu' ) ?>">Thiết kế vi khi hậu</a>
 							</div>
 							<div class="col-lg-3 col-6">
 								<p class="fw-bold">Dự án</p>
-								<a href="#">Thiết kế sân vườn</a>
-								<a href="#">Thiết kế nhà 1 tầng</a>
-								<a href="#">Thiết kế nhà 2 tầng</a>
+								<a href="<?= home_url( '/du-an' ) ?>">Thiết kế sân vườn</a>
+								<a href="<?= home_url( '/du-an' ) ?>">Thiết kế nhà 1 tầng</a>
+								<a href="<?= home_url( '/du-an' ) ?>">Thiết kế nhà 2 tầng</a>
 							</div>
 							<div class="col-lg-3 col-6">
 								<p class="fw-bold">Tin tức</p>
-								<a href="#">Blog</a>
-								<a href="#">Tuyển dụng</a>
+								<a href="<?= home_url( '/blog' ) ?>">Blog</a>
+								<a href="<?= home_url( '/tuyen-dung' ) ?>">Tuyển dụng</a>
 							</div>
 						</div>
 						<button type="button" class="btn btn-success btn-sm btn-explore">ĐĂNG KÝ <i class="fa-solid fa-angle-right"></i></button>
