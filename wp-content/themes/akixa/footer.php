@@ -82,6 +82,7 @@
 		'product' => get_template_directory_uri().'/assets/js/single-product.js?v='.time(),
 		'blog' => get_template_directory_uri().'/assets/js/blog.js?v='.time(),
 		'dich-vu' => get_template_directory_uri().'/assets/js/services.js?v='.time(),
+		'tuyen-dung' => get_template_directory_uri().'/assets/js/career.js?v='.time(),
 	];
 ?>
 <script src="<?= get_template_directory_uri().'/assets/js/main.js?v='.time() ?>"></script>

@@ -31,4 +31,37 @@ function save_recently_viewed_product() {
         $_SESSION['product_recently'] = array_slice($_SESSION['product_recently'], 0, 10);
     }
 }
+
+// remove_filter( 'the_content', 'wpautop' );
+// remove_filter( 'the_excerpt', 'wpautop' );
+
 add_action('template_redirect', 'save_recently_viewed_product');
+
+function ajax_load_posts() {
+    $paged = isset($_POST['page']) ? intval($_POST['page']) : 1;
+    $excludeIds = isset($_POST['excludeIds']) ? $_POST['excludeIds'] : array();
+
+    $args = array(
+        'post_type'      => 'post',
+        'posts_per_page' => 8,
+        'post_status'    => 'publish',
+        'post__not_in'   => $excludeIds,
+        'paged'          => $paged
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) :
+        while ($query->have_posts()) : $query->the_post();
+            // Trả về dữ liệu HTML hoặc JSON
+            get_template_part('template-parts/content', get_post_format());
+        endwhile;
+    else :
+        echo 'No more posts.';
+    endif;
+
+    wp_die(); // Kết thúc AJAX
+}
+
+add_action('wp_ajax_load_posts', 'ajax_load_posts');
+add_action('wp_ajax_nopriv_load_posts', 'ajax_load_posts');
