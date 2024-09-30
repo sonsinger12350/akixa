@@ -107,7 +107,7 @@
 	</div>
 </div>
 <div class="modal fade" id="jobModal" tabindex="-1" aria-labelledby="jobModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xxl">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-body">
 				<div class="banner">

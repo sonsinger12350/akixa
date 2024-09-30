@@ -1,73 +1,73 @@
 header {
-    min-height: unset;
+	min-height: unset;
 }
 
 header .content {
-    display: none;
+	display: none;
 }
 
 header .logo img {
-    width: 63px;
-    scale: 1.4;
+	width: 63px;
+	scale: 1.4;
 }
 
 .banner {
-    position: relative;
-    margin-top: 78px;
+	position: relative;
+	margin-top: 78px;
 }
 
 .banner .bg-header {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 79px;
-    background: linear-gradient(90deg, #111F12 0%, #1B2C1A 100%);
-    z-index: -1;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 79px;
+	background: linear-gradient(90deg, #111F12 0%, #1B2C1A 100%);
+	z-index: -1;
 }
 
 .banner .content {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
 	position: relative;
-    margin: 0px 24px;
-    border-radius: 16px;
-    padding: 90px 0px 132px 118px;
+	margin: 0px 24px;
+	border-radius: 16px;
+	padding: 90px 0px 132px 118px;
 }
 
 .banner .content .bg-blur {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 80%;
-    height: 100%;
-    background: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.00) 100%);
-    z-index: 1;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 80%;
+	height: 100%;
+	background: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.00) 100%);
+	z-index: 1;
 	border-radius: 16px;
 }
 
 .banner .content .title {
-    color: #fff;
-    font-size: 67px;
-    font-weight: 300;
-    line-height: 108%;
-    letter-spacing: -1.34px;
-    position: inherit;
-    z-index: 1;
+	color: #fff;
+	font-size: 67px;
+	font-weight: 300;
+	line-height: 108%;
+	letter-spacing: -1.34px;
+	position: inherit;
+	z-index: 1;
 	width: 800px;
 	margin: 0px;
 }
 
 .banner .content .desc {
-    color: #fff;
+	color: #fff;
 	font-size: 20px;
 	font-weight: 600;
 	line-height: 30px;
 	letter-spacing: 2px;
 	text-transform: uppercase;
 	position: inherit;
-    z-index: 1;
+	z-index: 1;
 	margin-bottom: 10px;
 }
 
@@ -144,34 +144,34 @@ header .logo img {
 
 .opportunity .count {
 	position: relative;
-    padding-top: 160px;
+	padding-top: 160px;
 }
 
 .opportunity .count .total {
 	position: absolute;
-    top: 0px;
-    left: 0px;
-    font-size: 200px;
-    font-weight: 600;
-    line-height: 1;
-    margin: 0px;
-    opacity: 0.3;
-    color: transparent;
-    -webkit-text-stroke: 2px #ffffff;
-    -webkit-mask-image: linear-gradient(180deg, rgb(255 255 255) 60%, rgba(0, 0, 0, 0) 85%);
-    mask-image: linear-gradient(180deg, rgb(255 255 255) 60%, rgba(0, 0, 0, 0) 85%);
+	top: 0px;
+	left: 0px;
+	font-size: 200px;
+	font-weight: 600;
+	line-height: 1;
+	margin: 0px;
+	opacity: 0.3;
+	color: transparent;
+	-webkit-text-stroke: 2px #ffffff;
+	-webkit-mask-image: linear-gradient(180deg, rgb(255 255 255) 60%, rgba(0, 0, 0, 0) 85%);
+	mask-image: linear-gradient(180deg, rgb(255 255 255) 60%, rgba(0, 0, 0, 0) 85%);
 }
 
 .opportunity .count .count-desc {
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
-    letter-spacing: 1.6px;
-    text-transform: uppercase;
-    z-index: 1;
-    position: inherit;
-    margin-left: 160px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 24px;
+	letter-spacing: 1.6px;
+	text-transform: uppercase;
+	z-index: 1;
+	position: inherit;
+	margin-left: 160px;
 }
 
 .job {
@@ -300,8 +300,8 @@ header .logo img {
 	background: var(--light-green);
 	padding: 36px;
 	display: flex;
-    flex-direction: column;
-    gap: 30px;
+	flex-direction: column;
+	gap: 30px;
 }
 
 #jobModal .job-detail .left * {
@@ -310,7 +310,7 @@ header .logo img {
 
 #jobModal .job-detail .left hr {
 	width: 70px;
-    border-color: #fff;
+	border-color: #fff;
 }
 
 #jobModal .job-detail .left .item * {
@@ -402,7 +402,7 @@ header .logo img {
 .policy .head .content {
 	position: absolute;
 	bottom: 0px;
-    left: 480px;
+	left: 480px;
 	color: var(--body-color);
 	font-size: 15px;
 	font-weight: 400;
@@ -418,7 +418,7 @@ header .logo img {
 	background-color: var(--gray);
 	position: absolute;
 	top: 10px;
-    left: -140px;
+	left: -140px;
 }
 
 .policy .head .content::after {
@@ -428,7 +428,7 @@ header .logo img {
 	background-color: var(--gray);
 	position: absolute;
 	top: 6px;
-    left: -20px;
+	left: -20px;
 	border-radius: 50%;
 }
 
@@ -524,7 +524,7 @@ header .logo img {
 	background-color: var(--gray);
 	position: absolute;
 	top: 40px;
-    left: 0px;
+	left: 0px;
 }
 
 .increase .head .title::after {
@@ -534,7 +534,7 @@ header .logo img {
 	background-color: var(--gray);
 	position: absolute;
 	top: 36px;
-    left: 120px;
+	left: 120px;
 	border-radius: 50%;
 }
 
@@ -566,10 +566,10 @@ header .logo img {
 
 .increase .body .content {
 	display: flex;
-    justify-content: center;
+	justify-content: center;
 	background-size: 100%;
-    background-position-y: 100%;
-    background-repeat: no-repeat;
+	background-position-y: 100%;
+	background-repeat: no-repeat;
 	padding-top: 150px;
 }
 
@@ -620,36 +620,36 @@ header .logo img {
 
 .standard .content .item {
 	position: relative;
-    padding-top: 160px;
+	padding-top: 160px;
 }
 
 .standard .content .item .count {
 	position: absolute;
-    top: 0px;
-    left: 0px;
-    font-size: 200px;
-    font-weight: 600;
-    line-height: 1;
-    margin: 0px;
-    opacity: 0.3;
-    color: transparent;
-    -webkit-text-stroke: 2px #ffffff;
-    -webkit-mask-image: linear-gradient(180deg, rgb(255 255 255) 60%, rgba(0, 0, 0, 0) 85%);
-    mask-image: linear-gradient(180deg, rgb(255 255 255) 60%, rgba(0, 0, 0, 0) 85%);
+	top: 0px;
+	left: 0px;
+	font-size: 200px;
+	font-weight: 600;
+	line-height: 1;
+	margin: 0px;
+	opacity: 0.3;
+	color: transparent;
+	-webkit-text-stroke: 2px #ffffff;
+	-webkit-mask-image: linear-gradient(180deg, rgb(255 255 255) 60%, rgba(0, 0, 0, 0) 85%);
+	mask-image: linear-gradient(180deg, rgb(255 255 255) 60%, rgba(0, 0, 0, 0) 85%);
 }
 
 .standard .content .item .line {
 	position: absolute;
-    top: 120px;
-    left: 112px;
+	top: 120px;
+	left: 112px;
 }
 
 .standard .content .item .desc {
-    margin-left: 110px;
+	margin-left: 110px;
 }
 
 .standard .content .item .desc .item-title {
-    color: #fff;
+	color: #fff;
 	font-size: 16px;
 	font-weight: 600;
 	line-height: 24px;
@@ -659,7 +659,7 @@ header .logo img {
 }
 
 .standard .content .item .desc .item-desc {
-    color: #fff;
+	color: #fff;
 	font-size: 15px;
 	font-weight: 400;
 	line-height: 20px;
@@ -680,8 +680,8 @@ header .logo img {
 
 .step .content img {
 	width: 90%;
-    height: 584px;
-    object-fit: cover;
+	height: 584px;
+	object-fit: cover;
 	border-radius: 16px;
 }
 
@@ -758,29 +758,22 @@ header .logo img {
 .work-place .slide .owl-nav {
 	position: absolute;
 	top: -71px;
-    right: 80px;
+	right: 80px;
 	width: 72px;
 	display: flex;
-    justify-content: space-between;
+	justify-content: space-between;
 }
 
 .work-place .slide .owl-nav button {
 	color: var(--main-black);
-    border: 1px solid;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-}
-
-@media (min-width: 576px) {
-	.modal-dialog {
-		margin-top: 80px;
-		max-width: 700px
-	}
+	border: 1px solid;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
 }
 
 @media (max-width: 1400px) {
-    .standard .content .item .count {
+	.standard .content .item .count {
 		font-size: 180px;
 	}
 
@@ -795,6 +788,15 @@ header .logo img {
 	.standard .content .item .line {
 		top: 100px;
 		left: 100px;
+	}
+
+	#jobModal .modal-dialog  {
+		margin-top: 80px;
+		max-width: 80%
+	}
+
+	#jobModal .btn-close-modal {
+		right: -100px;
 	}
 }
 
@@ -811,7 +813,7 @@ header .logo img {
 		width: auto;
 	}
 
-    .standard .content .item .count {
+	.standard .content .item .count {
 		font-size: 160px;
 	}
 
@@ -825,7 +827,7 @@ header .logo img {
 
 	.standard .content .item .line {
 		top: 100px;
-        left: 85px;
+		left: 85px;
 	}
 
 	.standard .content .item .line svg {
@@ -919,14 +921,14 @@ header .logo img {
 		width: 375px;
 	}
 
-    .standard .content {
+	.standard .content {
 		flex-wrap: wrap;
 		row-gap: 24px;
 	}
 
 	.standard .content .item {
-        width: 49%;
-    }
+		width: 49%;
+	}
 
 	.step .content img {
 		height: 450px;
@@ -934,25 +936,25 @@ header .logo img {
 }
 
 @media (max-width: 991px) {
-    .margin-section {
-        margin-top: 60px;
-    }
+	.margin-section {
+		margin-top: 60px;
+	}
 
-    .banner .content {
-        background-size: cover;
-    }
+	.banner .content {
+		background-size: cover;
+	}
 
-    .banner .content .desc {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        row-gap: 24px;
-    }
+	.banner .content .desc {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		row-gap: 24px;
+	}
 
-    .banner .content .desc .btn-explore {
-        position: initial;
-        transform: unset
-    }
+	.banner .content .desc .btn-explore {
+		position: initial;
+		transform: unset
+	}
 
 	.welcome {
 		flex-direction: column;
@@ -987,7 +989,7 @@ header .logo img {
 
 	.policy .head .content::after {
 		top: 140px;
-    	left: 60px;
+		left: 60px;
 	}
 
 	.policy .list {
@@ -998,8 +1000,8 @@ header .logo img {
 	}
 
 	.policy .list .item {
-        width: 100%;
-    }
+		width: 100%;
+	}
 
 	.increase {
 		padding-right: 0px;
@@ -1057,6 +1059,7 @@ header .logo img {
 
 	#jobModal .modal-dialog {
 		margin-top: 80px;
+		max-width: 90%
 	}
 
 	#jobModal .banner .content {
@@ -1087,30 +1090,30 @@ header .logo img {
 
 	#jobModal .btn-close-modal {
 		top: -40px;
-    	right: 50%;
+		right: 50%;
 		transform: translateX(50%);
 	}
 }
 
 @media (max-width: 767px) {
-    .banner {
-        margin-top: 95px;
-    }
+	.banner {
+		margin-top: 95px;
+	}
 
 	.banner .content {
 		padding: 24px 0px 68px 63px;
 	}
 
 	.banner .content .title {
-        font-size: 36px;
-        width: 280px;
+		font-size: 36px;
+		width: 280px;
 		line-height: 122%;
-    }
+	}
 
 	.welcome .title p,
 	.policy .head .title {
-        font-size: 42px;
-    }
+		font-size: 42px;
+	}
 
 	.opportunity {
 		padding-top: 24px;
@@ -1172,9 +1175,9 @@ header .logo img {
 	}
 
 	.standard .content .item {
-        width: 100%;
+		width: 100%;
 		padding-top: 160px;
-    }
+	}
 
 	.standard .content .item .count {
 		font-size: 200px;
@@ -1188,8 +1191,8 @@ header .logo img {
 		transform: rotate(90deg);
 		position: absolute;
 		left: -82px;
-        bottom: -138px;
-        width: 140px;
+		bottom: -138px;
+		width: 140px;
 	}
 
 	.standard .content .item:last-child .line {
@@ -1220,10 +1223,10 @@ header .logo img {
 }
 
 @media (max-width: 576px) {
-    .banner {
-        margin-top: 66px;
-        height: auto;
-    }
+	.banner {
+		margin-top: 66px;
+		height: auto;
+	}
 
 	.welcome .title p {
 		width: 100%;
@@ -1231,8 +1234,8 @@ header .logo img {
 
 	.welcome .title p,
 	.policy .head .title {
-        font-size: 40px;
-    }
+		font-size: 40px;
+	}
 
 	.increase .head .title::before {
 		width: 45%;
@@ -1243,12 +1246,12 @@ header .logo img {
 	}
 
 	.increase .body .content {
-        width: 430px;
-    }
+		width: 430px;
+	}
 
 	.increase .body .content table tr {
-        height: 46px;
-    }
+		height: 46px;
+	}
 
 	.increase .body .content table tr td {
 		font-size: 12px;
@@ -1281,15 +1284,19 @@ header .logo img {
 		padding: 0px;
 	}
 
+	#jobModal .modal-dialog {
+		max-width: 100%;
+	}
+
 	#jobModal .banner .content {
-        padding: 26px 0px 24px 32px;
-    }
+		padding: 26px 0px 24px 32px;
+	}
 }
 
 @media (max-width: 450px) {
 	.banner .content {
-        padding: 24px 0px 48px 43px;
-    }
+		padding: 24px 0px 48px 43px;
+	}
 
 	.opportunity .desc {
 		width: 100%;
@@ -1334,21 +1341,21 @@ header .logo img {
 	}
 
 	.increase .head .title::before {
-        width: 35%;
-    }
+		width: 35%;
+	}
 
 	.increase .head .title::after {
-        right: 35%;
-    }
+		right: 35%;
+	}
 
 	.increase .body .content {
-        width: 370px;
+		width: 370px;
 		padding-top: 80px;
-    }
+	}
 
 	.increase .body .content table tr {
-        height: 40px;
-    }
+		height: 40px;
+	}
 
 	.increase .body .content table tr td {
 		line-height: 16px;
@@ -1367,9 +1374,9 @@ header .logo img {
 }
 
 @media (max-width: 380px) {
-    .banner {
-        margin-top: 65px;
-    }
+	.banner {
+		margin-top: 65px;
+	}
 	
 	.banner .content .title {
 		width: 100%;
@@ -1379,20 +1386,20 @@ header .logo img {
 	.welcome .title p,
 	.policy .head .title,
 	.opportunity .title {
-        font-size: 33px;
-    }
+		font-size: 33px;
+	}
 
 	.opportunity .count {
 		padding-top: 110px;
 	}
 
 	.opportunity .count .total {
-        font-size: 135px;
-    }
+		font-size: 135px;
+	}
 
 	.opportunity .count .count-desc {
-        margin-left: 45px;
-    }
+		margin-left: 45px;
+	}
 
 	.job .list .item .location p {
 		font-size: 12px;
@@ -1423,32 +1430,32 @@ header .logo img {
 	}
 
 	.increase .body .content {
-        width: 310px;
-    }
+		width: 310px;
+	}
 
 	.increase .body .content table tr {
-        height: 33px;
-    }
+		height: 33px;
+	}
 
 	.increase .body .content table tr td {
 		font-size: 8px;
 	}
 
 	.standard .title {
-        font-size: 34px;
-    }
+		font-size: 34px;
+	}
 
 	.standard .content .item .count {
-        font-size: 180px;
-    }
+		font-size: 180px;
+	}
 
 	.standard .content .item {
-        padding-top: 140px;
-    }
+		padding-top: 140px;
+	}
 
 	.standard .content .item .desc {
-        margin-left: 80px;
-    }
+		margin-left: 80px;
+	}
 
 	.standard .content .item .desc .item-desc {
 		width: 100%;
@@ -1456,8 +1463,8 @@ header .logo img {
 
 	.standard .content .item .line svg {
 		left: -100px;
-        bottom: -132px;
-        width: 160px;
+		bottom: -132px;
+		width: 160px;
 	}
 
 	.step .content .block {
@@ -1465,12 +1472,12 @@ header .logo img {
 	}
 
 	.work-place .title {
-        font-size: 38px;
-    }
+		font-size: 38px;
+	}
 
 	.work-place .title-mini {
-        font-size: 14px;
-    }
+		font-size: 14px;
+	}
 
 	#jobModal .banner .content .title {
 		font-size: 32px;
