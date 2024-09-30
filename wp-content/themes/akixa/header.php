@@ -1,5 +1,12 @@
 <?php
 	global $post;
+
+	if (is_category() && !empty(get_queried_object())) {
+		$post = get_queried_object();
+		$post->post_type = $post->taxonomy;
+		$post->post_title = $post->name;
+	}
+
 	$websiteName = get_bloginfo('name');
 	$title = $post->post_name == 'trang-chu' ? $websiteName : $post->post_title . ' - '.$websiteName;
 	$description = get_bloginfo('description');
@@ -14,6 +21,7 @@
 		've-'.strtolower($websiteName) => get_template_directory_uri().'/assets/css/about.css?v='.time(),
 		'post' => get_template_directory_uri().'/assets/css/single-post.css?v='.time(),
 		'tuyen-dung' => get_template_directory_uri().'/assets/css/career.css?v='.time(),
+		'category' => get_template_directory_uri().'/assets/css/blog.css?v='.time(),
 	];
 
 	$pageHeader2 = [
@@ -24,6 +32,7 @@
 		've-'.strtolower($websiteName),
 		'post',
 		'tuyen-dung',
+		'category',
 	];
 
 	$isHeader2 = (in_array($post->post_name, $pageHeader2) || in_array($post->post_type, $pageHeader2)) ? true : false;

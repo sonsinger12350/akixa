@@ -1,17 +1,15 @@
 <?php
-	/**
-	 * Template Name: Tin Tức
-	 */
-
 	get_header();
 	$websiteName = get_bloginfo('name');
 	$default_img = get_template_directory_uri().'/assets/images/new-default.png';
+	$currentCat = null;
+	if (is_category()) $currentCat = get_queried_object();
 
-	$args = array(
+	$args = [
 		'orderby'    => 'id',
 		'order'      => 'ASC',
 		'hide_empty' => false
-	);
+	];
 	$categories = get_categories($args);
 
 	$args = array(
@@ -19,6 +17,7 @@
 		'posts_per_page' => 4,
 		'post_status' => 'publish'
 	);
+	if (!empty($currentCat)) $args['cat'] = $currentCat->term_id;
 	$list_first_news = new WP_Query($args);
 	$first_news = $list_first_news->have_posts() ? $list_first_news->posts[0] : [];
 	$first_news_cats = !empty($first_news) ? get_the_category($first_news->ID) : [];
@@ -39,6 +38,7 @@
 			'post__not_in' => $excludeIds,
 			'paged' => get_query_var('paged') ? get_query_var('paged') : 1
 		);
+		if (!empty($currentCat)) $args['cat'] = $currentCat->term_id;
 		$query = new WP_Query($args);
 		if (!empty($query->posts)) $list_new = $query->posts;
 	}
@@ -51,16 +51,16 @@
 <div class="banner">
 	<div class="bg-header"></div>
 	<div class="bg-banner">
-		<h1 class="block-title">Tin tức - Sự kiện</h1>
+		<h1 class="block-title"><?= is_category() ? $currentCat->name : 'Tin tức - Sự kiện'?></h1>
 	</div>
 </div>
 
 <div class="page">
 	<div class="categories custom-scrollbar">
-		<a class="item active" href="<?= home_url('blog') ?>">Tất cả</a>
+		<a class="item <?= empty($currentCat) ? 'active' : ''?>" href="<?= home_url('blog') ?>">Tất cả</a>
 		<?php if (!empty($categories)): ?>
 			<?php foreach ($categories as $category): ?>
-				<a class="item" href="<?= home_url($category->slug) ?>"><?= $category->name ?></a>
+				<a class="item <?= (!empty($currentCat) && $currentCat->slug == $category->slug) ? 'active' : ''?>" href="<?= home_url($category->slug) ?>"><?= $category->name ?></a>
 			<?php endforeach ?>
 		<?php endif ?>
 	</div>
