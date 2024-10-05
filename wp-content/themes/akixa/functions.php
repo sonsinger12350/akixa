@@ -65,3 +65,24 @@ function ajax_load_posts() {
 
 add_action('wp_ajax_load_posts', 'ajax_load_posts');
 add_action('wp_ajax_nopriv_load_posts', 'ajax_load_posts');
+
+add_filter( 'manage_edit-product_columns', 'add_custom_product_column', 10 );
+function add_custom_product_column( $columns ) {
+    $new_columns = array();
+
+    foreach ( $columns as $key => $column ) {
+        $new_columns[ $key ] = $column;
+        if ( 'name' === $key ) $new_columns['pin_home'] = __( 'Ghim trang chủ', 'your-textdomain' );
+    }
+
+    return $new_columns;
+}
+
+
+add_action( 'manage_product_posts_custom_column', 'show_custom_field_in_product_column', 10, 2 );
+function show_custom_field_in_product_column( $column, $post_id ) {
+    if ( 'pin_home' === $column ) {
+        $custom_field_value = get_post_meta( $post_id, 'pin_home', true ) == 1 ? 'Có' : 'Không';
+        echo !empty( $custom_field_value ) ? esc_html( $custom_field_value ) : __( 'Không', 'your-textdomain' );
+    }
+}
