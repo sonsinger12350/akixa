@@ -305,7 +305,7 @@ input[type=number] {
 
 .contact .form-contact .right .input-info-area .item .date .day input,
 .contact .form-contact .right .input-info-area .item .date .month input {
-	width: 25px;
+	width: 23px;
 }
 
 .contact .form-contact .right .input-info-area .item .date .year input {
@@ -562,11 +562,13 @@ input[type=number] {
 
 	.banner .content .scope .scope-content {
 		padding: 18px;
-		width: 100%;
+		width: 95%;
+        margin-left: auto;
 	}
 
 	.banner .content .scope .scope-content .title {
 		font-size: 14px;
+		line-height: 20px;
 	}
 
 	.contact .title {
