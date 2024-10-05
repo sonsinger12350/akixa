@@ -22,6 +22,7 @@
 		'post' => get_template_directory_uri().'/assets/css/single-post.css?v='.time(),
 		'tuyen-dung' => get_template_directory_uri().'/assets/css/career.css?v='.time(),
 		'category' => get_template_directory_uri().'/assets/css/blog.css?v='.time(),
+		'lien-he' => get_template_directory_uri().'/assets/css/contact.css?v='.time(),
 	];
 
 	$pageHeader2 = [
@@ -33,6 +34,7 @@
 		'post',
 		'tuyen-dung',
 		'category',
+		'lien-he',
 	];
 
 	$isHeader2 = (in_array($post->post_name, $pageHeader2) || in_array($post->post_type, $pageHeader2)) ? true : false;
