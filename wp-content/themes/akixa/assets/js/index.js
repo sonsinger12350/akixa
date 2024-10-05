@@ -1,8 +1,20 @@
 $(document).ready(function () {
 	let slide = $('.slide .owl-carousel');
+
 	slide.on('initialized.owl.carousel', function(event) {
+		var getDotWidthInterval = setInterval(function() {
+			if ($('.body .owl-carousel .owl-dots').length) {
+				let dotWidth = $('.body .owl-carousel .owl-dots').width();
+				let navWidth = Number(dotWidth) + 65;
+
+				$('.body .owl-carousel .owl-nav').css('width', navWidth + 'px');
+				clearInterval(getDotWidthInterval);
+			}
+
+		}, 100);
 		$('.bg-blur-mobile').appendTo('.slide .owl-carousel');
 	});
+
 	slide.owlCarousel({
 		loop: true,
 		margin: 0,

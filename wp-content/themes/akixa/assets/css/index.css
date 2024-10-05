@@ -10,8 +10,7 @@
 	object-position: center;
 }
 
-.body .owl-carousel .owl-dots,
-.body .owl-carousel .owl-nav {
+.body .owl-carousel .owl-dots {
 	position: absolute;
 	right: 90px;
 	bottom: 27px;
@@ -32,22 +31,20 @@
 	background: #fff;
 }
 
+.body .owl-carousel .owl-nav {
+	position: absolute;
+	right: 55px;
+	bottom: 27px;
+	display: flex;
+	justify-content: space-between;
+}
+
 .body .owl-carousel .owl-nav button {
 	color: #fff;
-	position: absolute;
-	top: -25px;
 	border: 1px solid;
 	width: 24px;
 	height: 24px;
 	border-radius: 50%;
-}
-
-.body .owl-carousel .owl-nav .owl-prev {
-	left: -150px;
-}
-
-.body .owl-carousel .owl-nav .owl-next {
-	right: -50px;
 }
 
 .body .slide .btn-explore {
@@ -161,15 +158,22 @@
 	overflow: hidden;
 }
 
-.body .project .project-gallery img {
+.body .project .project-gallery a {
 	width: 210px;
 	height: 210px;
+	transition: transform 0.3s ease;
+	text-decoration: none;
+}
+
+.body .project .project-gallery a img {
+	width: 100%;
+	height: 100%;
 	object-fit: cover;
 	object-position: center;
 	transition: transform 0.3s ease;
 }
 
-.body .project .project-gallery img:hover {
+.body .project .project-gallery a:hover {
 	transform: scale(1.5);
 }
 

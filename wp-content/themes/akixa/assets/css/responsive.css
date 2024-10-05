@@ -94,6 +94,13 @@
 		height: 500px;
 	}
 
+	.body .owl-carousel .owl-dots,
+	.body .owl-carousel .owl-nav {
+		right: 50%;
+        transform: translate(50%, 0);
+		bottom: 55px;
+	}
+
 	.block-title {
 		font-size: 49px;
 	}
@@ -212,7 +219,7 @@
         transform: translate(30%, 0px);
 	}
 	
-	.body .project .project-gallery img {
+	.body .project .project-gallery a {
 		width: 150px;
 		height: 150px;
 	}
@@ -265,14 +272,6 @@
 		height: 350px;
 	}
 
-	.body .owl-carousel .owl-dots button span {
-		background-color: var(--grey);
-	}
-
-	.body .owl-carousel .owl-dots button.active span {
-		background-color: var(--main-green);
-	}
-
 	.body .seek-tabs .head {
 		flex-direction: column;
         align-items: center;
@@ -282,21 +281,6 @@
 
 	header .content .block-desc {
 		width: 300px;
-	}
-
-	.body .owl-carousel .owl-dots,
-	.body .owl-carousel .owl-nav {
-		right: 50%;
-        transform: translate(50%, 0);
-		bottom: 55px;
-	}
-
-	.body .owl-carousel .owl-nav .owl-prev {
-		left: -95px;
-	}
-
-	.body .owl-carousel .owl-nav .owl-next {
-		right: -95px;
 	}
 
 	.body .slide .btn-explore {
@@ -366,7 +350,7 @@
 		font-size: 43px;
 	}
 
-	.body .project .project-gallery img {
+	.body .project .project-gallery a {
 		width: 145px;
         height: 145px;
 	}
@@ -584,18 +568,18 @@
 		bottom: -50px;
 	}
 
+	.body .owl-carousel .owl-dots button span {
+		background-color: var(--gray);
+	}
+
+	.body .owl-carousel .owl-dots button.active span {
+		background-color: var(--main-green);
+	}
+
 	.body .owl-carousel .owl-nav {
 		right: 50%;
 		width: 100%;
 		bottom: -50px;
-	}
-
-	.body .owl-carousel .owl-nav .owl-prev {
-		left: 0px;
-	}
-
-	.body .owl-carousel .owl-nav .owl-next {
-		right: 0px;
 	}
 
 	.body .owl-carousel .owl-nav button {
@@ -705,7 +689,7 @@
 		font-size: 40px;
 	}
 
-	.body .project .project-gallery img {
+	.body .project .project-gallery a {
 		width: 135px;
 		height: 135px;
 	}
@@ -752,14 +736,6 @@
 
 	.body .owl-carousel .owl-dots button span {
 		width: 25px;
-	}
-
-	.body .owl-carousel .owl-nav .owl-next {
-		right: -65px;
-	}
-
-	.body .owl-carousel .owl-nav .owl-prev {
-		left: -65px;
 	}
 
 	.body .invitation {
@@ -824,7 +800,7 @@
 		font-size: 37px;
 	}
 
-	.body .project .project-gallery img {
+	.body .project .project-gallery a {
 		width: 120px;
 		height: 120px;
 	}
@@ -847,7 +823,7 @@
 		font-size: 34px;
 	}
 
-	.body .project .project-gallery img {
+	.body .project .project-gallery a {
 		width: 110px;
 		height: 110px;
 	}
@@ -949,7 +925,7 @@
 		font-size: 31px;
 	}
 
-	.body .project .project-gallery img {
+	.body .project .project-gallery a {
 		width: 100px;
 		height: 100px;
 	}

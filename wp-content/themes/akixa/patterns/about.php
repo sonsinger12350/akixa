@@ -6,6 +6,9 @@
 
 	get_header();
 	$websiteName = get_bloginfo('name');
+
+	$members = get_post_gallery($post->ID, false);
+	if (!empty($members)) $members = $members['src'];
 ?>
 
 <style>
@@ -110,7 +113,7 @@
 	<div class="founder">
 		<p class="title d-block d-md-none">Đội ngũ<br><span><?= $websiteName ?></span></p>
 		<div class="image">
-			<img src="<?= get_template_directory_uri(); ?>/assets/images/about-team-1.png" alt="team-founder">
+			<img src="<?= $members[3] ?>" alt="team-founder">
 			<div class="bg-image"></div>
 		</div>
 		<div class="founder-info">
@@ -130,7 +133,7 @@
 	</div>
 	<div class="member">
 		<div class="item">
-			<img src="<?= get_template_directory_uri(); ?>/assets/images/about-team-2.png" alt="member-2">
+			<img src="<?= $members[0] ?>" alt="member-2">
 			<div class="info">
 				<p class="name">Nguyễn Thế Vĩnh Lộc</p>
 				<p class="position">Kiến trúc sư</p>
@@ -141,7 +144,7 @@
 			</div>
 		</div>
 		<div class="item">
-			<img src="<?= get_template_directory_uri(); ?>/assets/images/about-team-3.png" alt="member-3">
+			<img src="<?= $members[1] ?>" alt="member-3">
 			<div class="info">
 				<p class="name">Nguyễn văn tiến</p>
 				<p class="position">Kiến trúc sư</p>
@@ -152,7 +155,7 @@
 			</div>
 		</div>
 		<div class="item">
-			<img src="<?= get_template_directory_uri(); ?>/assets/images/about-team-4.png" alt="member-4">
+			<img src="<?= $members[2] ?>" alt="member-4">
 			<div class="info">
 				<p class="name">phan hằng</p>
 				<p class="position">Quản lý dự án</p>

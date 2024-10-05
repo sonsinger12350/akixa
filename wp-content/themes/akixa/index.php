@@ -34,6 +34,24 @@
 		3 => 'Shine',
 		4 => 'Share',
 	];
+
+	$slides = get_post_gallery($post->ID, false);
+	if (!empty($slides)) $slides = $slides['src'];
+	$totalSlide = !empty($slides) ? count($slides) : 0;
+
+	$args = array(
+		'post_type'  => 'product',
+		'post_status'  => 'publish',
+		'meta_query' => array(
+			array(
+				'key'   => 'pin_home',
+				'value' => '1',
+				'compare' => '='
+			)
+			),
+		'posts_per_page' => 9
+	);
+	$products = get_posts($args);
 ?>
 <style>
 	.body .seek-tabs .content .seek-tab.tab-1 .left {
@@ -66,17 +84,13 @@
 			<h3 class="title-mobile d-sm-none">Thiết kế kiến trúc vi khí hậu</h3>
 			<div class="bg-mobile d-sm-none"></div>
 			<div class="bg-blur-mobile d-sm-none"></div>
-			<div class="owl-carousel owl-theme">
-				<div>
-					<img src="<?= get_template_directory_uri(); ?>/assets/images/home-page-bg-1.png" alt="" loading="lazy">
+			<?php if (!empty($slides)): ?>
+				<div class="owl-carousel owl-theme">
+					<?php foreach ($slides as $k => $slideImg): ?>
+						<div><img src="<?= $slideImg ?>" alt="slide-<?= $k ?>" loading="lazy"></div>
+					<?php endforeach ?>
 				</div>
-				<div>
-					<img src="<?= get_template_directory_uri(); ?>/assets/images/home-page-bg-1.png" alt="" loading="lazy">
-				</div>
-				<div>
-					<img src="<?= get_template_directory_uri(); ?>/assets/images/home-page-bg-1.png" alt="" loading="lazy">
-				</div>
-			</div>
+			<?php endif ?>
 			<button type="button" class="btn btn-success btn-sm btn-explore">KHÁM PHÁ <?= $websiteName ?> <i class="fa-solid fa-angle-right"></i></button>
 		</div>
 		<div class="content-slide-mobile bullet-point d-sm-none">
@@ -91,15 +105,11 @@
 		</div>
 		<div class="project margin-section">
 			<div class="project-gallery">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-1.png" alt="" loading="lazy">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-2.png" alt="" loading="lazy">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-3.png" alt="" loading="lazy">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-4.png" alt="" loading="lazy">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-5.png" alt="" loading="lazy">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-6.png" alt="" loading="lazy">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-7.png" alt="" loading="lazy">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-8.png" alt="" loading="lazy">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/project-9.png" alt="" loading="lazy">
+				<?php if (!empty($products)): ?>
+					<?php foreach ($products as $v): ?>
+						<a href="<?= get_permalink($v->ID) ?>"><img src="<?= get_the_post_thumbnail_url($v->ID) ?>" alt="<?= $v->post_title ?>" loading="lazy"></a>
+					<?php endforeach ?>
+				<?php endif ?>
 			</div>
 			<div class="content">
 				<h3 class="block-title">Cùng khám phá<br>những <span class="text-green">dự án tuyệt vời</span><br>mà chúng tôi đã<br>đồng hành.</h3>

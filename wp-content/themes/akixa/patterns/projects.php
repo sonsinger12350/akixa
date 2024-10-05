@@ -3,11 +3,50 @@
 	 * Template Name: Dự án
 	 */
 
+	$limit = 3;
+	if (!empty($_GET['isAjax'])) {
+		$data = [
+			'continue' => 0,
+			'content' => '',
+		];
+		$offset = $_GET['offset'];
+
+		if (!$offset) {
+			wp_send_json_success($data);exit;
+		}
+
+		$args = array(
+			'limit' => $limit,
+			'offset' => $offset
+		);
+	
+		$products = wc_get_products($args);
+
+		if (empty($products)) {
+			wp_send_json_success($data);exit;
+		}
+
+		$html = '';
+
+		foreach ($products as $k => $product) {
+			ob_start();
+			get_template_part('template-parts/product', null, ['product' => $product]);
+			$html .= ob_get_clean();
+		}
+
+		$data['continue'] = count($products) >= $limit ? 1 : 0;
+		$data['content'] = $html;
+
+		wp_send_json_success($data);
+		exit;
+	}
+
 	get_header();
 	$websiteName = get_bloginfo('name');
-	$limit = 10;
 	$args = array(
-		'limit' => $limit
+		'limit' => $limit,
+		'orderby' => 'menu_order',
+    	'order'   => 'ASC'
 	);
 
 	$products = wc_get_products($args);
@@ -27,6 +66,9 @@
 	);
 
 	array_unshift($categories, $all_category);
+
+	$showBtnLoadMore = 0;
+	if (count($products) > $limit) $showBtnLoadMore = 1;
 ?>
 
 <div class="slide">
@@ -83,33 +125,17 @@
 			</div>
 			<div class="list row mt-4">
 				<?php foreach ($products as $k => $product): ?>
-					<?php 
+					<?php
 						if ($k == 0) continue;
-						$cf_product = get_post_meta($product->id);
-						$col = 'col-lg-4';
-						if (in_array($k, [2,6])) $col = 'col-lg-8';
+						get_template_part('template-parts/product', null, ['index' => $k, 'product' => $product]);
 					?>
-					<div class="item <?= $col ?> product">
-						<div class="image">
-							<?= $product->get_image('full') ?>
-							<a class="bg-detail" href="<?= $product->get_permalink() ?>">Chi tiết</a>
-						</div>
-						<div class="content">
-							<div>
-								<h4><?= $product->name ?></h4>
-								<ul>
-									<li>Diện tích đất: <?= $cf_product['land_area'][0] ?></li>
-									<li>Diện tích xây dựng: <?= $cf_product['construction_area'][0] ?></li>
-								</ul>
-							</div>
-							<p class="short-desc"><?= nl2br(wp_strip_all_tags($product->short_description)) ?></p>
-						</div>
-					</div>
 				<?php endforeach ?>
 			</div>
+			<? if ($showBtnLoadMore): ?>
 			<div class="text-center mt-4 mb-4">
-				<button class="btn btn-load-more">XEM THÊM DỰ ÁN</button>
+				<button class="btn btn-load-more" value="0" data-url="<?= home_url('du-an') ?>" data-limit="<?= $limit ?>">XEM THÊM DỰ ÁN</button>
 			</div>
+			<? endif ?>
 		</div>
 	</div>
 </div>

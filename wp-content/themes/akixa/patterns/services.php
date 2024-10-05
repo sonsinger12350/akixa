@@ -6,6 +6,10 @@
 
 	get_header();
 	$websiteName = get_bloginfo('name');
+
+	$partners = get_post_gallery($post->ID, false);
+	if (!empty($partners)) $partners = $partners['src'];
+	$partnerCount = !empty($partners) ? count($partners) : 1;
 ?>
 <style>
 	.banner .content {
@@ -287,7 +291,12 @@
 	<p class="title-mini">Chúng tôi tự hào khi được đồng hành cùng các</p>
 	<p class="title">đối tác hàng đầu</p>
 	<div class="list">
-		<?php for ($i = 1; $i <= 12; $i++): ?>
+		<?php if (!empty($partners)): ?>
+			<?php foreach ($partners as $k => $v): ?>
+				<div class="item active"><img src="<?= $v ?>" alt="partner-<?= $k ?>"></div>
+			<?php endforeach ?>
+		<?php endif ?>
+		<?php for ($i = $partnerCount; $i < 12; $i++): ?>
 			<div class="item <?= $i == 1 ? 'active' : '' ?>">
 				<img src="<?= get_template_directory_uri(); ?>/assets/images/partner-google.png" alt="partner-<?= $i ?>">
 			</div>
