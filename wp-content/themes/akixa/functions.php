@@ -86,3 +86,21 @@ function show_custom_field_in_product_column( $column, $post_id ) {
         echo !empty( $custom_field_value ) ? esc_html( $custom_field_value ) : __( 'Không', 'your-textdomain' );
     }
 }
+
+add_filter( 'manage_edit-product_sortable_columns', 'make_custom_field_sortable' );
+function make_custom_field_sortable( $sortable_columns ) {
+    $sortable_columns['pin_home'] = 'pin_home';
+    return $sortable_columns;
+}
+
+add_action( 'pre_get_posts', 'custom_field_orderby' );
+function custom_field_orderby( $query ) {
+    if ( !is_admin() ) return;
+    $orderby = $query->get( 'orderby' );
+
+    if ( 'custom_field' === $orderby ) {
+        $query->set( 'meta_key', 'pin_home' );
+        $query->set( 'orderby', 'meta_value' );
+    }
+}
+
