@@ -37,11 +37,7 @@
         ),
     );
 	$related_products = new WP_Query( $args );
-	// $description = nl2br(get_the_content( null, false, $product_id ));
-	// echo '<pre>';print_r($description);exit;
 	$description = nl2br($product->description);
-	// $description = preg_replace('/<div[^>]*>/i', '', $description);
-	// $description = preg_replace('/<\/div>/i', '', $description);
 ?>
 
 <div class="page">

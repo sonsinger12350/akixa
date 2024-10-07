@@ -24,7 +24,7 @@
 		<h3 class="title">Thiết kế kiến trúc<br>vi khí hậu</h3>
 		<div class="desc">
 			<p><?= $websiteName ?> cùng bạn nuôi dưỡng<br>sức khỏe thân - tâm - trí cho gia đình</p>
-			<button type="button" class="btn btn-success btn-sm btn-explore">Khám phá <?= $websiteName ?> <i class="fa-solid fa-angle-right"></i></button>
+			<?= get_template_part('template-parts/btn-explore', null, ['type' => 'about']); ?>
 		</div>
 	</div>
 </div>
@@ -52,7 +52,7 @@
 					<div>
 						<p class="slogan mb-4 d-none d-md-block">“Trọng tâm trong mỗi bản thiết kế từ <?= $websiteName ?><br>đều hướng về con người”</p>
 						<p class="slogan mb-4 d-block d-md-none">“Trọng tâm trong mỗi bản thiết kế từ<br><?= $websiteName ?> đều hướng về con người”</p>
-						<button type="button" class="btn btn-success btn-sm btn-explore">Liên hệ tư vấn <i class="fa-solid fa-angle-right"></i></button>
+						<?= get_template_part('template-parts/btn-explore', null, ['type' => 'contact']); ?>
 					</div>
 				</div>
 				<div class="image">
@@ -67,7 +67,7 @@
 					</div>
 					<div>
 						<p class="slogan mb-4">Hạnh phúc của <?= $websiteName ?> là mỗi ngày được thấy thêm một<br>công trình hoàn thiện, mà ở trong đó nuôi dưỡng, kết nối<br>con người bằng một bản thể hạnh phúc</p>
-						<button type="button" class="btn btn-success btn-sm btn-explore">Liên hệ tư vấn <i class="fa-solid fa-angle-right"></i></button>
+						<?= get_template_part('template-parts/btn-explore', null, ['type' => 'contact']); ?>
 					</div>
 				</div>
 				<div class="image">
@@ -171,7 +171,7 @@
 		</div>
 	</div>
 	<div class="text-center">
-		<button type="button" class="btn btn-success btn-sm btn-explore">Liên hệ tư vấn <i class="fa-solid fa-angle-right"></i></button>
+		<?= get_template_part('template-parts/btn-explore', null, ['type' => 'contact']); ?>
 	</div>
 </div>
 <div class="price-list margin-section">
@@ -284,7 +284,7 @@
 	</div>
 	<p class="scroll-note d-block d-md-none">Vuốt sang ngang để xem toàn bộ bảng giá</p>
 	<div class="text-center">
-		<button type="button" class="btn btn-success btn-sm btn-explore">Liên hệ tư vấn <i class="fa-solid fa-angle-right"></i></button>
+		<?= get_template_part('template-parts/btn-explore', null, ['type' => 'contact']); ?>
 	</div>
 </div>
 <div class="partner margin-section">

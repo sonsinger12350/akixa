@@ -91,7 +91,7 @@
 					<?php endforeach ?>
 				</div>
 			<?php endif ?>
-			<button type="button" class="btn btn-success btn-sm btn-explore">KHÁM PHÁ <?= $websiteName ?> <i class="fa-solid fa-angle-right"></i></button>
+			<?= get_template_part('template-parts/btn-explore', null, ['type' => 'about']); ?>
 		</div>
 		<div class="content-slide-mobile bullet-point d-sm-none">
 			<p class="text-grey block-desc">Nơi không chỉ thiết kế những công trình kiến trúc có <b>giá trị thẩm mỹ</b> tinh tế, mà còn tạo <b>môi trường sống lí tưởng</b> cho sức khỏe thể chất và tinh thần của bạn và gia đình.</p>
@@ -100,7 +100,7 @@
 			<h3 class="block-title">Nền tảng thiết kế<br><span class="text-green">vì sức khỏe</span> của<br>bạn và gia đình.</h3>
 			<div class="content bullet-point">
 				<p class="block-desc text-white">Với <?= $websiteName ?>, kiến trúc là phải hòa hợp với thiên nhiên và con người; hình thức bên ngoài chịu ảnh hưởng bởi địa hình; khí hậu, tính bản địa; hình thức bên trong ảnh hưởng nhiều bởi nhu cầu tiện nghi của con người gồm nhiệt độ, độ ẩm, âm thanh, ánh sáng; Và người kiến trúc sư muốn tạo ra được hình thức công trình thì bắt buộc phải giải quyết các vấn đề nảy sinh của bối cảnh khu đất và nhu cầu sử dụng;</p>
-				<button type="button" class="btn btn-success btn-sm btn-explore">xem thêm <i class="fa-solid fa-angle-right"></i></button>
+				<?= get_template_part('template-parts/btn-explore', null, ['type' => 'product']); ?>
 			</div>
 		</div>
 		<div class="project margin-section">
@@ -116,7 +116,7 @@
 				<div class="detail bullet-point">
 					<p class="text-grey block-desc">Ngôi nhà của chúng ta không chỉ dừng lại là một nơi để ở. Với triết lý ”Kiến trúc vi khí hậu - Thiết kế kiến trúc phải kết hợp nghệ thuật và khoa học thực tiễn” chúng tôi mong muốn mọi công trình kiến trúc của mình sẽ giúp bạn hạnh phúc cả về tinh thần và thể chất. Đó cũng chính là điều khiến <?= $websiteName ?> trở nên độc đáo và đặc biệt.</p>
 					<p class="text-grey block-desc">Chúng tôi tin rằng, người kể truyện không chỉ đến từ <?= $websiteName ?>. Hãy cùng khám phá những dự án tuyệt vời mà chúng tôi đã cùng đồng hành.</p>
-					<button type="button" class="btn btn-success btn-sm btn-explore">Đăng ký <i class="fa-solid fa-angle-right"></i></button>
+					<?= get_template_part('template-parts/btn-explore', null, ['type' => 'register']); ?>
 				</div>
 			</div>
 		</div>
@@ -168,7 +168,7 @@
 				<div class="bullet-point">
 					<div class="content">
 						<p class="block-desc text-grey">Vì cuộc đời là của chính mình, nên hãy trải nghiệm sự khác biệt, để nâng cao bản thân mình lên một tầng cao mới, cùng <b class="text-black">thiết kế kiến trúc vi khí hậu đến từ <?= $websiteName ?>.</b></p>
-						<button type="button" class="btn btn-success btn-sm btn-explore">KHÁM PHÁ <?= $websiteName ?> <i class="fa-solid fa-angle-right"></i></button>
+						<?= get_template_part('template-parts/btn-explore', null, ['type' => 'about']); ?>
 					</div>
 				</div>
 			</div>

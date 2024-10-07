@@ -8,7 +8,14 @@
 	}
 
 	$websiteName = get_bloginfo('name');
-	$title = $post->post_name == 'trang-chu' ? $websiteName : $post->post_title . ' - '.$websiteName;
+	$title = $post->post_title . ' - '.$websiteName;
+	if ($post->post_name == 'trang-chu') $title = $websiteName;
+
+	if (!empty($_GET['type'])) {
+		$term = get_term_by('slug', $_GET['type'], 'product_cat');
+		if (!empty($term)) $title = 'Dự án '.$term->name.' - '.$websiteName;
+	}
+
 	$description = get_bloginfo('description');
 	$menu_locations = get_nav_menu_locations();
 	$primary_menu_items = wp_get_nav_menu_items($menu_locations['primary']);

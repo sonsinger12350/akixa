@@ -4,6 +4,8 @@
 	 */
 
 	$limit = 11;
+	$category = !empty($_GET['type']) ? $_GET['type'] : '';
+
 	if (!empty($_GET['isAjax'])) {
 		$data = [
 			'continue' => 0,
@@ -19,6 +21,7 @@
 			'limit' => $limit,
 			'offset' => $offset
 		);
+		if (!empty($category)) $args['category'] = [$category];
 	
 		$products = wc_get_products($args);
 
@@ -48,6 +51,7 @@
 		'orderby' => 'menu_order',
     	'order'   => 'ASC'
 	);
+	if (!empty($category)) $args['category'] = [$category];
 
 	$products = wc_get_products($args);
 	$first_product = !empty($products[0]) ? $products[0] : [];
@@ -69,22 +73,21 @@
 
 	$showBtnLoadMore = 0;
 	if (count($products) > $limit) $showBtnLoadMore = 1;
+
+	$slides = get_post_gallery($post->ID, false);
+	if (!empty($slides)) $slides = $slides['src'];
 ?>
 
 <div class="slide">
 	<div class="bg-header"></div>
 	<div class="content">
-		<div class="owl-carousel owl-theme">
-			<div>
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/home-page-bg-1.png" alt="" loading="lazy">
+		<?php if (!empty($slides)): ?>
+			<div class="owl-carousel owl-theme">
+				<?php foreach ($slides as $k => $v): ?>
+					<div><img src="<?= $v ?>" alt="slide-<?= $k ?>" loading="lazy"></div>
+				<?php endforeach ?>
 			</div>
-			<div>
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/home-page-bg-1.png" alt="" loading="lazy">
-			</div>
-			<div>
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/home-page-bg-1.png" alt="" loading="lazy">
-			</div>
-		</div>
+		<?php endif ?>
 	</div>
 </div>
 <div class="page">
@@ -100,8 +103,19 @@
 		<div class="categories margin-section">
 			<div class="list-category">
 				<?php if (!empty($categories)): ?>
-					<?php foreach ($categories as $k => $cat): ?>
-						<a class="item <?= $k ==0 ? 'active' : ''?>" href="<?= home_url($cat->slug) ?>"><?= $cat->name ?></a>
+					<?php 
+						foreach ($categories as $k => $cat): 
+
+						if ($cat->slug == 'tat-ca') {
+							$cat->slug = '';
+							$url = home_url('du-an');
+						} 
+						else {
+							$url = home_url('du-an').'?type='.$cat->slug;
+						}
+						
+					?>
+						<a class="item <?= $cat->slug == $category ? 'active' : ''?>" href="<?= $url ?>"><?= $cat->name ?></a>
 					<?php endforeach ?>
 				<?php endif ?>
 			</div>
@@ -131,11 +145,11 @@
 					?>
 				<?php endforeach ?>
 			</div>
-			<? if ($showBtnLoadMore): ?>
-			<div class="text-center mt-4 mb-4">
-				<button class="btn btn-load-more" value="0" data-url="<?= home_url('du-an') ?>" data-limit="<?= $limit ?>">XEM THÊM DỰ ÁN</button>
-			</div>
-			<? endif ?>
+			<?php if ($showBtnLoadMore): ?>
+				<div class="text-center mt-4 mb-4">
+					<button class="btn btn-load-more" value="0" data-url="<?= home_url('du-an') ?>" data-limit="<?= $limit ?>">XEM THÊM DỰ ÁN</button>
+				</div>
+			<?php endif ?>
 		</div>
 	</div>
 </div>
