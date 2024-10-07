@@ -3,7 +3,7 @@
 	 * Template Name: Dự án
 	 */
 
-	$limit = 3;
+	$limit = 11;
 	if (!empty($_GET['isAjax'])) {
 		$data = [
 			'continue' => 0,
@@ -101,7 +101,7 @@
 			<div class="list-category">
 				<?php if (!empty($categories)): ?>
 					<?php foreach ($categories as $k => $cat): ?>
-						<a class="item <?= $k ==0 ? 'active' : ''?>" href="javascript:void(0)"><?= $cat->name ?></a>
+						<a class="item <?= $k ==0 ? 'active' : ''?>" href="<?= home_url($cat->slug) ?>"><?= $cat->name ?></a>
 					<?php endforeach ?>
 				<?php endif ?>
 			</div>
