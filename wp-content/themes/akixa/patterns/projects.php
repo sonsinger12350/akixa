@@ -121,35 +121,40 @@
 			</div>
 		</div>
 		<div class="list-product margin-section">
-			<div class="first-product product">
-				<div class="image">
-					<?= $first_product->get_image('full') ?>
-					<a class="bg-detail" href="<?= $first_product->get_permalink() ?>">Chi tiết</a>
-				</div>
-				<div class="content">
-					<div>
-						<h4><?= $first_product->name ?></h4>
-						<ul>
-							<li>Diện tích đất: <?= $cf_first_product['land_area'][0] ?></li>
-							<li>Diện tích xây dựng: <?= $cf_first_product['construction_area'][0] ?></li>
-						</ul>
+			<?php if (!empty($products)): ?>
+				<div class="first-product product">
+					<div class="image">
+						<?= $first_product->get_image('full') ?>
+						<a class="bg-detail" href="<?= $first_product->get_permalink() ?>">Chi tiết</a>
 					</div>
-					<p class="short-desc"><?= nl2br(wp_strip_all_tags($first_product->short_description)) ?></p>
+					<div class="content">
+						<div>
+							<h4><?= $first_product->name ?></h4>
+							<ul>
+								<li>Diện tích đất: <?= $cf_first_product['land_area'][0] ?></li>
+								<li>Diện tích xây dựng: <?= $cf_first_product['construction_area'][0] ?></li>
+							</ul>
+						</div>
+						<p class="short-desc"><?= nl2br(wp_strip_all_tags($first_product->short_description)) ?></p>
+					</div>
 				</div>
-			</div>
-			<div class="list row mt-4">
-				<?php foreach ($products as $k => $product): ?>
-					<?php
-						if ($k == 0) continue;
-						get_template_part('template-parts/product', null, ['index' => $k, 'product' => $product]);
-					?>
-				<?php endforeach ?>
-			</div>
-			<?php if ($showBtnLoadMore): ?>
-				<div class="text-center mt-4 mb-4">
-					<button class="btn btn-load-more" value="0" data-url="<?= home_url('du-an') ?>" data-limit="<?= $limit ?>">XEM THÊM DỰ ÁN</button>
+			
+				<div class="list row mt-4">
+					<?php foreach ($products as $k => $product): ?>
+						<?php
+							if ($k == 0) continue;
+							get_template_part('template-parts/product', null, ['index' => $k, 'product' => $product]);
+						?>
+					<?php endforeach ?>
 				</div>
-			<?php endif ?>
+				<?php if ($showBtnLoadMore): ?>
+					<div class="text-center mt-4 mb-4">
+						<button class="btn btn-load-more" value="0" data-url="<?= home_url('du-an') ?>" data-limit="<?= $limit ?>">XEM THÊM DỰ ÁN</button>
+					</div>
+				<?php endif ?>
+			<?php else: ?>
+				<p class="text-center mb-0">Chưa có dự án</p>
+			<?php endif ?>	
 		</div>
 	</div>
 </div>
