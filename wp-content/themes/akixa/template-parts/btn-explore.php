@@ -1,6 +1,7 @@
 <?php
+	$type = !empty($args['type']) ? $args['type'] : '';
 	if (!empty($type)):
-	$href = 'javascript:void(0)';
+	$websiteName = get_bloginfo('name');
 
 	if ($type == 'explore') {
 		$title = 'KHÁM PHÁ '.$websiteName.' <i class="fa-solid fa-angle-right"></i>';

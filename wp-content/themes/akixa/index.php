@@ -91,7 +91,7 @@
 					<?php endforeach ?>
 				</div>
 			<?php endif ?>
-			<?= get_template_part('template-parts/btn-explore', null, ['type' => 'about']); ?>
+			<?= get_template_part('template-parts/btn-explore', null, ['type' => 'explore']); ?>
 		</div>
 		<div class="content-slide-mobile bullet-point d-sm-none">
 			<p class="text-grey block-desc">Nơi không chỉ thiết kế những công trình kiến trúc có <b>giá trị thẩm mỹ</b> tinh tế, mà còn tạo <b>môi trường sống lí tưởng</b> cho sức khỏe thể chất và tinh thần của bạn và gia đình.</p>
@@ -168,7 +168,7 @@
 				<div class="bullet-point">
 					<div class="content">
 						<p class="block-desc text-grey">Vì cuộc đời là của chính mình, nên hãy trải nghiệm sự khác biệt, để nâng cao bản thân mình lên một tầng cao mới, cùng <b class="text-black">thiết kế kiến trúc vi khí hậu đến từ <?= $websiteName ?>.</b></p>
-						<?= get_template_part('template-parts/btn-explore', null, ['type' => 'about']); ?>
+						<?= get_template_part('template-parts/btn-explore', null, ['type' => 'explore']); ?>
 					</div>
 				</div>
 			</div>
