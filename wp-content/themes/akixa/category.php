@@ -1,9 +1,45 @@
 <?php
+	$limit = 1;
+	$currentCat = null;
+	if (is_category()) $currentCat = get_queried_object();
+
+	if (!empty($_GET['isAjax'])) {
+		$data = '';
+		$page = $_GET['nextPage'];
+		$excludeIds = !empty($_GET['excludeIds']) ? explode(',', $_GET['excludeIds']) : [];
+
+		$args = array(
+			'post_type' => 'post',
+			'posts_per_page' => $limit,
+			'post_status' => 'publish',
+			'post__not_in' => $excludeIds,
+			'paged' => $page
+		);
+		if (!empty($currentCat)) $args['cat'] = $currentCat->term_id;
+
+		$query = new WP_Query($args);
+
+		if (empty($query->posts)) {
+			wp_send_json_success($data);exit;
+		}
+
+		$html = '';
+
+		foreach ($query->posts as $article) {
+			ob_start();
+			get_template_part('template-parts/article', null, ['article' => $article]);
+			$html .= ob_get_clean();
+		}
+
+		$data = $html;
+
+		wp_send_json_success($data);
+		exit;
+	}
+
 	get_header();
 	$websiteName = get_bloginfo('name');
 	$default_img = get_template_directory_uri().'/assets/images/new-default.png';
-	$currentCat = null;
-	if (is_category()) $currentCat = get_queried_object();
 
 	$args = [
 		'orderby'    => 'id',
@@ -14,7 +50,7 @@
 
 	$args = array(
 		'post_type' => 'post',
-		'posts_per_page' => 4,
+		'posts_per_page' => 1,
 		'post_status' => 'publish'
 	);
 	if (!empty($currentCat)) $args['cat'] = $currentCat->term_id;
@@ -24,23 +60,30 @@
 	$first_news_img = !empty($first_news) ? get_the_post_thumbnail_url($first_news->ID, 'full') : '';
 
 	$list_new = [];
-	$totalPage = 0;
+	$total_page = 0;
+	$excludeIds = array_map(function($val) {
+		return $val->ID;
+	}, $list_first_news->posts);
 
-	if (count($list_first_news->posts) == 4) {
+	if (count($list_first_news->posts) == 1) {
 		$excludeIds = array_map(function($val) {
 			return $val->ID;
 		}, $list_first_news->posts);
 
 		$args = array(
 			'post_type' => 'post',
-			'posts_per_page' => 8,
+			'posts_per_page' => $limit,
 			'post_status' => 'publish',
 			'post__not_in' => $excludeIds,
 			'paged' => get_query_var('paged') ? get_query_var('paged') : 1
 		);
 		if (!empty($currentCat)) $args['cat'] = $currentCat->term_id;
 		$query = new WP_Query($args);
-		if (!empty($query->posts)) $list_new = $query->posts;
+
+		if (!empty($query->posts)) {
+			$list_new = $query->posts;
+			$total_page = $query->max_num_pages;
+		}
 	}
 ?>
 <style>
@@ -86,24 +129,11 @@
 				</div>
 				<div class="right">
 					<?php 
-						foreach ($list_first_news->posts as $k => $news): 
-						if ($k == 0) continue;
-						$news_img = get_the_post_thumbnail_url($news->ID, 'full');
-						$cat = get_the_category($news->ID);
-					?>
-						<a class="new" href="<?= $first_news->post_name ?>">
-							<div class="image">
-								<img src="<?= !empty($news_img) ? $news_img : $default_img ?>" alt="<?= $news->post_title ?>">
-							</div>
-							<div class="content">
-								<?php if (!empty($cat)): ?>
-									<p class="category"><?= $cat[0]->name ?></p>
-								<?php endif ?>
-								<p class="title"><?= $news->post_title ?></p>
-								<p class="post-date"><?= date('d/m/Y', strtotime($news->post_date)) ?></p>
-							</div>
-						</a>
-					<?php endforeach ?>				
+						foreach ($list_first_news->posts as $k => $article) {
+							if ($k == 0) continue;
+							get_template_part('template-parts/article', null, ['article' => $article]);
+						}
+					?>			
 				</div>
 			</div>
 			<?php if (!empty($list_new)) : ?>
@@ -111,38 +141,22 @@
 					<div class="left">
 						<div class="list">
 							<?php 
-								foreach ($list_new as $new): 
-								if ($k == 0) continue;
-								$new_img = get_the_post_thumbnail_url($new->ID, 'full');
-								$cat = get_the_category($new->ID);
+								foreach ($list_new as $article) {
+									get_template_part('template-parts/article', null, ['article' => $article]);
+								}
 							?>
-								<a class="new" href="<?= $first_news->post_name ?>">
-									<div class="image">
-										<img src="<?= !empty($new_img) ? $new_img : $default_img ?>" alt="<?= $new->post_title ?>">
-									</div>
-									<div class="content">
-										<?php if (!empty($cat)): ?>
-											<p class="category"><?= $cat[0]->name ?></p>
-										<?php endif ?>
-										<p class="title"><?= $new->post_title ?></p>
-										<p class="post-date"><?= date('d/m/Y', strtotime($new->post_date)) ?></p>
-									</div>
-								</a>
-							<?php endforeach ?>
 						</div>
-						<div class="pagination">
-							<div class="btn-paginate btn-prev">
-								<i class="fa-solid fa-angle-left"></i>
+						<?php if ($total_page > 1): ?>
+							<div class="pagination" data-url="<?= home_url('blog/') ?>" data-ids="<?= implode(',', $excludeIds) ?>">
+								<div class="btn-paginate" data-action="prev"><i class="fa-solid fa-angle-left"></i></div>
+								<div class="list-page">
+									<?php for ($i = 1; $i <= $total_page; $i++): ?>
+										<span class="item <?= $i==1 ? 'active' : '' ?> <?= $i==$total_page ? 'last' : '' ?>" data-page="<?= $i ?>"></span>
+									<?php endfor?>
+								</div>
+								<div class="btn-paginate" data-action="next"><i class="fa-solid fa-angle-right"></i></div>
 							</div>
-							<div class="list-page">
-								<span class="item active"></span>
-								<span class="item"></span>
-								<span class="item"></span>
-							</div>
-							<div class="btn-paginate btn-next">
-								<i class="fa-solid fa-angle-right"></i>
-							</div>
-						</div>
+						<?php endif ?>
 					</div>
 					<div class="right">
 						<div class="ads-banner">

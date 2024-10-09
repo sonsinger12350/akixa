@@ -234,6 +234,7 @@ header .logo img {
 	height: 24px;
 	border: 1px solid #000;
 	border-radius: 50%;
+	cursor: pointer;
 }
 
 .news .list-news .left .pagination .list-page {

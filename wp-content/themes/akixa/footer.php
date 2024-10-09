@@ -76,11 +76,19 @@
 </body>
 <?php
 	global $post;
+
+	if (is_category() && !empty(get_queried_object())) {
+		$post = get_queried_object();
+		$post->post_type = $post->taxonomy;
+		$post->post_title = $post->name;
+	}
+
 	$jsFiles = [
 		'trang-chu' => get_template_directory_uri().'/assets/js/index.js?v='.time(),
 		'du-an' => get_template_directory_uri().'/assets/js/projects.js?v='.time(),
 		'product' => get_template_directory_uri().'/assets/js/single-product.js?v='.time(),
 		'blog' => get_template_directory_uri().'/assets/js/blog.js?v='.time(),
+		'category' => get_template_directory_uri().'/assets/js/blog.js?v='.time(),
 		'dich-vu' => get_template_directory_uri().'/assets/js/services.js?v='.time(),
 		'tuyen-dung' => get_template_directory_uri().'/assets/js/career.js?v='.time(),
 		'lien-he' => get_template_directory_uri().'/assets/js/contact.js?v='.time(),
