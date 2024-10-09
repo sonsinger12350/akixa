@@ -7,6 +7,7 @@ $(document).ready(function() {
         let url = btn.parent().attr('data-url');
         let excludeIds = btn.parent().attr('data-ids');
         let nextPage;
+        let btnHtml = btn.html();
 
         if (action == 'prev') {
             if (currentPage == 1) return;
@@ -16,12 +17,18 @@ $(document).ready(function() {
             if (pagination.find('.item.active').hasClass('last')) return;
             nextPage = Number(currentPage) + 1;
         }
-        console.log(url);
+
+        btn.attr('disabled', true);
+		btn.html('<i class="fas fa-spinner fa-pulse"></i>');
+
         $.ajax({
 			url: url,
 			type: "GET",
 			data: {isAjax: 1, nextPage, excludeIds},
 			success: function(rs) {
+                btn.attr('disabled', false);
+				btn.html(btnHtml);
+
 				if (rs.success) {
                     $('.list-news .list').html(rs.data);
                     pagination.find('.item').removeClass('active');

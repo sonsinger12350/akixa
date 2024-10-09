@@ -2,7 +2,7 @@
 	/**
 	 * Template Name: Tin Tức
 	 */
-	$limit = 1;
+	$limit = 8;
 
 	if (!empty($_GET['isAjax'])) {
 		$data = '';

@@ -1,5 +1,5 @@
 <?php
-	$limit = 1;
+	$limit = 8;
 	$currentCat = null;
 	if (is_category()) $currentCat = get_queried_object();
 
