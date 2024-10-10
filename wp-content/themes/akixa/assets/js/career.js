@@ -21,4 +21,31 @@ $(document).ready(function () {
 			}
 		}
 	});
+
+	$('body').on('click', '.btn-load-more', function() {
+		let btn = $(this);
+		let limit = Number(btn.attr('data-limit'));
+		let offset = Number(btn.val()) + limit;
+		let url = btn.attr('data-url');
+		let btnHtml = btn.html();
+
+		btn.attr('disabled', true);
+		btn.html('<i class="fas fa-spinner fa-pulse"></i>');
+
+		$.ajax({
+			url: url,
+			type: "GET",
+			data: {isAjax: 1,offset},
+			success: function(rs) {
+				btn.attr('disabled', false);
+				btn.html(btnHtml);
+
+				if (rs.success) {
+					if (rs.data.content) $('.job .list').append(rs.data.content);
+					if (rs.data.continue) btn.val(offset);
+					else btn.hide();
+				}
+			}
+		});
+	});
 });

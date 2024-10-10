@@ -3,9 +3,46 @@
 	/**
 	 * Template Name: Tuyển dụng
 	 */
+	$limit = 8;
+
+	if (!empty($_GET['isAjax'])) {
+		$data = [
+			'continue' => 0,
+			'content' => '',
+		];
+		$offset = $_GET['offset'];
+
+		if (!$offset) {
+			wp_send_json_success($data);
+			exit;
+		}
+
+		$sql = "SELECT * FROM `wp_connest_job` WHERE `show` = 1 LIMIT $offset, $limit";
+		$jobs = $wpdb->get_results($sql);
+
+		if (empty($jobs)) {
+			wp_send_json_success($data);exit;
+		}
+
+		$html = '';
+
+		foreach ($jobs as $k => $job) {
+			ob_start();
+			get_template_part('template-parts/job', null, ['job' => $job]);
+			$html .= ob_get_clean();
+		}
+
+		$data['continue'] = count($jobs) >= $limit ? 1 : 0;
+		$data['content'] = $html;
+
+		wp_send_json_success($data);
+		exit;
+	}
 
 	get_header();
 	$websiteName = get_bloginfo('name');
+	$sql = "SELECT * FROM `wp_connest_job` WHERE `show` = 1 LIMIT $limit";
+	$data = $wpdb->get_results($sql);
 ?>
 <style>
 	.banner .content {
@@ -52,114 +89,18 @@
 	</div>
 </div>
 <div class="job margin-section">
-	<div class="list">
-		<div class="item active" data-bs-toggle="modal" data-bs-target="#jobModal">
-			<p class="title">Nhân viên chăm sóc khách hàng</p>
-			<div class="location">
-				<p class="address"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/place.svg" alt="salary"> Hà Nội</p>
-				<p class="time"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/clock.svg" alt="salary"> 01/07/2021 - 30/07/2021</p>
-			</div>
-			<p class="salary"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/salary.svg" alt="salary"> 25,000,000 - 35,000,000 VNĐ</p>
+	<?php if (!empty($data)): ?>
+		<div class="list">
+			<?php 
+				foreach ($data as $k => $job) {
+					get_template_part('template-parts/job', null, ['index' => $k, 'job' => $job]);
+				} 
+			?>
 		</div>
-		<div class="item" data-bs-toggle="modal" data-bs-target="#jobModal">
-			<p class="title">Trưởng phòng kinh doanh</p>
-			<div class="location">
-				<p class="address"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/place.svg" alt="salary"> Hà Nội</p>
-				<p class="time"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/clock.svg" alt="salary"> 01/07/2021 - 30/07/2021</p>
-			</div>
-			<p class="salary"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/salary.svg" alt="salary"> 25,000,000 - 35,000,000 VNĐ</p>
+		<div class="text-center">
+			<button class="btn btn-load-more" value="0" data-url="<?= home_url('tuyen-dung') ?>" data-limit="<?= $limit ?>" type="button">Tải thêm</button>
 		</div>
-		<div class="item" data-bs-toggle="modal" data-bs-target="#jobModal">
-			<p class="title">Nhân viên chăm sóc khách hàng</p>
-			<div class="location">
-				<p class="address"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/place.svg" alt="salary"> Hà Nội</p>
-				<p class="time"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/clock.svg" alt="salary"> 01/07/2021 - 30/07/2021</p>
-			</div>
-			<p class="salary"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/salary.svg" alt="salary"> 25,000,000 - 35,000,000 VNĐ</p>
-		</div>
-		<div class="item" data-bs-toggle="modal" data-bs-target="#jobModal">
-			<p class="title">Trưởng phòng kinh doanh</p>
-			<div class="location">
-				<p class="address"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/place.svg" alt="salary"> Hà Nội</p>
-				<p class="time"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/clock.svg" alt="salary"> 01/07/2021 - 30/07/2021</p>
-			</div>
-			<p class="salary"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/salary.svg" alt="salary"> 25,000,000 - 35,000,000 VNĐ</p>
-		</div>
-		<div class="item" data-bs-toggle="modal" data-bs-target="#jobModal">
-			<p class="title">Nhân viên chăm sóc khách hàng</p>
-			<div class="location">
-				<p class="address"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/place.svg" alt="salary"> Hà Nội</p>
-				<p class="time"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/clock.svg" alt="salary"> 01/07/2021 - 30/07/2021</p>
-			</div>
-			<p class="salary"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/salary.svg" alt="salary"> 25,000,000 - 35,000,000 VNĐ</p>
-		</div>
-		<div class="item" data-bs-toggle="modal" data-bs-target="#jobModal">
-			<p class="title">Trưởng phòng kinh doanh</p>
-			<div class="location">
-				<p class="address"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/place.svg" alt="salary"> Hà Nội</p>
-				<p class="time"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/clock.svg" alt="salary"> 01/07/2021 - 30/07/2021</p>
-			</div>
-			<p class="salary"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/salary.svg" alt="salary"> 25,000,000 - 35,000,000 VNĐ</p>
-		</div>
-	</div>
-	<div class="text-center">
-		<button class="btn btn-load-more" type="button">Tải thêm</button>
-	</div>
-</div>
-<div class="modal fade" id="jobModal" tabindex="-1" aria-labelledby="jobModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-body">
-				<div class="banner">
-					<div class="bg-header"></div>
-					<div class="content">
-						<div class="bg-blur"></div>
-						<p class="desc">Tuyển dụng <?= $websiteName ?></p>
-						<p class="title">Chuyên viên phát triển thương hiệu</p>
-					</div>
-				</div>
-				<div class="job-detail">
-					<div class="left">
-						<p class="title">Thông tin việc làm</p>	
-						<hr>
-						<div class="item">
-							<p class="title">Mức lương</p>
-							<span class="detail">25,000,000 - 35,000,000 VNĐ</span>	
-						</div>
-						<div class="item">
-							<p class="title">Thời gian làm việc</p>
-							<span class="detail">Toàn thời gian</span>	
-						</div>
-						<div class="item">
-							<p class="title">Địa điểm làm việc</p>
-							<span class="detail">Hà Nội</span>	
-						</div>
-						<div class="item">
-							<p class="title">Thời gian nộp hồ sơ</p>
-							<span class="detail">01/07/2021 - 30/07/2021</span>	
-						</div>
-					</div>
-					<div class="right">
-						<div class="desc">
-							<p class="title">Mô tả công việc</p>
-							<p><span class="line"></span> <span class="text">Hỗ trợ công việc đào tạo của khối CN&PTS</span></p>
-							<p><span class="line"></span> <span class="text">Tìm kiếm, liên hệ và đám phán với các khách hàng tiềm năng</span></p>
-							<p><span class="line"></span> <span class="text">Xây dựng và mở rộng mối quan hệ với Khách hàng, đối tác, Nhà phân phối để thực hiến tối đa nhiệm vụ Kinh doanh</span></p>
-							<p><span class="line"></span> <span class="text">Phối hợp điều hành, kiểm soát mảng vận hành</span></p>
-						</div>	
-						<div class="benefit">
-							<p class="title">Quyền lợi</p>
-							<p><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/salary.svg" alt="salary"> Lương thưởng hấp dẫn theo quy định của công ty</p>
-							<p><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/increase.svg" alt="salary"> Được xét tăng lương 2 lần/năm</p>
-							<p><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/plus-circle.svg" alt="salary"> Chế độ BHXH, BHYT theo luật Lao động, ngoài ra được tham gia chương trình bảo hiểm</p>
-							<p><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/graduate.svg" alt="salary"> Được tham gia các khóa đào tạo từ các chuyên gia hàng đầu</p>
-						</div>	
-					</div>
-				</div>
-            </div>
-			<p class="btn-close-modal" data-bs-dismiss="modal">Đóng</p>
-        </div>
-    </div>
+	<?php endif ?>
 </div>
 <div class="policy margin-section">
 	<div class="head">

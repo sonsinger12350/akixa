@@ -70,7 +70,7 @@
 			'posts_per_page' => $limit,
 			'post_status' => 'publish',
 			'post__not_in' => $excludeIds,
-			'paged' => get_query_var('paged') ? get_query_var('paged') : 1
+			'paged' => 1
 		);
 		$query = new WP_Query($args);
 

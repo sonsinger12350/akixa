@@ -256,12 +256,12 @@ header .logo img {
 	line-height: 1px;
 }
 
-#jobModal {
+.jobModal {
 	opacity: 1;
 	background: #272727d4;
 }
 
-#jobModal .btn-close-modal {
+.jobModal .btn-close-modal {
 	position: absolute;
 	top: 0px;
 	right: -120px;
@@ -275,26 +275,26 @@ header .logo img {
 	margin: 0;
 }
 
-#jobModal .banner {
+.jobModal .banner {
 	margin-top: 0;
 }
 
-#jobModal .banner .content {
+.jobModal .banner .content {
 	margin: 0;
 	padding: 50px 0px 50px 118px;
 }
 
-#jobModal .banner .content .title {
+.jobModal .banner .content .title {
 	font-size: 48px;
 }
 
-#jobModal .job-detail {
+.jobModal .job-detail {
 	display: flex;
 	justify-content: space-between;
 	margin-top: 50px;
 }
 
-#jobModal .job-detail .left {
+.jobModal .job-detail .left {
 	width: 30%;
 	border-radius: 16px;
 	background: var(--light-green);
@@ -304,16 +304,16 @@ header .logo img {
 	gap: 30px;
 }
 
-#jobModal .job-detail .left * {
+.jobModal .job-detail .left * {
 	margin: 0;
 }
 
-#jobModal .job-detail .left hr {
+.jobModal .job-detail .left hr {
 	width: 70px;
 	border-color: #fff;
 }
 
-#jobModal .job-detail .left .item * {
+.jobModal .job-detail .left .item * {
 	color: var(--main-black);
 	font-size: 15px;
 	font-weight: 700;
@@ -321,15 +321,15 @@ header .logo img {
 	letter-spacing: 0.15px;
 }
 
-#jobModal .job-detail .left .item .detail {
+.jobModal .job-detail .left .item .detail {
 	font-weight: 400;
 }
 
-#jobModal .job-detail .right {
+.jobModal .job-detail .right {
 	width: 60%;
 }
 
-#jobModal .job-detail .right p.title {
+.jobModal .job-detail .right p.title {
 	color: #2E2E2E;
 	font-size: 20px;
 	font-weight: 600;
@@ -339,7 +339,7 @@ header .logo img {
 	margin-bottom: 20px;
 }
 
-#jobModal .job-detail .right p {
+.jobModal .job-detail .right p {
 	color: #2E2E2E;
 	font-size: 15px;
 	font-weight: 400;
@@ -348,29 +348,29 @@ header .logo img {
 	margin-bottom: 10px;
 }
 
-#jobModal .job-detail .right p img {
+.jobModal .job-detail .right p img {
 	margin-right: 10px;
 }
 
-#jobModal .job-detail .right .desc {
+.jobModal .job-detail .right .desc {
 	margin-bottom: 50px;
 }
 
-#jobModal .job-detail .right .desc p {
+.jobModal .job-detail .right .desc p {
 	display: flex;
 	align-items: end;
 }
 
-#jobModal .job-detail .right .desc p:last-child,
-#jobModal .job-detail .right .benefit p:last-child {
+.jobModal .job-detail .right .desc p:last-child,
+.jobModal .job-detail .right .benefit p:last-child {
 	margin: 0;
 }
 
-#jobModal .job-detail .right .desc p .text {
+.jobModal .job-detail .right .desc p .text {
 	width: calc(100% - 26px);
 }
 
-#jobModal .job-detail .right .desc p .line {
+.jobModal .job-detail .right .desc p .line {
 	width: 16px;
 	height: 1px;
 	background: var(--main-green);
@@ -790,12 +790,12 @@ header .logo img {
 		left: 100px;
 	}
 
-	#jobModal .modal-dialog  {
+	.jobModal .modal-dialog  {
 		margin-top: 80px;
 		max-width: 80%
 	}
 
-	#jobModal .btn-close-modal {
+	.jobModal .btn-close-modal {
 		right: -100px;
 	}
 }
@@ -1057,38 +1057,38 @@ header .logo img {
 		width: 95%;
 	}
 
-	#jobModal .modal-dialog {
+	.jobModal .modal-dialog {
 		margin-top: 80px;
 		max-width: 90%
 	}
 
-	#jobModal .banner .content {
+	.jobModal .banner .content {
 		margin: 0;
 		padding: 26px 0px 24px 52px;
 	}
 
-	#jobModal .banner .content .title {
+	.jobModal .banner .content .title {
 		font-size: 36px;
 	}
 
-	#jobModal .banner .content .desc {
+	.jobModal .banner .content .desc {
 		font-size: 17px;
 	}
 
-	#jobModal .job-detail {
+	.jobModal .job-detail {
 		flex-direction: column;
 		gap: 36px;
 	}
 
-	#jobModal .job-detail .left {
+	.jobModal .job-detail .left {
 		width: 100%;
 	}
 
-	#jobModal .job-detail .right {
+	.jobModal .job-detail .right {
 		width: 100%;
 	}
 
-	#jobModal .btn-close-modal {
+	.jobModal .btn-close-modal {
 		top: -40px;
 		right: 50%;
 		transform: translateX(50%);
@@ -1284,11 +1284,11 @@ header .logo img {
 		padding: 0px;
 	}
 
-	#jobModal .modal-dialog {
+	.jobModal .modal-dialog {
 		max-width: 100%;
 	}
 
-	#jobModal .banner .content {
+	.jobModal .banner .content {
 		padding: 26px 0px 24px 32px;
 	}
 }
@@ -1479,7 +1479,7 @@ header .logo img {
 		font-size: 14px;
 	}
 
-	#jobModal .banner .content .title {
+	.jobModal .banner .content .title {
 		font-size: 32px;
 		width: 100%;
 	}
