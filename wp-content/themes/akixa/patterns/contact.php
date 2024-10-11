@@ -6,6 +6,7 @@
 
 	get_header();
 	$websiteName = get_bloginfo('name');
+	$config = getConnestConfig();
 ?>
 
 <style>
@@ -22,21 +23,36 @@
 				<p class="title">Chào mừng bạn đến với <?= $websiteName ?>!</p>
 				<span class="line"></span>
 				<div class="branch">
-					<div class="branch-1">
-						<p class="name">Văn phòng Hà Nội:</p>
-						<ul>
-							<li>DM5-12A Vạn Phúc - Hà Đông - Hà Nội</li>
-						</ul>
-					</div>					
-					<div class="branch-2">
-						<p class="name">Văn phòng Đà Nẵng:</p>
-						<ul class="mb-0">
-							<li>B3.11-16 Trương Minh Giảng - KĐT Phú Mỹ An - Hòa Hải - Ngũ Hành Sơn - Đà Nẵng</li>
-							<li>Điện thoại: 035 922 6017</li>
-							<li>Email: <a href="mailto:Lienhe@connest.vn">Lienhe@connest.vn</a></li>
-							<li>Website: <a href="<?= home_url() ?>"><?= home_url() ?></a></li>
-						</ul>
-					</div>					
+					<?php if (!empty($config['department_1'])): ?>
+						<div class="branch-1">
+							<p class="name"><?= $config['department_1']['name'] ?>:</p>
+							<ul>
+								<?php 
+									foreach ($config['department_1'] as $k => $v) {
+										if ($k == 'name') continue;
+										if (empty($v)) continue;
+										if ($k == 'phone') echo "<li>Điện thoại: <a href='tel:$v'>$v</a></li>";
+										else echo "<li>$v</li>";
+									}
+								?>
+							</ul>
+						</div>
+					<?php endif?>
+					<?php if (!empty($config['department_2'])): ?>
+						<div class="branch-2">
+							<p class="name"><?= $config['department_2']['name'] ?>:</p>
+							<ul>
+								<?php 
+									foreach ($config['department_2'] as $k => $v) {
+										if ($k == 'name') continue;
+										if (empty($v)) continue;
+										if ($k == 'phone') echo "<li>Điện thoại: <a href='tel:$v'>$v</a></li>";
+										else echo "<li>$v</li>";
+									}
+								?>
+							</ul>
+						</div>
+					<?php endif?>
 				</div>
 			</div>
 		</div>

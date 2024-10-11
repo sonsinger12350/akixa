@@ -39,6 +39,16 @@
 			'dashicons-email',
 			11
 		);
+
+		add_menu_page(
+			'',     // Tiêu đề của mục menu
+			'Cấu hình website',     // Tiêu đề của menu
+			'manage_options',        // Quyền truy cập cần thiết để thấy mục menu
+			'connest-config',     // Slug của menu
+			'website_config', // Hàm callback để hiển thị trang của menu
+			'dashicons-admin-settings',
+			12
+		);
 	}
 
 	add_action('admin_menu', 'add_custom_admin_menu');
@@ -105,7 +115,7 @@
 				if (empty($data)) {
 					$notify = '
 						<div id="message" class="notice notice-error is-dismissible" style="margin-left: 2px;">
-							<button type="button" class="notice-dismiss" onclick="this.parentNode.parentNode.remove()">
+							<button type="button" class="notice-dismiss" onclick="this.parentNode.remove()">
 								<span class="screen-reader-text">Dismiss this notice.</span>
 							</button>
 						</div>
@@ -121,7 +131,7 @@
 					$notify = '
 						<div id="message" class="notice notice-error is-dismissible" style="margin-left: 2px;">
 							<p>Tin tuyển dụng đã tồn tại.</p>
-							<button type="button" class="notice-dismiss" onclick="this.parentNode.parentNode.remove()">
+							<button type="button" class="notice-dismiss" onclick="this.parentNode.remove()">
 								<span class="screen-reader-text">Dismiss this notice.</span>
 							</button>
 						</div>
@@ -138,7 +148,7 @@
 				$notify = '
 					<div id="message" class="updated notice notice-success is-dismissible" style="margin-left: 2px;">
 						<p>Cập nhật dịch vụ thành công.</p>
-						<button type="button" class="notice-dismiss" onclick="this.parentNode.parentNode.remove()">
+						<button type="button" class="notice-dismiss" onclick="this.parentNode.remove()">
 							<span class="screen-reader-text">Dismiss this notice.</span>
 						</button>
 					</div>
@@ -155,7 +165,7 @@
 					$notify = '
 						<div id="message" class="notice notice-error is-dismissible" style="margin-left: 2px;">
 							<p>Tin tuyển dụng đã tồn tại.</p>
-							<button type="button" class="notice-dismiss" onclick="this.parentNode.parentNode.remove()">
+							<button type="button" class="notice-dismiss" onclick="this.parentNode.remove()">
 								<span class="screen-reader-text">Dismiss this notice.</span>
 							</button>
 						</div>
@@ -170,7 +180,7 @@
 			$notify = '
 				<div id="message" class="updated notice notice-success is-dismissible" style="margin-left: 2px;">
 					<p>'.$message.'</p>
-					<button type="button" class="notice-dismiss" onclick="this.parentNode.parentNode.remove()">
+					<button type="button" class="notice-dismiss" onclick="this.parentNode.remove()">
 						<span class="screen-reader-text">Dismiss this notice.</span>
 					</button>
 				</div>
@@ -218,6 +228,48 @@
 		];
 
 		include 'view/contact-list.php';
+	}
+
+	function website_config() {
+		global $wpdb;
+
+		$table = "wp_connest_config";
+
+		if (!empty($_POST['submit-config-form'])) {
+			$inputs = [
+				'social'  =>  sanitize_text_field(json_encode($_POST['social'])),
+				'hotline'  =>  sanitize_text_field($_POST['hotline']),
+				'email'  =>  sanitize_text_field($_POST['email']),
+				'department_1'  =>  sanitize_text_field(json_encode($_POST['department_1'], JSON_UNESCAPED_UNICODE)),
+				'department_2'  =>  sanitize_text_field(json_encode($_POST['department_2'], JSON_UNESCAPED_UNICODE)),
+			];
+
+			foreach ($inputs as $k => $v) {
+				$sql = "SELECT `key` FROM `$table` WHERE `key` = '$k'";
+				$isExist = $wpdb->get_var($sql);
+
+				if (!empty($isExist)) $sql = "UPDATE `$table` SET `value` = '$v' WHERE `key` = '$k'";
+				else $sql = "INSERT INTO `$table`(`key`, `value`) VALUES ('$k', '$v')";
+
+				$wpdb->query($sql);
+			}
+		
+			$notify = '
+				<div id="message" class="updated notice notice-success is-dismissible" style="margin-left: 2px;">
+					<p>Đã lưu cài đặt</p>
+					<button type="button" class="notice-dismiss" onclick="this.parentNode.remove()">
+						<span class="screen-reader-text">Dismiss this notice.</span>
+					</button>
+				</div>
+			';
+
+			echo $notify;
+		}
+
+		$config = getConnestConfig();
+
+		DONE:
+		include 'view/config.php';
 	}
 
 	// Save form
@@ -325,3 +377,22 @@
 
 	add_action( 'wp_ajax_delete_data_connest', 'delete_data_connest' );
 	add_action( 'wp_ajax_nopriv_delete_data_connest', 'delete_data_connest' );
+
+	function getConnestConfig() {
+		global $wpdb;
+
+		$result = $wpdb->get_results("SELECT * FROM `wp_connest_config`");
+		$data = [];
+
+		if (empty($result)) return $data;
+
+		foreach ($result as $v) {
+			$data[$v->key] = $v->value;
+		}
+
+		$data['social'] = json_decode($data['social'], true);
+		$data['department_1'] = json_decode($data['department_1'], true);
+		$data['department_2'] = json_decode($data['department_2'], true);
+
+		return $data;
+	}
