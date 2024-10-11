@@ -53,6 +53,10 @@
 		object-fit: cover;
 		object-position: center;
 	}
+
+	input[type="search"] {
+		width: 300px;
+	}
 </style>
 <!-- FancyBox -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"/>
@@ -65,7 +69,7 @@
 		<div class="tablenav top">
 			<p class="search-box" style="float: left">
 				<label class="screen-reader-text" for="post-search-input">Tìm kiếm:</label>
-				<input type="search" name="post-search-input" value="<?=$search_input?>" placeholder="Tìm vị trí">
+				<input type="search" name="post-search-input" value="<?=$search_input?>" placeholder="Tìm tên hoặc số điện thoại">
 				<input type="submit" id="search-submit" class="button" value="Tìm kiếm">
 			</p>
 			<h2 class="screen-reader-text">Điều hướng danh sách các trang</h2>
