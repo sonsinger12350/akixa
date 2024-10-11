@@ -1,106 +1,104 @@
 <?php
-function theme_setup() {
-    // Thêm hỗ trợ cho menu
-    add_theme_support('menus');
 
-    // Đăng ký các vị trí menu
-    register_nav_menus(array(
-        'primary' => __('Primary Menu'), // Đăng ký vị trí menu "Primary"
-        'footer'  => __('Footer Menu'),  // Có thể thêm nhiều vị trí khác
-    ));
-}
-add_action('after_setup_theme', 'theme_setup');
+	function theme_setup() {
+		// Thêm hỗ trợ cho menu
+		add_theme_support('menus');
 
-function register_my_menus() {
-    register_nav_menus(array(
-        'primary' => __('Primary Menu'), // Vị trí menu với tên 'primary'
-    ));
-}
-add_action('init', 'register_my_menus');
+		// Đăng ký các vị trí menu
+		register_nav_menus(array(
+			'primary' => __('Primary Menu'), // Đăng ký vị trí menu "Primary"
+			'footer'  => __('Footer Menu'),  // Có thể thêm nhiều vị trí khác
+		));
+	}
+	add_action('after_setup_theme', 'theme_setup');
 
-function save_recently_viewed_product() {
-    if (is_product()) {
-        global $post;
+	function register_my_menus() {
+		register_nav_menus(array(
+			'primary' => __('Primary Menu'), // Vị trí menu với tên 'primary'
+		));
+	}
+	add_action('init', 'register_my_menus');
 
-        $product_id = $post->ID;
-        if (!isset($_SESSION['product_recently'])) $_SESSION['product_recently'] = [];
-        if (($key = array_search($product_id, $_SESSION['product_recently'])) !== false) unset($_SESSION['product_recently'][$key]);
-        array_unshift($_SESSION['product_recently'], $product_id);
+	function save_recently_viewed_product() {
+		if (is_product()) {
+			global $post;
 
-        // Giới hạn danh sách sản phẩm đã xem gần đây
-        $_SESSION['product_recently'] = array_slice($_SESSION['product_recently'], 0, 10);
-    }
-}
+			$product_id = $post->ID;
+			if (!isset($_SESSION['product_recently'])) $_SESSION['product_recently'] = [];
+			if (($key = array_search($product_id, $_SESSION['product_recently'])) !== false) unset($_SESSION['product_recently'][$key]);
+			array_unshift($_SESSION['product_recently'], $product_id);
 
-// remove_filter( 'the_content', 'wpautop' );
-// remove_filter( 'the_excerpt', 'wpautop' );
+			// Giới hạn danh sách sản phẩm đã xem gần đây
+			$_SESSION['product_recently'] = array_slice($_SESSION['product_recently'], 0, 10);
+		}
+	}
 
-add_action('template_redirect', 'save_recently_viewed_product');
+	add_action('template_redirect', 'save_recently_viewed_product');
 
-function ajax_load_posts() {
-    $paged = isset($_POST['page']) ? intval($_POST['page']) : 1;
-    $excludeIds = isset($_POST['excludeIds']) ? $_POST['excludeIds'] : array();
+	function ajax_load_posts() {
+		$paged = isset($_POST['page']) ? intval($_POST['page']) : 1;
+		$excludeIds = isset($_POST['excludeIds']) ? $_POST['excludeIds'] : array();
 
-    $args = array(
-        'post_type'      => 'post',
-        'posts_per_page' => 8,
-        'post_status'    => 'publish',
-        'post__not_in'   => $excludeIds,
-        'paged'          => $paged
-    );
+		$args = array(
+			'post_type'      => 'post',
+			'posts_per_page' => 8,
+			'post_status'    => 'publish',
+			'post__not_in'   => $excludeIds,
+			'paged'          => $paged
+		);
 
-    $query = new WP_Query($args);
+		$query = new WP_Query($args);
 
-    if ($query->have_posts()) :
-        while ($query->have_posts()) : $query->the_post();
-            // Trả về dữ liệu HTML hoặc JSON
-            get_template_part('template-parts/content', get_post_format());
-        endwhile;
-    else :
-        echo 'No more posts.';
-    endif;
+		if ($query->have_posts()) :
+			while ($query->have_posts()) : $query->the_post();
+				// Trả về dữ liệu HTML hoặc JSON
+				get_template_part('template-parts/content', get_post_format());
+			endwhile;
+		else :
+			echo 'No more posts.';
+		endif;
 
-    wp_die(); // Kết thúc AJAX
-}
+		wp_die(); // Kết thúc AJAX
+	}
 
-add_action('wp_ajax_load_posts', 'ajax_load_posts');
-add_action('wp_ajax_nopriv_load_posts', 'ajax_load_posts');
+	add_action('wp_ajax_load_posts', 'ajax_load_posts');
+	add_action('wp_ajax_nopriv_load_posts', 'ajax_load_posts');
 
-add_filter( 'manage_edit-product_columns', 'add_custom_product_column', 10 );
-function add_custom_product_column( $columns ) {
-    $new_columns = array();
+	add_filter( 'manage_edit-product_columns', 'add_custom_product_column', 10 );
+	function add_custom_product_column( $columns ) {
+		$new_columns = array();
 
-    foreach ( $columns as $key => $column ) {
-        $new_columns[ $key ] = $column;
-        if ( 'name' === $key ) $new_columns['pin_home'] = __( 'Ghim trang chủ', 'your-textdomain' );
-    }
+		foreach ( $columns as $key => $column ) {
+			$new_columns[ $key ] = $column;
+			if ( 'name' === $key ) $new_columns['pin_home'] = __( 'Ghim trang chủ', 'your-textdomain' );
+		}
 
-    return $new_columns;
-}
+		return $new_columns;
+	}
 
 
-add_action( 'manage_product_posts_custom_column', 'show_custom_field_in_product_column', 10, 2 );
-function show_custom_field_in_product_column( $column, $post_id ) {
-    if ( 'pin_home' === $column ) {
-        $custom_field_value = get_post_meta( $post_id, 'pin_home', true ) == 1 ? 'Có' : 'Không';
-        echo !empty( $custom_field_value ) ? esc_html( $custom_field_value ) : __( 'Không', 'your-textdomain' );
-    }
-}
+	add_action( 'manage_product_posts_custom_column', 'show_custom_field_in_product_column', 10, 2 );
+	function show_custom_field_in_product_column( $column, $post_id ) {
+		if ( 'pin_home' === $column ) {
+			$custom_field_value = get_post_meta( $post_id, 'pin_home', true ) == 1 ? 'Có' : 'Không';
+			echo !empty( $custom_field_value ) ? esc_html( $custom_field_value ) : __( 'Không', 'your-textdomain' );
+		}
+	}
 
-add_filter( 'manage_edit-product_sortable_columns', 'make_custom_field_sortable' );
-function make_custom_field_sortable( $sortable_columns ) {
-    $sortable_columns['pin_home'] = 'pin_home';
-    return $sortable_columns;
-}
+	add_filter( 'manage_edit-product_sortable_columns', 'make_custom_field_sortable' );
+	function make_custom_field_sortable( $sortable_columns ) {
+		$sortable_columns['pin_home'] = 'pin_home';
+		return $sortable_columns;
+	}
 
-add_action( 'pre_get_posts', 'custom_field_orderby' );
-function custom_field_orderby( $query ) {
-    if ( !is_admin() ) return;
-    $orderby = $query->get( 'orderby' );
+	add_action( 'pre_get_posts', 'custom_field_orderby' );
+	function custom_field_orderby( $query ) {
+		if ( !is_admin() ) return;
+		$orderby = $query->get( 'orderby' );
 
-    if ( 'custom_field' === $orderby ) {
-        $query->set( 'meta_key', 'pin_home' );
-        $query->set( 'orderby', 'meta_value' );
-    }
-}
+		if ( 'custom_field' === $orderby ) {
+			$query->set( 'meta_key', 'pin_home' );
+			$query->set( 'orderby', 'meta_value' );
+		}
+	}
 

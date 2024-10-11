@@ -104,7 +104,7 @@
 				<h5 class="title">Bạn thích dự án<br>thiết kế này?</h5>
 				<div>
 					<p class="desc">Đăng ký ngay<br>để nhận tư vấn</p>
-					<button class="btn btn-success btn-explore">Đăng ký <i class="fa-solid fa-angle-right"></i></button>
+					<?= get_template_part('template-parts/btn-explore', null, ['type' => 'register']); ?>
 				</div>
 			</div>
 		</div>
@@ -162,15 +162,16 @@
 </div>
 <div class="form-contact margin-section d-none d-md-flex">
 	<h3 class="title">Để lại thông tin nhận<br>tư vấn miễn phí</h3>
-	<form action="post">
+	<form id="contactForm" action="post" enctype="multipart/form-data" novalidate>
+		<input type="hidden" name="type" value="get-advice">
 		<div class="input">
-			<input type="text" class="d-block mb-2" placeholder="Họ và tên">
+			<input type="text" class="d-block mb-2" name="full_name" placeholder="Họ và tên" required>
 		</div>
 		<div class="input">
-			<input type="text" class="d-block" placeholder="Số điện thoại">
+			<input type="text" class="d-block" name="phone" placeholder="Số điện thoại" required>
 		</div>
 	</form>
-	<button class="btn btn-success btn-explore">Gửi cho <?= $websiteName ?> <i class="fa-solid fa-angle-right"></i></button>
+	<button class="btn btn-success btn-explore" type="submit" form="contactForm">Gửi cho <?= $websiteName ?> <i class="fa-solid fa-angle-right"></i></button>
 </div>
 	
 <?php

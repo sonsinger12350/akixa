@@ -72,3 +72,98 @@ $(document).ready(function () {
 		}
 	}
 });
+
+function saveCustomForm(form) {
+	if (!form) return false;
+
+	let error = 0;
+	let formType = form.find('[name="type"]').val();
+	let formData = new FormData(form.get(0));
+	let btn = form.parent().find('button[type="submit"]');
+	let btnHtml = btn.html();
+
+	if ($('.alert-danger').length > 0) $('.alert-danger').addClass('d-none');
+
+	form.find(':input[required]').each(function() {
+		let input = $(this);
+		let val = input.val().trim();
+		let type = input.attr('type');
+		
+		if (type == 'phone') {
+			if (val == '' || val.length == 0) {
+				error = 1;
+				input.addClass('is-invalid');
+			}
+			else {
+				if (!validatePhone(val)) {
+					error = 2;
+					input.addClass('is-invalid');
+				}
+				else input.removeClass('is-invalid');
+			}
+			
+		}
+		else {
+			if (val == '' || val.length == 0) {
+				error = 1;
+				input.addClass('is-invalid');
+			}
+			else input.removeClass('is-invalid');
+		}
+	});
+
+	if (error) {
+		let message = error == 2 ? 'Vui lòng nhập số điện thoại hợp lệ' : 'Vui lòng nhập đầy đủ thông tin';
+		let element = form.find(':input.is-invalid').first();
+		if (formType == 'contact') scrollToDiv(element);
+		element.focus();
+
+		if ($('.alert-danger').length > 0) {
+			$('.alert-danger').html(message);
+			$('.alert-danger').removeClass('d-none');
+		}
+		else {
+			alert(message);
+		}
+		
+		return false;
+	}
+
+	btn.attr('disabled', true);
+	btn.addClass('loading');
+	btn.html('<i class="fas fa-spinner fa-pulse"></i>');
+
+	$.ajax({
+		url: adminAjaxUrl + '?action=save_form_custom',
+		type: 'POST',
+		contentType: false,
+		processData: false,
+		data: formData,
+		success: function(response) {
+			btn.attr('disabled', false);
+			btn.removeClass('loading');
+			btn.html(btnHtml);
+			alert('Đã gửi thông tin!');
+			if (formType == 'contact') location.reload();
+			form.find(':input:not([name="type"])').val('');
+			form.find('.list-image').html('');
+		},
+		error: function(error) {
+			btn.attr('disabled', false);
+			btn.removeClass('loading');
+			btn.html(btnHtml);
+			$('.alert-danger').html('Có lỗi xảy ra khi gửi!');
+			$('.alert-danger').removeClass('d-none');
+		}
+	});
+}
+
+function validatePhone(phone) {
+	if (!/(84|0[3|5|7|8|9])+([0-9]{8})\b/g.test(phone)) return false;
+	if (phone.trim() === "") return false;
+	return true;
+}
+
+function scrollToDiv(element, distance=0) {
+	window.scrollTo({ top: Number(element.offset().top) + distance, behavior: 'smooth' });
+}

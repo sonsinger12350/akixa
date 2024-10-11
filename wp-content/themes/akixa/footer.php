@@ -88,12 +88,16 @@
 		'du-an' => get_template_directory_uri().'/assets/js/projects.js?v='.time(),
 		'product' => get_template_directory_uri().'/assets/js/single-product.js?v='.time(),
 		'blog' => get_template_directory_uri().'/assets/js/blog.js?v='.time(),
+		'post' => get_template_directory_uri().'/assets/js/blog.js?v='.time(),
 		'category' => get_template_directory_uri().'/assets/js/blog.js?v='.time(),
 		'dich-vu' => get_template_directory_uri().'/assets/js/services.js?v='.time(),
 		'tuyen-dung' => get_template_directory_uri().'/assets/js/career.js?v='.time(),
 		'lien-he' => get_template_directory_uri().'/assets/js/contact.js?v='.time(),
 	];
 ?>
+<script>
+	var adminAjaxUrl = '<?=admin_url('admin-ajax.php')?>';
+</script>
 <script src="<?= get_template_directory_uri().'/assets/js/main.js?v='.time() ?>"></script>
 <?php if (!empty($jsFiles[$post->post_name])): ?>
 	<script src="<?= $jsFiles[$post->post_name] ?>"></script>

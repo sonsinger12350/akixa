@@ -291,7 +291,7 @@ header .logo img {
 
 .news .list-news .right .form-contact .input {
 	position: relative;
-	margin-bottom: 8px;
+	margin-bottom: 16px;
 }
 
 .news .list-news .right .form-contact .input input {
@@ -317,7 +317,7 @@ header .logo img {
 	height: 1px;
 	background-color: var(--gray);
 	position: absolute;
-	bottom: -4px;
+	bottom: -7px;
     left: 9px;
 }
 
@@ -327,7 +327,7 @@ header .logo img {
 	height: 10px;
 	background-color: var(--gray);
 	position: absolute;
-	bottom: -8px;
+	bottom: -11px;
     left: 0px;
 	border-radius: 50%;
 }

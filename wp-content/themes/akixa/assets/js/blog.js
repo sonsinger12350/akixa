@@ -37,4 +37,11 @@ $(document).ready(function() {
 			}
 		});
     });
+
+    $('body').on('submit', '.form-contact form', function(e) {
+        e.preventDefault();
+        saveCustomForm($(this));
+
+        return false;
+    });
 });

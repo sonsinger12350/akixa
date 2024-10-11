@@ -158,14 +158,15 @@
 						</div>
 						<div class="form-contact">
 							<h5 class="title">Cập nhật tin tức<br>mới nhất từ <?= $websiteName ?></h5>
-							<form action="">
+							<form action="" enctype="multipart/form-data" novalidate>
+								<input type="hidden" name="type" value="register-news">
 								<div class="input">
-									<input type="text" placeholder="Họ và tên">
+									<input type="text" name="full_name" placeholder="Họ và tên" required>
 								</div>
 								<div class="input">
-									<input type="text" placeholder="Số điện thoại">
+									<input type="phone" name="phone" placeholder="Số điện thoại" required>
 								</div>
-								<button class="btn btn-success btn-explore">Đăng ký <i class="fa-solid fa-angle-right"></i></button>
+								<button class="btn btn-success btn-explore" type="submit">Đăng ký <i class="fa-solid fa-angle-right"></i></button>
 							</form>
 						</div>
 					</div>

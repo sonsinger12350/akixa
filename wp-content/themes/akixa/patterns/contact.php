@@ -44,20 +44,23 @@
 </div>
 <div class="contact">
 	<p class="title">Liên hệ với chúng tôi</p>
-	<form class="form-contact">
+	<div class="alert alert-danger d-none"></div>
+	<form class="form-contact" enctype="multipart/form-data" novalidate>
+		<input type="hidden" name="type" value="contact">
+		<?php wp_nonce_field('custom_upload_action', 'custom_nonce'); ?>
 		<div class="left">
 			<div>
 				<div class="input-custom">
 					<label for="name">Họ và tên</label>
-					<input type="text" name="name">
+					<input type="text" name="full_name" required>
 				</div>
 				<div class="input-custom">
-					<label for="name">Địa chỉ</label>
-					<input type="text" name="name">
+					<label for="address">Địa chỉ</label>
+					<input type="text" name="address" required>
 				</div>
 				<div class="input-custom">
-					<label for="name">Điện thoại</label>
-					<input type="text" name="name">
+					<label for="mobile">Điện thoại</label>
+					<input type="phone" name="phone" required>
 				</div>
 			</div>
 			<div>
@@ -67,8 +70,8 @@
 		<div class="right">
 			<p class="info">Thông tin công trình</p>
 			<div class="input-custom">
-				<label for="name">Địa điểm khu đất</label>
-				<input type="text" name="name">
+				<label for="area_address">Địa điểm khu đất</label>
+				<input type="text" name="area_address" class="w-100">
 			</div>
 			<div class="input-info-area">
 				<div class="item">
@@ -82,22 +85,22 @@
 					<p class="item-title">Số phòng ngủ</p>
 					<div class="input number">
 						<div class="action" data-action="minus"><i class="fa-solid fa-minus"></i></div>
-						<input type="number" min="1" value="1">
+						<input type="number" name="number_bedrooms" min="1" value="1">
 						<div class="action" data-action="plus"><i class="fa-solid fa-plus"></i></div>
 					</div>
 				</div>
 				<div class="item">
 					<p class="item-title">Thời gian xây dựng dự kiến</p>
 					<div class="input date">
-						<div class="day"><input type="number" max="31"><span>/</span></div>
-						<div class="month"><input type="number" max="12"><span>/</span></div>
-						<div class="year"><input type="number" max="9999"></div>
+						<div class="day"><input type="number" max="31" name="date[day]"><span>/</span></div>
+						<div class="month"><input type="number" max="12" name="date[month]"><span>/</span></div>
+						<div class="year"><input type="number" max="9999" name="date[year]"></div>
 					</div>
 				</div>
 			</div>
 			<div class="input-custom">
 				<label for="name">Yêu cầu khác</label>
-				<input type="text" name="name">
+				<input type="text" name="other">
 			</div>
 			<div class="upload-image">
 				<label id="dropFile">
@@ -115,8 +118,8 @@
 				</label>
 				<div class="list-image-sample d-none">
 					<div class="item">
-						<img src="http://localhost/akixa/wp-content/themes/akixa/assets/images/contact-banner.jpeg" alt="" class="image">
-						<p class="name">IMG.2847</p>
+						<img src="" alt="" class="image">
+						<p class="name"></p>
 						<img src="<?= get_template_directory_uri(); ?>/assets/images/icon/close.svg" alt="delete-image" class="delete">
 					</div>
 				</div>

@@ -24,6 +24,13 @@ $(document).ready(function () {
 		var slideIndex = $(this).data('slide');
 		slide.trigger('to.owl.carousel', [slideIndex, 300]); // Chuyển tới slide tương ứng
 	});
+
+	$('body').on('submit', '.form-contact form', function(e) {
+		e.preventDefault();
+		saveCustomForm($(this));
+
+		return false;
+	});
 });
 
 function updateCurrentCount(event) {
