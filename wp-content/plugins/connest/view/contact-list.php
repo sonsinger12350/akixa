@@ -62,7 +62,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 <div class="wrap">
-	<h1 class="wp-heading-inline">Danh sách tin tuyển dụng</h1>
+	<h1 class="wp-heading-inline">Danh sách liên hệ</h1>
 	<hr class="wp-header-end">
 
 	<form id="posts-filter" method="POST" action="">
@@ -79,7 +79,7 @@
 			</div>
 			<br class="clear">
 		</div>
-		<h2 class="screen-reader-text">Danh sách tin tuyển dụng</h2>
+		<h2 class="screen-reader-text">Danh sách liên hệ</h2>
 		<table class="wp-list-table widefat fixed striped table-view-list pages">
 			<thead>
 				<tr>
