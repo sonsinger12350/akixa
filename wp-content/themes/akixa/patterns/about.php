@@ -7,8 +7,16 @@
 	get_header();
 	$websiteName = get_bloginfo('name');
 
-	$members = get_post_gallery($post->ID, false);
-	if (!empty($members)) $members = $members['src'];
+	$page_content = get_post_field('post_content', $post->ID);
+	$contents = [];
+	$images = [];
+
+	if (!empty(parse_blocks($page_content))) {
+		foreach (parse_blocks($page_content) as $block) {
+			if ($block['blockName'] == 'core/html') $contents[] = $block['innerHTML'];
+			if ($block['blockName'] == 'core/image') $images[] = wp_get_attachment_image_url($block['attrs']['id'], 'full');;
+		}
+	}
 ?>
 
 <style>
@@ -30,8 +38,8 @@
 <div class="banner">
 	<div class="bg-header"></div>
 	<div class="content">
-        <p class="title-mini">Về <?= $websiteName ?></p>
-        <p class="title">Shining<br>tomorrow<br>now</p>
+		<p class="title-mini">Về <?= $websiteName ?></p>
+		<p class="title">Shining<br>tomorrow<br>now</p>
 		<div class="scope" id="tam-nhin">
 			<div class="scope-content">
 				<p class="desc-1">Sứ mệnh chúng tôi<br>đem đến thế giới</p>
@@ -111,60 +119,30 @@
 </div>
 <div class="team margin-section" id="doi-ngu">
 	<div class="founder">
+		<?php if (!empty($contents[0])): ?>
 		<p class="title d-block d-md-none">Đội ngũ<br><span><?= $websiteName ?></span></p>
 		<div class="image">
-			<img src="<?= $members[3] ?>" alt="team-founder">
+			<img src="<?= $images[0] ?>" alt="team-founder">
 			<div class="bg-image"></div>
 		</div>
 		<div class="founder-info">
 			<p class="title d-none d-md-block">Đội ngũ<br><span><?= $websiteName ?></span></p>
-			<div class="info">
-				<div>
-					<p class="name">HÒA ĐINH</p>
-					<p class="position">CEO/ Founder</p>
-				</div>
-				<p class="desc">Không chỉ đam mê thiết kế xây dựng những công trình để đời, tôi còn khát khao xây dựng những tập thể mạnh mẽ, sẵn sàng chinh phục mọi thử thách.</p>
-				<ul class="desc mb-0">
-					<li>Số năm kinh nghiệm: 20 năm</li>
-					<li>Số công trình thiết kế: 200 công trình đã hoàn thành</li>
-				</ul>
-			</div>
+			<div class="info"><?= $contents[0] ?></div>
 		</div>
+		<?php endif ?>
 	</div>
 	<div class="member">
-		<div class="item">
-			<img src="<?= $members[0] ?>" alt="member-2">
-			<div class="info">
-				<p class="name">Nguyễn Thế Vĩnh Lộc</p>
-				<p class="position">Kiến trúc sư</p>
-				<ul class="desc mb-0">
-					<li>Số năm kinh nghiệm: 10 năm</li>
-					<li>Số công trình thiết kế: 95 công trình đã hoàn thành</li>
-				</ul>
-			</div>
-		</div>
-		<div class="item">
-			<img src="<?= $members[1] ?>" alt="member-3">
-			<div class="info">
-				<p class="name">Nguyễn văn tiến</p>
-				<p class="position">Kiến trúc sư</p>
-				<ul class="desc mb-0">
-					<li>Số năm kinh nghiệm: 10 năm</li>
-					<li>Số công trình thiết kế: 95 công trình đã hoàn thành</li>
-				</ul>
-			</div>
-		</div>
-		<div class="item">
-			<img src="<?= $members[2] ?>" alt="member-4">
-			<div class="info">
-				<p class="name">phan hằng</p>
-				<p class="position">Quản lý dự án</p>
-				<ul class="desc mb-0">
-					<li>Số năm kinh nghiệm: 10 năm</li>
-					<li>Số công trình thiết kế: 95 công trình đã hoàn thành</li>
-				</ul>
-			</div>
-		</div>
+		<?php if (!empty($contents[1])): ?>
+			<?php 
+				foreach ($contents as $k => $content):
+					if ($k == 0) continue;
+			?>
+				<div class="item">
+					<img src="<?= @$images[$k] ?>" alt="member-<?= $k ?>">
+					<div class="info"><?= @$content ?></div>
+				</div>
+			<?php endforeach ?>
+		<?php endif ?>
 	</div>
 </div>
 <?php get_footer(); ?>
