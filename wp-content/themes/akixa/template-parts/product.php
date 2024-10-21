@@ -5,9 +5,9 @@
 	$cf_product = get_post_meta($product->id);
 	$col = 'col-lg-4';
 
-	if (!empty($args['index'])) {
-		if (in_array($args['index'], [2,6])) $col = 'col-lg-8';
-	}
+	// if (!empty($args['index'])) {
+	// 	if (in_array($args['index'], [2,6])) $col = 'col-lg-8';
+	// }
 ?>
 
 <div class="item <?= $col ?> product">
@@ -23,6 +23,5 @@
 				<li>Diện tích xây dựng: <?= $cf_product['construction_area'][0] ?></li>
 			</ul>
 		</div>
-		<p class="short-desc"><?= nl2br(wp_strip_all_tags($product->short_description)) ?></p>
 	</div>
 </div>

@@ -86,7 +86,7 @@
 		</div>
 	</div>
 </div>
-<div class="founder-message" id="thong-diep">
+<div class="founder-message d-none" id="thong-diep">
 	<div class="message-1 bullet-point">
 		<p class="title-mini">Thông điệp của</p>
 		<p class="title">Người sáng lập</p>
@@ -117,7 +117,7 @@
 		<div class="hr"></div>
 	</div>
 </div>
-<div class="team margin-section" id="doi-ngu">
+<div class="team margin-section d-none" id="doi-ngu">
 	<div class="founder">
 		<?php if (!empty($contents[0])): ?>
 		<p class="title d-block d-md-none">Đội ngũ<br><span><?= $websiteName ?></span></p>

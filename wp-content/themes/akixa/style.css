@@ -20,6 +20,7 @@ Text Domain: akixa
 	--main-green: #48684B;
 	--light-green: #8EBC43;
 	--gray: #E2E2E2;
+	--gray-text: #C8C8C8;
 	--body-color: #7F7F7F;
 	--header-bg-color: linear-gradient(90deg, #111F12 0%, #1B2C1A 100%);
 }

@@ -240,7 +240,7 @@
 		</div>
 	</div>
 </div>
-<div class="work-place margin-section">
+<div class="work-place margin-section d-none">
 	<p class="title">Cùng khám phá</p>
 	<p class="title-mini">Không gian làm việc tại <?= $websiteName ?></p>
 	<div class="slide">

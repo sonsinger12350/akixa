@@ -176,113 +176,49 @@
 </div>
 <div class="price-list margin-section">
 	<div class="title">Bảng báo giá thiết kế</div>
+	<div class="title-mini">lựa chọn giải pháp phù hợp với nhu cầu của bạn</div>
 	<div class="table-price-list">
-		<table class="table table-borderless">
-			<thead>
-				<tr>
-					<td style="width: 5%">TT</td>
-					<td style="width: 20%">hạng mục</td>
-					<td style="width: 10%">Đơn vị</td>
-					<td style="width: 10%">Đơn giá<br><span>(ngàn đồng/m2)</span></td>
-					<td style="width: 55%;">Ghi chú</td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class="highlight">
-					<td>I.</td>
-					<td>Thiết kế sơ bộ</td>
-					<td>gói</td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr class="borderless">
-					<td>1.1</td>
-					<td>Khảo sát khu đất; Thiết kế ý tưởng mặt bằng công năng, quy hoạch sân vườn</td>
-					<td>Gói</td>
-					<td>5.000.000</td>
-					<td>
-						<ul class="mb-0">
-							<li>Đơn vị thiết kế về khảo sát trực tiếp khu đất: đo vẽ hiện trạng, tìm hiểu địa chất, khí hậu khu vực; Khảo sát nhu cầu thiết kế của khách hàng;</li>
-							<li>Dựa vào các thông tin thu thập được, thiết kế sơ bộ mặt bằng công năng toàn bộ khu đất để Khách hàng hình dung rõ nét về mong muốn của mình</li>
-						</ul>
-					</td>
-				</tr>
-				<tr class="highlight">
-					<td>II.</td>
-					<td>Thiết kế kiến trúc</td>
-					<td>m2</td>
-					<td>230.000</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>2.1</td>
-					<td>Thiết kế 3D</td>
-					<td>m2</td>
-					<td></td>
-					<td>Các bản vẽ 3D phối cảnh ngoại thất các góc công trình</td>
-				</tr>
-				<tr>
-					<td>2.2</td>
-					<td>Hồ sơ chi tiết kiến trúc</td>
-					<td>m2</td>
-					<td></td>
-					<td>Bản vẽ chi tiết kích thước, cấu tạo, ghi chú cụ thể vật liệu, màu sắc;</td>
-				</tr>
-				<tr>
-					<td>2.3</td>
-					<td>Thiết kế kết cấu</td>
-					<td>m2</td>
-					<td></td>
-					<td>Bản vẽ chi tiết kích thước, cấu tạo, ghi chú cụ thể vật liệu, màu sắc;</td>
-				</tr>
-				<tr class="borderless">
-					<td>2.4</td>
-					<td>Thiết kế M&E</td>
-					<td>m2</td>
-					<td></td>
-					<td>Thiết kế sơ đồ nguyên lý điện, điện nhẹ, sơ đồ nước; bố trí chi tiết thiết bị; thống kê số lượng vật tư</td>
-				</tr>
-				<tr class="highlight">
-					<td>IV.</td>
-					<td>Thiết kế sân vườn</td>
-					<td>m2</td>
-					<td>100.000</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>3.1</td>
-					<td>Phối cảnh 3D</td>
-					<td>m2</td>
-					<td></td>
-					<td>Phối cảnh tổng thể, phối cảnh chi tiết thể hiện đầy đủ ý tưởng</td>
-				</tr>
-				<tr class="borderless">
-					<td>3.2</td>
-					<td>Hồ sơ chi tiết</td>
-					<td>m2</td>
-					<td></td>
-					<td>Bản vẽ chi tiết kích thước, cấu tạo, ghi chú cụ thể vật liệu, màu sắc;</td>
-				</tr>
-				<tr class="highlight">
-					<td>V.</td>
-					<td>DỰ TOÁN CHI TIẾT</td>
-					<td>
-						<p class="small">10% (phí thiết kế)</p>
-					</td>
-					<td></td>
-					<td><p class="small">Bóc tách chi tiết khối lượng, đơn giá; tổng hợp vật tư</p></td>
-				</tr>
-				<tr class="highlight">
-					<td>VI.</td>
-					<td>GIÁM SÁT TÁC GIẢ</td>
-					<td><p class="small">10% (phí thiết kế) (chưa bao gồm chi phí di chuyển ngoài Hà Nội)</p></td>
-					<td></td>
-					<td><p class="small">Kiến trúc sư giám sát việc thi công tại công trình vào những thời điểm cần thiết (Định vị tim cột, cote sàn; hoàn thành phần thô; hoàn thành phần hoàn thiện); Kiểm tra chất lượng công trình ngoại quan; theo dõi để đảm bảo công trình đáp ứng yêu cầu thiết kế;</p></td>
-				</tr>
-			</tbody>
-		</table>
+		<div class="item item-1">
+			<div class="icon"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/price-list-1.svg" alt="price-list-1"></div>
+			<p class="title">Basic</p>
+			<p class="price">xxx.000đ/m2</p>
+			<div class="hr"></div>
+			<ul class="desc">
+				<li>(Demo text) Khảo sát khu đất; Thiết kế ý tưởng mặt bằng công năng, quy hoạch sân vườn</li>
+				<li>Thiết kế 2D</li>
+				<li>Thiết kế 3D</li>
+			</ul>
+		</div>
+		<div class="item item-2">
+			<div class="icon"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/price-list-2.svg" alt="price-list-2"></div>
+			<p class="title">Plus</p>
+			<p class="price">xxx.000đ/m2</p>
+			<div class="hr"></div>
+			<ul class="desc">
+				<li>(Demo text) Khảo sát khu đất; Thiết kế ý tưởng mặt bằng công năng, quy hoạch sân vườn</li>
+				<li>Thiết kế 2D</li>
+				<li>Hồ sơ chi tiết kiến trúc</li>
+				<li>Thiết kế 3D</li>
+				<li>Thiết kế kết cấu</li>
+			</ul>
+		</div>
+		<div class="item item-3">
+			<div class="icon"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/price-list-3.svg" alt="price-list-3"></div>
+			<p class="title">Pro</p>
+			<p class="price">xxx.000đ/m2</p>
+			<div class="hr"></div>
+			<ul class="desc">
+				<li>(Demo text) Khảo sát khu đất; Thiết kế ý tưởng mặt bằng công năng, quy hoạch sân vườn</li>
+				<li>Thiết kế 2D</li>
+				<li>Hồ sơ chi tiết kiến trúc</li>
+				<li>Thiết kế 3D</li>
+				<li>Thiết kế kết cấu</li>
+				<li>Thiết kế M&E</li>
+				<li>...</li>
+			</ul>
+		</div>
 	</div>
-	<p class="scroll-note d-block d-md-none">Vuốt sang ngang để xem toàn bộ bảng giá</p>
+	<!-- <p class="scroll-note d-block d-md-none">Vuốt sang ngang để xem toàn bộ bảng giá</p> -->
 	<div class="text-center">
 		<?= get_template_part('template-parts/btn-explore', null, ['type' => 'contact']); ?>
 	</div>

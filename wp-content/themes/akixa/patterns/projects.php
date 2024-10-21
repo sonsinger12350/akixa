@@ -54,8 +54,6 @@
 	if (!empty($category)) $args['category'] = [$category];
 
 	$products = wc_get_products($args);
-	$first_product = !empty($products[0]) ? $products[0] : [];
-	$cf_first_product = get_post_meta($first_product->id);
 
 	$categories = get_terms(array(
 		'taxonomy' => 'product_cat',
@@ -122,27 +120,9 @@
 		</div>
 		<div class="list-product margin-section">
 			<?php if (!empty($products)): ?>
-				<div class="first-product product">
-					<div class="image">
-						<?= $first_product->get_image('full') ?>
-						<a class="bg-detail" href="<?= $first_product->get_permalink() ?>">Chi tiết</a>
-					</div>
-					<div class="content">
-						<div>
-							<h4><?= $first_product->name ?></h4>
-							<ul>
-								<li>Diện tích đất: <?= $cf_first_product['land_area'][0] ?></li>
-								<li>Diện tích xây dựng: <?= $cf_first_product['construction_area'][0] ?></li>
-							</ul>
-						</div>
-						<p class="short-desc"><?= nl2br(wp_strip_all_tags($first_product->short_description)) ?></p>
-					</div>
-				</div>
-			
 				<div class="list row mt-4">
 					<?php foreach ($products as $k => $product): ?>
 						<?php
-							if ($k == 0) continue;
 							get_template_part('template-parts/product', null, ['index' => $k, 'product' => $product]);
 						?>
 					<?php endforeach ?>

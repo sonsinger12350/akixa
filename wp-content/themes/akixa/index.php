@@ -120,7 +120,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="seek-tabs margin-section">
+		<div class="seek-tabs margin-section d-none d-md-block">
 			<div class="bg-blur-gif"></div>
 			<div class="bg-gif"></div>
 			<div class="head d-flex justify-content-between">

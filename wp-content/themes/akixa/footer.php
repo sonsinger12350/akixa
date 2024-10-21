@@ -14,7 +14,7 @@
 						<div class="row">
 							<div class="col-lg-3 col-6">
 								<p class="fw-bold">Về <?= $websiteName ?></p>
-								<a href="<?= home_url( '/ve-connest' ) ?>#thong-diep">Thông điệp nhà sáng lập</a>
+								<!-- <a href="<?= home_url( '/ve-connest' ) ?>#thong-diep">Thông điệp nhà sáng lập</a> -->
 								<a href="<?= home_url( '/ve-connest' ) ?>#tam-nhin">Tầm nhìn - Sứ mệnh</a>
 								<a href="<?= home_url( '/ve-connest' ) ?>#doi-ngu">Đội ngũ</a>
 							</div>
