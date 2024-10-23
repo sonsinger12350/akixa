@@ -180,42 +180,52 @@
 	<div class="table-price-list">
 		<div class="item item-1">
 			<div class="icon"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/price-list-1.svg" alt="price-list-1"></div>
-			<p class="title">Basic</p>
-			<p class="price">xxx.000đ/m2</p>
+			<p class="title">Gói cơ bản</p>
+			<p class="price">220.000đ/m2</p>
+			<p class="detail-1">(Thiết kế kiến trúc)</p>
+			<p class="detail-2">Phù hợp với những KH xây căn nhà thứ 2 không ở thường xuyên, mức độ đầu tư vừa phải</p>
 			<div class="hr"></div>
-			<ul class="desc">
-				<li>(Demo text) Khảo sát khu đất; Thiết kế ý tưởng mặt bằng công năng, quy hoạch sân vườn</li>
-				<li>Thiết kế 2D</li>
-				<li>Thiết kế 3D</li>
-			</ul>
+			<div class="desc">
+				<p class="desc-title">-	Hồ sơ: Bản vẽ phối cảnh 3D; Hồ sơ thiết kế thi công, dự toán kiến trúc</p>
+				<p class="desc-title mb-1">- Ưu đãi:</p>
+				<ul class="desc-content">
+					<li>Tặng bản vẽ quy hoạch sân vườn</li>
+				</ul>
+			</div>
 		</div>
 		<div class="item item-2">
 			<div class="icon"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/price-list-2.svg" alt="price-list-2"></div>
-			<p class="title">Plus</p>
-			<p class="price">xxx.000đ/m2</p>
+			<p class="title">Gói chuyên nghiệp</p>
+			<p class="price">350.000đ/m2</p>
+			<p class="detail-1">(Thiết kế kiến trúc + Nội thất)</p>
+			<p class="detail-2">Dành cho KH ở thường xuyên, mong muốn một không gian sống hoàn hảo; Thống nhất từ kiến trúc đến nội thất</p>
 			<div class="hr"></div>
-			<ul class="desc">
-				<li>(Demo text) Khảo sát khu đất; Thiết kế ý tưởng mặt bằng công năng, quy hoạch sân vườn</li>
-				<li>Thiết kế 2D</li>
-				<li>Hồ sơ chi tiết kiến trúc</li>
-				<li>Thiết kế 3D</li>
-				<li>Thiết kế kết cấu</li>
-			</ul>
+			<div class="desc">
+				<p class="desc-title">-	Hồ sơ: Bản vẽ phối cảnh 3D; Hồ sơ thiết kế thi công, dự toán kiến trúc và <b>nội thất</b></p>
+				<p class="desc-title mb-1">- Ưu đãi:</p>
+				<ul class="desc-content">
+					<li>Quy mô thiết kế lớn hơn 200m2 giảm 5%/Đơn giá thiết kế</li>
+					<li>Tặng bản vẽ quy hoạch sân vườn</li>
+					<li>Tặng phối cảnh 3d sân vườn với diện tích sân vườn < 100m2, (diện tích vượt tính 30N/m2)</li>
+				</ul>
+			</div>
 		</div>
 		<div class="item item-3">
 			<div class="icon"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/price-list-3.svg" alt="price-list-3"></div>
-			<p class="title">Pro</p>
-			<p class="price">xxx.000đ/m2</p>
+			<p class="title">Gói Thiết kế cao cấp</p>
+			<p class="price">Bao gồm chi phí Gói chuyên nghiệp + Chi phí thiết kế cảnh quan (100N/m2)</p>
+			<p class="detail-1">(Chi phí thiết kế cảnh quan chỉ tính cho diện tích cần thiết kế chi tiết)</p>
+			<p class="detail-2">Dành cho KH ở thường xuyên có Gu thẩm mỹ cao; Mong muốn một không gian sống chất lượng đến từng chi tiết.</p>
 			<div class="hr"></div>
-			<ul class="desc">
-				<li>(Demo text) Khảo sát khu đất; Thiết kế ý tưởng mặt bằng công năng, quy hoạch sân vườn</li>
-				<li>Thiết kế 2D</li>
-				<li>Hồ sơ chi tiết kiến trúc</li>
-				<li>Thiết kế 3D</li>
-				<li>Thiết kế kết cấu</li>
-				<li>Thiết kế M&E</li>
-				<li>...</li>
-			</ul>
+			<div class="desc">
+				<p class="desc-title">-	Hồ sơ: Bản vẽ phối cảnh 3D; Hồ sơ thiết kế thi công, dự toán kiến trúc, <b>nội thất, sân vườn</b></p>
+				<p class="desc-title mb-1">- Ưu đãi:</p>
+				<ul class="desc-content">
+					<li>Quy mô thiết kế lớn hơn 200m2 giảm 5%/Đơn giá thiết kế</li>
+					<li>Quy mô thiết kế cảnh quan lớn hơn 300m2 giảm 10%/Đơn giá thiết kế cảnh quan</li>
+					<li>Tặng bản vẽ quy hoạch cảnh quan toàn bộ khu đất</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 	<!-- <p class="scroll-note d-block d-md-none">Vuốt sang ngang để xem toàn bộ bảng giá</p> -->
@@ -226,17 +236,19 @@
 <div class="partner margin-section">
 	<p class="title-mini">Chúng tôi tự hào khi được đồng hành cùng các</p>
 	<p class="title">đối tác hàng đầu</p>
-	<div class="list">
-		<?php if (!empty($partners)): ?>
-			<?php foreach ($partners as $k => $v): ?>
-				<div class="item active"><img src="<?= $v ?>" alt="partner-<?= $k ?>"></div>
-			<?php endforeach ?>
-		<?php endif ?>
-		<?php for ($i = $partnerCount; $i < 12; $i++): ?>
-			<div class="item <?= $i == 1 ? 'active' : '' ?>">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/partner-google.png" alt="partner-<?= $i ?>">
-			</div>
-		<?php endfor ?>
+	<div class="list-scroll">
+		<div class="list">
+			<?php if (!empty($partners)): ?>
+				<?php foreach ($partners as $k => $v): ?>
+					<div class="item active"><img src="<?= $v ?>" alt="partner-<?= $k ?>"></div>
+				<?php endforeach ?>
+			<?php endif ?>
+			<?php for ($i = $partnerCount; $i < 12; $i++): ?>
+				<div class="item <?= $i == 1 ? 'active' : '' ?>">
+					<img src="<?= get_template_directory_uri(); ?>/assets/images/partner-google.png" alt="partner-<?= $i ?>">
+				</div>
+			<?php endfor ?>
+		</div>
 	</div>
 </div>
 

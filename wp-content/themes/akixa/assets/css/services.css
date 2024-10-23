@@ -394,11 +394,32 @@ header .logo img {
 .price-list .table-price-list .item .title {
 	color: var(--gray-text);
 	text-align: center;
-	font-size: 108px;
+	font-size: 60px;
 	font-weight: 600;
-	line-height: 122%;
+	line-height: 110%;
 	letter-spacing: -2.16px;
+	margin-bottom: 8px;
+	min-height: 146px;
+}
+
+.price-list .table-price-list .item .detail-1,
+.price-list .table-price-list .item .detail-2 {
+	color: var(--main-black);
+	text-align: center;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 20px;
+	letter-spacing: 0.15px;
 	margin-bottom: 0px;
+}
+
+.price-list .table-price-list .item .detail-1 {
+	margin-bottom: 4px;
+	min-height: 40px;
+}
+
+.price-list .table-price-list .item .detail-2 {
+	min-height: 60px;
 }
 
 .price-list .table-price-list .item .price {
@@ -408,6 +429,12 @@ header .logo img {
 	font-weight: 600;
 	line-height: 122%;
 	letter-spacing: -0.72px;
+	min-height: 73px;
+}
+
+.price-list .table-price-list .item-3 .price {
+	font-size: 20px;
+	width: 320px;
 }
 
 .price-list .table-price-list .item .hr {
@@ -423,9 +450,17 @@ header .logo img {
 	font-weight: 400;
 	line-height: 20px;
 	letter-spacing: 0.15px;
+	margin-bottom: 0;
+}
+
+.price-list .table-price-list .item .desc .desc-title:first-child {
+	min-height: 60px;
+}
+
+.price-list .table-price-list .item .desc .desc-content {
 	display: flex;
 	flex-direction: column;
-	gap: 24px;
+	gap: 12px;
 	margin-bottom: 0;
 }
 
@@ -479,15 +514,19 @@ header .logo img {
 	margin-bottom: 48px;
 }
 
-.partner .list {
+.partner .list-scroll {
+	overflow: scroll;
+	padding-bottom: 8px;
+}
+
+.partner .list-scroll .list {
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: space-between;
-	row-gap: 24px;
+	gap: 24px;
+	width: 100%;
 }
 
 .partner .list .item {
-	width: 24%;
 	padding: 70px 50px;
 	text-align: center;
 	background: #FAFAFA;
@@ -630,9 +669,15 @@ header .logo img {
 		width: 32%;
 	}
 
-	.partner .list .item img {
-		width: 100%;
-		height: auto;
+	.price-list .table-price-list .item .title {
+		font-size: 48px;
+	}
+
+	.price-list .table-price-list .item-3 .price {
+		font-size: 18px;
+		width: 280px;
+		margin-left: auto;
+    	margin-right: auto;
 	}
 }
 
@@ -732,8 +777,23 @@ header .logo img {
 		row-gap: 4px;
 	}
 
-	.partner .list .item {
-		width: 33%;
+	.price-list .table-price-list .item .title {
+		min-height: auto;
+		font-size: 40px;
+		letter-spacing: normal;
+		width: auto;
+	}
+
+	.price-list .table-price-list .item .price {
+        font-size: 24px;
+        width: auto;
+		min-height: auto;
+		letter-spacing: normal;
+	}
+
+	.price-list .table-price-list .item .detail-2,
+	.price-list .table-price-list .item .desc .desc-title:first-child {
+		min-height: auto;
 	}
 }
 
@@ -948,11 +1008,11 @@ header .logo img {
 	}
 
 	.price-list .table-price-list .item .title {
-		font-size: 80px;
+		font-size: 30px;
 	}
 
 	.price-list .table-price-list .item .price {
-		font-size: 32px;
+        font-size: 18px;
 	}
 }
 
@@ -1066,5 +1126,13 @@ header .logo img {
 
 	.partner .list .item {
 		padding: 25px 15px;
+	}
+
+	.price-list .table-price-list .item .title {
+		font-size: 26px;
+	}
+
+	.price-list .table-price-list .item .price {
+        font-size: 16px;
 	}
 }
