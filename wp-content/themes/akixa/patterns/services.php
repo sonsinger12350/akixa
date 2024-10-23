@@ -236,7 +236,7 @@
 <div class="partner margin-section">
 	<p class="title-mini">Chúng tôi tự hào khi được đồng hành cùng các</p>
 	<p class="title">đối tác hàng đầu</p>
-	<div class="list-scroll">
+	<div class="list-scroll custom-scrollbar">
 		<div class="list">
 			<?php if (!empty($partners)): ?>
 				<?php foreach ($partners as $k => $v): ?>
