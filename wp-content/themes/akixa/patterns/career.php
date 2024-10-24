@@ -228,7 +228,7 @@
 		</div>
 	</div>
 </div>
-<div class="step margin-section">
+<div class="step margin-section mb-5">
 	<div class="content">
 		<img src="<?= get_template_directory_uri(); ?>/assets/images/career-step.png" alt="step">
 		<div class="block">
