@@ -10,6 +10,14 @@
 	$partners = get_post_gallery($post->ID, false);
 	if (!empty($partners)) $partners = $partners['src'];
 	$partnerCount = !empty($partners) ? count($partners) : 1;
+	$page_content = get_post_field('post_content', $post->ID);
+	$price_list = [];
+
+	if (!empty(parse_blocks($page_content))) {
+		foreach (parse_blocks($page_content) as $block) {
+			if ($block['blockName'] == 'core/html') $price_list = $block['innerHTML'];
+		}
+	}
 ?>
 <style>
 	.banner .content {
@@ -177,7 +185,7 @@
 <div class="price-list margin-section">
 	<div class="title">Bảng báo giá thiết kế</div>
 	<div class="title-mini">lựa chọn giải pháp phù hợp với nhu cầu của bạn</div>
-	<div class="table-price-list">
+	<!-- <div class="table-price-list">
 		<div class="item item-1">
 			<div class="icon"><img src="<?= get_template_directory_uri(); ?>/assets/images/icon/price-list-1.svg" alt="price-list-1"></div>
 			<p class="title">Gói cơ bản</p>
@@ -227,8 +235,8 @@
 				</ul>
 			</div>
 		</div>
-	</div>
-	<!-- <p class="scroll-note d-block d-md-none">Vuốt sang ngang để xem toàn bộ bảng giá</p> -->
+	</div> -->
+	<?= $price_list ?>
 	<div class="text-center">
 		<?= get_template_part('template-parts/btn-explore', null, ['type' => 'contact']); ?>
 	</div>
