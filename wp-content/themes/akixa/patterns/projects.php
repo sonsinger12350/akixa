@@ -3,7 +3,7 @@
 	 * Template Name: Dự án
 	 */
 
-	$limit = 11;
+	$limit = 12;
 	$category = !empty($_GET['type']) ? $_GET['type'] : '';
 
 	if (!empty($_GET['isAjax'])) {
@@ -70,7 +70,7 @@
 	array_unshift($categories, $all_category);
 
 	$showBtnLoadMore = 0;
-	if (count($products) > $limit) $showBtnLoadMore = 1;
+	if (count($products) >= $limit) $showBtnLoadMore = 1;
 
 	$slides = get_post_gallery($post->ID, false);
 	if (!empty($slides)) $slides = $slides['src'];
