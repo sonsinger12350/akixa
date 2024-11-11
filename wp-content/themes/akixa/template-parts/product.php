@@ -13,7 +13,7 @@
 <a class="item <?= $col ?> product" href="<?= $product->get_permalink() ?>">
 	<div class="image">
 		<?= $product->get_image('full') ?>
-		<!-- <a class="bg-detail" href="<?= $product->get_permalink() ?>">Chi tiết</a> -->
+		<a class="bg-detail" href="<?= $product->get_permalink() ?>">Chi tiết</a>
 	</div>
 	<div class="content">
 		<div>
