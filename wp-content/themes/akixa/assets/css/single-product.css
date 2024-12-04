@@ -235,7 +235,7 @@ header .logo img {
 
 .product-content .left .product-description img {
 	max-width: 100%;
-	max-height: 500px;
+	/* max-height: 500px; */
 	width: 100%;
     height: auto;
 	object-fit: cover;
