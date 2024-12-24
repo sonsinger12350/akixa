@@ -74,8 +74,12 @@
 	$showBtnLoadMore = 0;
 	if (count($data) >= $limit) $showBtnLoadMore = 1;
 
-	$slides = get_post_gallery(99, false);
-	if (!empty($slides)) $slides = $slides['src'];
+	$post = get_page_by_path('du-an-sample', OBJECT, 'page');
+
+	if (!empty($post)) {
+		$slides = get_post_gallery($post->ID, false);
+		if (!empty($slides)) $slides = $slides['src'];
+	}
 ?>
 
 <div class="slide">
