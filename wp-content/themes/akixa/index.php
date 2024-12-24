@@ -40,7 +40,7 @@
 	$totalSlide = !empty($slides) ? count($slides) : 0;
 
 	$args = array(
-		'post_type'  => 'product',
+		'post_type'  => 'du-an',
 		'post_status'  => 'publish',
 		'meta_query' => array(
 			array(
@@ -51,7 +51,8 @@
 			),
 		'posts_per_page' => 9
 	);
-	$products = get_posts($args);
+	$projects = new WP_Query($args);
+	$projects = !empty($projects->posts) ? $projects->posts : [];
 ?>
 <style>
 	.body .seek-tabs .content .seek-tab.tab-1 .left {
@@ -105,8 +106,8 @@
 		</div>
 		<div class="project margin-section">
 			<div class="project-gallery">
-				<?php if (!empty($products)): ?>
-					<?php foreach ($products as $v): ?>
+				<?php if (!empty($projects)): ?>
+					<?php foreach ($projects as $v): ?>
 						<a href="<?= get_permalink($v->ID) ?>"><img src="<?= get_the_post_thumbnail_url($v->ID) ?>" alt="<?= $v->post_title ?>" loading="lazy"></a>
 					<?php endforeach ?>
 				<?php endif ?>
