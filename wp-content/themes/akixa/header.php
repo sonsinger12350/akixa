@@ -1,15 +1,28 @@
 <?php
 	global $post;
 
-	if (is_category() && !empty(get_queried_object())) {
-		$post = get_queried_object();
-		$post->post_type = $post->taxonomy;
-		$post->post_title = $post->name;
+	$query = get_queried_object();
+
+	if (!empty($query) && $query->name == 'du-an') {
+		$post_type = $query->name;
+		$post_title = $query->label;
+		$post_name = $query->post_name ?? '';
+	} 
+	else if (!empty($post)) {
+		$post_type = $post->post_type == 'du-an' ? 'single-project' : $post->post_type;
+		$post_title = $post->post_title;
+		$post_name = $post->post_name;
+	}
+	else {
+		$post_type = $query->taxonomy;
+		$post_title = $query->name;
+		$post_name = $query->post_name ?? '';
 	}
 
 	$websiteName = get_bloginfo('name');
-	$title = $post->post_title . ' - '.$websiteName;
-	if ($post->post_name == 'trang-chu') $title = $websiteName;
+	$title = $post_title . ' - '.$websiteName;
+
+	if ($post_name == 'trang-chu') $title = $websiteName;
 
 	if (!empty($_GET['type'])) {
 		$term = get_term_by('slug', $_GET['type'], 'product_cat');
@@ -23,7 +36,7 @@
 		'trang-chu' => get_template_directory_uri().'/assets/css/index.css?v='.time(),
 		'dich-vu' => get_template_directory_uri().'/assets/css/services.css?v='.time(),
 		'du-an' => get_template_directory_uri().'/assets/css/projects.css?v='.time(),
-		'product' => get_template_directory_uri().'/assets/css/single-product.css?v='.time(),
+		'single-project' => get_template_directory_uri().'/assets/css/single-project.css?v='.time(),
 		'blog' => get_template_directory_uri().'/assets/css/blog.css?v='.time(),
 		've-'.strtolower($websiteName) => get_template_directory_uri().'/assets/css/about.css?v='.time(),
 		'post' => get_template_directory_uri().'/assets/css/single-post.css?v='.time(),
@@ -35,7 +48,7 @@
 	$pageHeader2 = [
 		'dich-vu',
 		'du-an',
-		'product',
+		'single-project',
 		'blog',
 		've-'.strtolower($websiteName),
 		'post',
@@ -44,7 +57,7 @@
 		'lien-he',
 	];
 
-	$isHeader2 = (in_array($post->post_name, $pageHeader2) || in_array($post->post_type, $pageHeader2)) ? true : false;
+	$isHeader2 = (in_array($post_name, $pageHeader2) || in_array($post_type, $pageHeader2)) ? true : false;
 	$logoBlack = get_template_directory_uri()."/assets/images/logo.png?v=1";
 	$logoWhite = get_template_directory_uri()."/assets/images/logo-white.png?v=1";
 	$logo = $logoBlack;
@@ -73,11 +86,11 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
 	<link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/style.css?v=<?=time()?>">
-	<?php if (!empty($cssFiles[$post->post_name])): ?>
-		<link rel="stylesheet" href="<?= $cssFiles[$post->post_name] ?>">
+	<?php if (!empty($cssFiles[$post_name])): ?>
+		<link rel="stylesheet" href="<?= $cssFiles[$post_name] ?>">
 	<?php else:?>
-		<?php if (!empty($cssFiles[$post->post_type])): ?>
-			<link rel="stylesheet" href="<?= $cssFiles[$post->post_type] ?>">
+		<?php if (!empty($cssFiles[$post_type])): ?>
+			<link rel="stylesheet" href="<?= $cssFiles[$post_type] ?>">
 		<?php endif ?>
 	<?php endif ?>
 	

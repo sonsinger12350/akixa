@@ -81,16 +81,28 @@
 <?php
 	global $post;
 
-	if (is_category() && !empty(get_queried_object())) {
-		$post = get_queried_object();
-		$post->post_type = $post->taxonomy;
-		$post->post_title = $post->name;
+	$query = get_queried_object();
+
+	if (!empty($query) && $query->name == 'du-an') {
+		$post_type = $query->name;
+		$post_title = $query->label;
+		$post_name = $query->post_name ?? '';
+	} 
+	else if (!empty($post)) {
+		$post_type = $post->post_type == 'du-an' ? 'single-project' : $post->post_type;
+		$post_title = $post->post_title;
+		$post_name = $post->post_name;
+	}
+	else {
+		$post_type = $query->taxonomy;
+		$post_title = $query->name;
+		$post_name = $query->post_name ?? '';
 	}
 
 	$jsFiles = [
 		'trang-chu' => get_template_directory_uri().'/assets/js/index.js?v='.time(),
 		'du-an' => get_template_directory_uri().'/assets/js/projects.js?v='.time(),
-		'product' => get_template_directory_uri().'/assets/js/single-product.js?v='.time(),
+		'single-project' => get_template_directory_uri().'/assets/js/single-project.js?v='.time(),
 		'blog' => get_template_directory_uri().'/assets/js/blog.js?v='.time(),
 		'post' => get_template_directory_uri().'/assets/js/blog.js?v='.time(),
 		'category' => get_template_directory_uri().'/assets/js/blog.js?v='.time(),
@@ -103,11 +115,11 @@
 	var adminAjaxUrl = '<?=admin_url('admin-ajax.php')?>';
 </script>
 <script src="<?= get_template_directory_uri().'/assets/js/main.js?v='.time() ?>"></script>
-<?php if (!empty($jsFiles[$post->post_name])): ?>
-	<script src="<?= $jsFiles[$post->post_name] ?>"></script>
+<?php if (!empty($jsFiles[$post_name])): ?>
+	<script src="<?= $jsFiles[$post_name] ?>"></script>
 <?php else:?>
-	<?php if (!empty($jsFiles[$post->post_type])): ?>
-		<script src="<?= $jsFiles[$post->post_type] ?>"></script>
+	<?php if (!empty($jsFiles[$post_type])): ?>
+		<script src="<?= $jsFiles[$post_type] ?>"></script>
 	<?php endif ?>
 <?php endif ?>
 </html>
