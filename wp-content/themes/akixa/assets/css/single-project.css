@@ -80,7 +80,8 @@ header .logo img {
 	position: absolute;
 	color: #fff;
 	right: 116px;
-	bottom: 27px;
+	bottom: 37px;	
+	z-index: 1;
 }
 
 .product-info .left .slide .owl-carousel .owl-nav {
@@ -90,6 +91,9 @@ header .logo img {
 	width: 120px;
 	display: flex;
 	justify-content: space-between;
+	background-color: #00000059;
+    border-radius: 15px;
+    padding: 10px;
 }
 
 .product-info .left .slide .owl-carousel .owl-dots button span {
@@ -161,6 +165,7 @@ header .logo img {
 	margin-left: auto;
 	display: flex;
 	justify-content: space-between;
+	margin-right: 3%;
 }
 
 .product-content .left .general-info {
@@ -481,6 +486,11 @@ header .logo img {
 @media (max-width: 1199px) {
 	.product-content {
 		width: 90%;
+		margin-right: 0;
+	}
+
+	.product-content .left {
+		width: calc(100% - 190px);
 	}
 
 	.form-contact form .input input {
@@ -592,10 +602,6 @@ header .logo img {
 		width: 100%;
 	}
 
-	.product-info .left .slide .owl-carousel .owl-nav button {
-		color: #000;
-	}
-
 	.product-info .left .slide .owl-carousel .owl-nav {
 		right: 51%;
         bottom: -50px;
@@ -604,9 +610,8 @@ header .logo img {
 	}
 
 	.product-info .left .slide .owl-dot-number {
-		color: #C8C8C8;
 		right: 48%;
-		bottom: -50px;
+		bottom: -40px;
 	}
 
 	.product-info .left .slide img {
