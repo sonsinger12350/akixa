@@ -19,6 +19,7 @@
 		$post_name = $query->post_name ?? '';
 	}
 
+	if (is_shop()) $post_title = 'SHOP';
 	if (is_product()) $post_name = 'single-product';
 
 	$websiteName = get_bloginfo('name');
