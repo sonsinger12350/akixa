@@ -2,6 +2,11 @@ $(document).ready(function () {
 	$('.open-menu-mobile').on('click', function() {
 		$(this).toggleClass('active');
 		$('.menu-collapse-mobile').toggleClass('active');
+		$('.menu-mobile-overlay').toggleClass('active');
+	});
+
+	$('.menu-mobile-overlay').on('click', function() {
+		$('.open-menu-mobile').click();
 	});
 
 	$('.open-menu-desktop').on('click', function() {
@@ -166,4 +171,8 @@ function validatePhone(phone) {
 
 function scrollToDiv(element, distance=0) {
 	window.scrollTo({ top: Number(element.offset().top) + distance, behavior: 'smooth' });
+}
+
+function formatPrice(price) {
+	return new Intl.NumberFormat('vi-VN', { maximumSignificantDigits: 3 }).format(Number(price)) + ' <span class="woocommerce-Price-currencySymbol">₫</span>';
 }

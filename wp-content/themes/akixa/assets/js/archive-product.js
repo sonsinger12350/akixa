@@ -1,0 +1,78 @@
+$(document).ready(function () {
+	$('body').on('click', '.btn-load-more', function() {
+		let btn = $(this);
+		let limit = Number(btn.attr('data-limit'));
+		let offset = Number(btn.val()) + limit;
+		let url = btn.attr('data-url');
+		let btnHtml = btn.html();
+
+		btn.attr('disabled', true);
+		btn.html('<i class="fas fa-spinner fa-pulse"></i>');
+
+		$.ajax({
+			url: url,
+			type: "GET",
+			data: {
+				isAjax: 1,
+				action: "load_more",
+				offset
+			},
+			success: function(rs) {
+				btn.attr('disabled', false);
+				btn.html(btnHtml);
+
+				if (rs.success) {
+					if (rs.data.content) $('.list-product .list').append(rs.data.content);
+					if (rs.data.continue) btn.val(offset);
+					else btn.hide();
+				}
+			}
+		});
+	});
+
+	$('body').on('click','.submit-search', function() {
+		$('#search-form').submit();
+	});
+
+	$('body').on('click','.toggle-category', function() {
+		let parent = $(this).closest('.cat-item');
+
+		parent.toggleClass('active');
+
+		if (parent.hasClass('active')) {
+			parent.find('.children-categories').slideDown();
+		}
+		else {
+			parent.find('.children-categories').slideUp();
+		}
+	});
+
+	$('.product-categories .cat-parent').each(function() {
+		if ($(this).hasClass('active')) {
+			$(this).find('.children-categories').slideDown();
+		}
+	})
+
+	let minPrice = Number(priceRange.min_price);
+	let maxPrice = Number(priceRange.max_price);
+
+	$( "#slider-range" ).slider({
+		range: true,
+		min: minPrice,
+		max: maxPrice,
+		values: [ current_min_price, current_max_price ],
+		slide: function( event, ui ) {
+			$('.filter-price-widget [name="min-price"]').val(ui.values[0]);
+			$('.filter-price-widget [name="max-price"]').val(ui.values[1]);
+
+			$('.filter-price-widget .min-price .amount bdi').html(formatPrice(ui.values[0]));
+			$('.filter-price-widget .max-price .amount bdi').html(formatPrice(ui.values[1]));
+		}
+	});
+
+	$('.filter-price-widget [name="min-price"]').val(current_min_price);
+	$('.filter-price-widget [name="max-price"]').val(current_max_price);
+
+	$('.filter-price-widget .min-price .amount bdi').html(formatPrice(current_min_price));
+	$('.filter-price-widget .max-price .amount bdi').html(formatPrice(current_max_price));
+});

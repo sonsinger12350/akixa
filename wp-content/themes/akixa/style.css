@@ -283,19 +283,35 @@ header.header-2.active-menu .hamburger .open-menu-desktop {
 }
 
 header .menu-collapse-mobile {
-	height: 270px;
-	width: 100%;
-	overflow: hidden;
-	transition: height 500ms;
-	position: absolute;
-	left: 0px;
-	top: 112px;
-	z-index: 2;
+	height: 100%;
+    width: 290px;
+    overflow: hidden;
+    transition: width 500ms;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+	z-index: 4;
+}
+
+.menu-mobile-overlay {
+	height: 100%;
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+	z-index: 3;
+	background: #1c1c1c80;
+	display: none;
+}
+
+.menu-mobile-overlay.active {
+	display: block;
 }
 
 header .menu-collapse-mobile .card {
 	border-radius: 0px;
-	background-color: var(--gray);
+	background-color: #fff;
+	height: 100%;
 }
 
 header .menu-collapse-mobile .menu {
@@ -306,7 +322,7 @@ header .menu-collapse-mobile .menu {
 header .menu-collapse-mobile .menu li {
 	padding: 8px;
 	border-bottom: 1px solid var(--gray);
-	text-align: center;
+	text-align: left;
 }
 
 header .menu-collapse-mobile .menu li a {
@@ -316,7 +332,7 @@ header .menu-collapse-mobile .menu li a {
 }
 
 header .menu-collapse-mobile:not(.active) {
-	height: 0px;
+	width: 0px;
 }
 
 header .hamburger .open-menu-desktop:not(.active) .fa-xmark,

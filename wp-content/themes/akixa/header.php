@@ -19,6 +19,8 @@
 		$post_name = $query->post_name ?? '';
 	}
 
+	if (is_product()) $post_name = 'single-product';
+
 	$websiteName = get_bloginfo('name');
 	$title = $post_title . ' - '.$websiteName;
 
@@ -43,6 +45,8 @@
 		'tuyen-dung' => get_template_directory_uri().'/assets/css/career.css?v='.time(),
 		'category' => get_template_directory_uri().'/assets/css/blog.css?v='.time(),
 		'lien-he' => get_template_directory_uri().'/assets/css/contact.css?v='.time(),
+		'product' => get_template_directory_uri().'/assets/css/archive-product.css?v='.time(),
+		'single-product' => get_template_directory_uri().'/assets/css/single-product.css?v='.time(),
 	];
 
 	$pageHeader2 = [
@@ -55,13 +59,18 @@
 		'tuyen-dung',
 		'category',
 		'lien-he',
+		'product',
+		'single-product',
 	];
 
 	$isHeader2 = (in_array($post_name, $pageHeader2) || in_array($post_type, $pageHeader2)) ? true : false;
 	$logoBlack = get_template_directory_uri()."/assets/images/logo.png?v=1";
 	$logoWhite = get_template_directory_uri()."/assets/images/logo-white.png?v=1";
 	$logo = $logoBlack;
+
 	if ($isHeader2) $logo = $logoWhite;
+
+	$config = getConnestConfig();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,7 +94,16 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"/>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
+	<!-- JqueryUI -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/themes/base/jquery-ui.min.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"></script>
+
+	<!-- elevatezoom -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/elevatezoom/2.2.3/jquery.elevatezoom.min.js"></script> -->
+	
 	<link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/style.css?v=<?=time()?>">
+	<link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/responsive.css?v=<?=time()?>">
+
 	<?php if (!empty($cssFiles[$post_name])): ?>
 		<link rel="stylesheet" href="<?= $cssFiles[$post_name] ?>">
 	<?php else:?>
@@ -93,8 +111,8 @@
 			<link rel="stylesheet" href="<?= $cssFiles[$post_type] ?>">
 		<?php endif ?>
 	<?php endif ?>
-	
-	<link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/responsive.css?v=<?=time()?>">
+
+	<?php wp_head(); ?>
 </head>
 
 <body>
@@ -133,6 +151,12 @@
 		</div>
 		<div class="menu-collapse-mobile d-sm-none">
 			<div class="card card-body">
+				<form id="search-form" class="mb-4" method="GET">
+					<div class="input-group">
+						<input type="text" class="form-control" name="keyword" value="" placeholder="Tìm kiếm sản phẩm">
+						<span class="submit-search"><i class="fa-solid fa-magnifying-glass"></i></span>
+					</div>
+				</form>
 				<?php
 					wp_nav_menu(
 						array(
@@ -142,6 +166,18 @@
 						)
 					);
 				?>
+				<div class="social-icon d-flex justify-content-center align-items-center gap-3 mt-4">
+					<a href="<?= !empty($config['social']['zalo']) ? $config['social']['zalo'] : 'javascript:void(0)'?>">
+						<img src="<?= get_template_directory_uri(); ?>/assets/images/zalo-logo.svg" alt="Zalo">
+					</a>
+					<a href="<?= !empty($config['social']['facebook']) ? $config['social']['facebook'] : 'javascript:void(0)'?>">
+						<img src="<?= get_template_directory_uri(); ?>/assets/images/facebook-logo.svg" alt="Zalo">
+					</a>
+					<a href="<?= !empty($config['social']['youtube']) ? $config['social']['youtube'] : 'javascript:void(0)'?>">
+						<img src="<?= get_template_directory_uri(); ?>/assets/images/youtube-logo.svg" alt="Zalo" width="40">
+					</a>
+				</div>
 			</div>
 		</div>
+		<div class="menu-mobile-overlay"></div>
 	</header>

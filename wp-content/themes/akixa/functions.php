@@ -1,4 +1,11 @@
 <?php
+	if (file_exists(get_template_directory() . '/inc/functions/custom.php')) {
+		require_once get_template_directory() . '/inc/functions/custom.php';
+	}
+
+	add_action('after_setup_theme', function () {
+		add_theme_support('woocommerce');
+	});
 
 	function theme_setup() {
 		// Thêm hỗ trợ cho menu
@@ -76,7 +83,6 @@
 		return $new_columns;
 	}
 
-
 	add_action( 'manage_product_posts_custom_column', 'show_custom_field_in_product_column', 10, 2 );
 	function show_custom_field_in_product_column( $column, $post_id ) {
 		if ( 'pin_home' === $column ) {
@@ -102,3 +108,14 @@
 		}
 	}
 
+	// add_filter('posts_request', function($sql) {
+		// error_log($sql); // Ghi log truy vấn SQL
+		// return $sql;
+	// });
+
+	// add_action('template_include', function ($template) {
+	// 	error_log('Template being used: ' . $template);
+	// 	return $template;
+	// });
+	
+	

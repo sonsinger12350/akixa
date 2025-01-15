@@ -76,6 +76,8 @@
 			<p>ConNest © 2024, All Rights Reserved</p>
 			<!-- <p>Designed by DuocViec Agency</p> -->
 		</div>
+
+		<?php wp_footer(); ?>
 	</footer>
 </body>
 <?php
@@ -99,6 +101,8 @@
 		$post_name = $query->post_name ?? '';
 	}
 
+	if (is_product()) $post_name = 'single-product';
+
 	$jsFiles = [
 		'trang-chu' => get_template_directory_uri().'/assets/js/index.js?v='.time(),
 		'du-an' => get_template_directory_uri().'/assets/js/projects.js?v='.time(),
@@ -109,6 +113,8 @@
 		'dich-vu' => get_template_directory_uri().'/assets/js/services.js?v='.time(),
 		'tuyen-dung' => get_template_directory_uri().'/assets/js/career.js?v='.time(),
 		'lien-he' => get_template_directory_uri().'/assets/js/contact.js?v='.time(),
+		'product' => get_template_directory_uri().'/assets/js/archive-product.js?v='.time(),
+		'single-product' => get_template_directory_uri().'/assets/js/single-product.js?v='.time(),
 	];
 ?>
 <script>

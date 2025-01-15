@@ -1,4 +1,5 @@
 <?php
+	// echo '<pre>';print_r(1);exit;
 	get_header();
 	$websiteName = get_bloginfo('name');
 	$image = get_the_post_thumbnail_url($post->ID, 'full');

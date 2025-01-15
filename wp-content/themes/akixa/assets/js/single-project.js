@@ -31,6 +31,8 @@ $(document).ready(function () {
 
 		return false;
 	});
+
+	$('.big-image .item img').elevateZoom();
 });
 
 function updateCurrentCount(event) {
