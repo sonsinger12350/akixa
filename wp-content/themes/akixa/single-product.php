@@ -2,7 +2,7 @@
 	get_header();
 
 	$websiteName = get_bloginfo('name');
-	$product_id = get_the_ID();
+	$product_id = get_queried_object_id();
 	$product = wc_get_product( $product_id );
 	$images = [];
 	$gallery_image_ids = $product->get_gallery_image_ids();
@@ -17,15 +17,15 @@
 	$category = !empty($category_ids[0]) ? get_term( $category_ids[0], 'product_cat' ) : [];
 	$tag_ids = $product->get_tag_ids();;
 
-	$cf_data = get_post_meta($product->id);
+	$cf_data = get_post_meta($product_id);
 	$cf_product = array_map(function($value) {
 		return $value[0];
 	}, $cf_data);
 
 	$args = array(
         'post_type' => 'product',
-        'posts_per_page' => 4, // Giới hạn số lượng sản phẩm lấy ra
-        'post__not_in' => array( $product_id ), // Loại trừ sản phẩm hiện tại
+        'posts_per_page' => 4,
+        'post__not_in' => array( $product_id ),
         'tax_query' => array(
             array(
                 'taxonomy' => 'product_cat',
@@ -61,9 +61,9 @@
 		<?= yoast_breadcrumb() ?>
 	</div>
 	<hr>
-	<div class="row gap-3">
+	<div class="row">
 		<div class="col-lg-9">
-			<div class="row mb-4 gap-3">
+			<div class="row mb-4">
 				<div class="col-lg-6 slide">
 					<?php if (!empty($images)): ?>
 						<div class="big-image owl-carousel owl-theme position-relative">
@@ -208,13 +208,13 @@
 					?>
 					<div class="item product">
 						<a class="image" href="<?= $data->get_permalink() ?>">
-							<img src="<?= $image ?>" alt="<?= $data->name ?>" loading="lazy">
+							<img src="<?= $image ?>" alt="<?= $data->get_name() ?>" loading="lazy">
 						</a>
 						<div class="content">
 							<div class="categories">
 								<?= wc_get_product_category_list($id) ?>
 							</div>
-							<p class="name"><?= $data->name ?></p>
+							<p class="name"><?= $data->get_name() ?></p>
 							<p class="price"><?= !empty($data->get_price()) ? wc_price($data->get_price()) : 'Liên hệ' ?></p>
 							<div class="btn-buy">
 								<?php if (!empty($product->get_price())): ?>

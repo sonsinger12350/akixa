@@ -103,7 +103,6 @@
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/elevatezoom/2.2.3/jquery.elevatezoom.min.js"></script> -->
 	
 	<link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/style.css?v=<?=time()?>">
-	<link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/responsive.css?v=<?=time()?>">
 
 	<?php if (!empty($cssFiles[$post_name])): ?>
 		<link rel="stylesheet" href="<?= $cssFiles[$post_name] ?>">
@@ -112,6 +111,8 @@
 			<link rel="stylesheet" href="<?= $cssFiles[$post_type] ?>">
 		<?php endif ?>
 	<?php endif ?>
+
+	<link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/assets/css/responsive.css?v=<?=time()?>">
 
 	<?php wp_head(); ?>
 </head>
@@ -152,7 +153,7 @@
 		</div>
 		<div class="menu-collapse-mobile d-sm-none">
 			<div class="card card-body">
-				<form id="search-form" class="mb-4" method="GET">
+				<form id="search-form" class="mb-4" method="GET" action="<?= home_url('shop') ?>">
 					<div class="input-group">
 						<input type="text" class="form-control" name="keyword" value="" placeholder="Tìm kiếm sản phẩm">
 						<span class="submit-search"><i class="fa-solid fa-magnifying-glass"></i></span>

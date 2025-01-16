@@ -431,3 +431,22 @@ footer .copy-right p {
 	line-height: 20px;
 	letter-spacing: 0.12px;
 }
+
+#search-form .input-group {
+	border: 1px solid #dee2e6;
+	border-radius: 25px;
+}
+
+#search-form .input-group input {
+	border: 0px;
+	border-radius: 25px;
+}
+
+#search-form .input-group .submit-search {
+	width: 55px;
+    height: 35px;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+	cursor: pointer;
+}
