@@ -293,11 +293,22 @@ header .logo img {
 	font-size: 12px;
 }
 
-@media (max-width: 1399px) {
-	.page {
-		padding: 0px;
-	}
+#search-form input {
+	border-right: 0px;
+}
 
+#search-form .submit-search {
+	border: 1px solid var(--bs-border-color);
+    border-left: 0px;
+	border-top-right-radius: var(--bs-border-radius);
+	border-bottom-right-radius: var(--bs-border-radius);
+	width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1399px) {
 	.list-product .first-product .image img {
 		height: 435px;
 		width: 650px;
@@ -351,6 +362,10 @@ header .logo img {
 }
 
 @media (max-width: 767px) {
+	.page {
+        margin-top: 120px !important;
+	}
+
 	.list-product .first-product .image img,
 	.list-product .list .item .image img {
 		height: 280px;

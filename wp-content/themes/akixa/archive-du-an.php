@@ -58,7 +58,7 @@
 	$data = !empty($result->posts) ? $result->posts : [];
 
 	$categories = get_terms(array(
-		'taxonomy' => 'product_cat',
+		'taxonomy' => 'danh-muc-du-an',
 		'hide_empty' => false,
 		'orderby' => 'menu_order',
 		'order' => 'ASC',

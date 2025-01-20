@@ -72,6 +72,7 @@
 	if ($isHeader2) $logo = $logoWhite;
 
 	$config = getConnestConfig();
+	$categories_tree = get_product_categories_tree();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -124,6 +125,29 @@
 		</a>
 		<div class="center">
 			<div class="main-menu">
+				<?php if (!empty($categories_tree)): ?>
+					<h5 class="title-category"><span>Danh mục sản phẩm</span> <i class="fa-solid fa-cubes"></i></h5>
+					<div class="category-tree">
+						<ul class="parent-element">
+							<?php foreach ($categories_tree as $cat): ?>
+								<li class="cat-item cat-parent">
+									<a href="<?= $cat['link'] ?>" class="link-parent"><?= $cat['image'] ?><?= $cat['name'] ?></a>
+									<?php if (!empty($cat['children'])): ?>
+										<div class="children-categories">
+											<ul>
+												<?php foreach ($cat['children'] as $child): ?>
+													<li class="cat-item cat-children">
+														<a href="<?= $child['link'] ?>" class="link-children"><?= $child['name'] ?></a>
+													</li>
+												<?php endforeach ?>
+											</ul>
+										</div>
+									<?php endif ?>
+								</li>
+							<?php endforeach ?>
+						</ul>
+					</div>
+				<?php endif ?>
 				<?php
 					wp_nav_menu(
 						array(
@@ -141,24 +165,22 @@
 				</div>
 			<?php endif ?>
 		</div>
-		<div class="hamburger">
-			<a href="javascript:void(0)" class="open-menu-desktop d-sm-flex d-none">
+		<div class="hamburger d-flex gap-3">
+			<a href="javascript:void(0)" class="open-menu-desktop d-md-flex d-none">
 				<i class="fa-solid fa-bars"></i>
 				<i class="fa-solid fa-xmark"></i>
 			</a>
-			<a href="javascript:void(0)" class="open-menu-mobile d-sm-none">
+			<a href="javascript:void(0)" class="open-category-mobile d-md-none">
+				<i class="fa-solid fa-cubes"></i>
+			</a>
+			<a href="javascript:void(0)" class="open-menu-mobile d-md-none">
 				<i class="fa-solid fa-bars"></i>
 				<i class="fa-solid fa-xmark"></i>
 			</a>
 		</div>
-		<div class="menu-collapse-mobile d-sm-none">
+
+		<div class="menu-collapse-mobile d-md-none">
 			<div class="card card-body">
-				<form id="search-form" class="mb-4" method="GET" action="<?= home_url('shop') ?>">
-					<div class="input-group">
-						<input type="text" class="form-control" name="keyword" value="" placeholder="Tìm kiếm sản phẩm">
-						<span class="submit-search"><i class="fa-solid fa-magnifying-glass"></i></span>
-					</div>
-				</form>
 				<?php
 					wp_nav_menu(
 						array(
@@ -168,18 +190,32 @@
 						)
 					);
 				?>
-				<div class="social-icon d-flex justify-content-center align-items-center gap-3 mt-4">
-					<a href="<?= !empty($config['social']['zalo']) ? $config['social']['zalo'] : 'javascript:void(0)'?>">
-						<img src="<?= get_template_directory_uri(); ?>/assets/images/zalo-logo.svg" alt="Zalo">
-					</a>
-					<a href="<?= !empty($config['social']['facebook']) ? $config['social']['facebook'] : 'javascript:void(0)'?>">
-						<img src="<?= get_template_directory_uri(); ?>/assets/images/facebook-logo.svg" alt="Zalo">
-					</a>
-					<a href="<?= !empty($config['social']['youtube']) ? $config['social']['youtube'] : 'javascript:void(0)'?>">
-						<img src="<?= get_template_directory_uri(); ?>/assets/images/youtube-logo.svg" alt="Zalo" width="40">
-					</a>
-				</div>
 			</div>
 		</div>
 		<div class="menu-mobile-overlay"></div>
+
+		<?php if (!empty($categories_tree)): ?>
+			<div class="category-tree-mobile">
+				<ul class="parent-element">
+					<?php foreach ($categories_tree as $cat): ?>
+						<li class="cat-item cat-parent">
+							<a href="<?= $cat['link'] ?>" class="link-parent"><?= $cat['image'] ?><?= $cat['name'] ?></a>
+							<?php if (!empty($cat['children'])): ?>
+								<i class="fa-solid fa-plus open-children-categories"></i>
+								<div class="children-categories">
+									<ul>
+										<?php foreach ($cat['children'] as $child): ?>
+											<li class="cat-item cat-children">
+												<a href="<?= $child['link'] ?>" class="link-children"><?= $child['name'] ?></a>
+											</li>
+										<?php endforeach ?>
+									</ul>
+								</div>
+							<?php endif ?>
+						</li>
+					<?php endforeach ?>
+				</ul>
+			</div>
+		<?php endif ?>
 	</header>
+	<div class="box-overlay"></div>

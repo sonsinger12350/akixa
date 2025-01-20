@@ -43,3 +43,54 @@ function get_product_near( $id, $type ) {
 
 	return $result[0];
 }
+
+function get_product_categories_tree() {
+	$args = array(
+		'taxonomy'   => 'product_cat',
+		'hide_empty' => true,
+		'parent'     => 0,
+	);
+
+	$categories_lv1 = get_terms($args);
+
+	$categories_tree = [];
+
+	if (!empty($categories_lv1) && !is_wp_error($categories_lv1)) {
+		foreach ($categories_lv1 as $category_lv1) {
+			$args_lv2 = array(
+				'taxonomy'   => 'product_cat',
+				'hide_empty' => true,
+				'parent'     => $category_lv1->term_id,
+			);
+
+			$image_id_lv1 = get_term_meta($category_lv1->term_id, 'thumbnail_id', true);
+			$image_lv1 = !empty($image_id_lv1) ? wp_get_attachment_image($image_id_lv1, 'thumbnail') : '';
+
+			$categories_lv2 = get_terms($args_lv2);
+
+			$categories_tree[] = array(
+				'id'       => $category_lv1->term_id,
+				'name'     => $category_lv1->name,
+				'slug'     => $category_lv1->slug,
+				'count'    => $category_lv1->count,
+				'image'    => $image_lv1,
+				'link'     => get_term_link($category_lv1->term_id, 'product_cat'),
+				'children' => !empty($categories_lv2) && !is_wp_error($categories_lv2) ? array_map(function ($category_lv2) {
+					$image_id_lv2 = get_term_meta($category_lv2->term_id, 'thumbnail_id', true);
+					$image_lv2 = !empty($image_id_lv2) ? wp_get_attachment_image($image_id_lv2, 'thumbnail') : '';
+
+					return array(
+						'id'    => $category_lv2->term_id,
+						'name'  => $category_lv2->name,
+						'slug'  => $category_lv2->slug,
+						'count' => $category_lv2->count,
+						'image' => $image_lv2,
+						'link'  => get_term_link($category_lv2->term_id, 'product_cat'),
+					);
+				}, $categories_lv2) : [],
+			);
+		}
+	}
+
+	return $categories_tree;
+}
