@@ -59,7 +59,7 @@ function get_product_categories_tree() {
 		foreach ($categories_lv1 as $category_lv1) {
 			$args_lv2 = array(
 				'taxonomy'   => 'product_cat',
-				'hide_empty' => true,
+				'hide_empty' => false,
 				'parent'     => $category_lv1->term_id,
 			);
 
