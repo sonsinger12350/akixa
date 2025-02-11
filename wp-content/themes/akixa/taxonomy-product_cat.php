@@ -130,7 +130,7 @@
 			<?= yoast_breadcrumb() ?>
 		</div>
 		<div class="body">
-			<?= include('wp-content/themes/akixa/template-parts/list-product-content.php') ?>
+			<?php include('wp-content/themes/akixa/template-parts/list-product-content.php') ?>
 		</div>
 	</div>
 </div>
