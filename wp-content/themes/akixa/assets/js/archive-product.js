@@ -53,8 +53,8 @@ $(document).ready(function () {
 		}
 	})
 
-	let minPrice = Number(priceRange.min_price);
-	let maxPrice = Number(priceRange.max_price);
+	let minPrice = Number(priceRange.min);
+	let maxPrice = Number(priceRange.max);
 
 	$( "#slider-range" ).slider({
 		range: true,
@@ -62,16 +62,16 @@ $(document).ready(function () {
 		max: maxPrice,
 		values: [ current_min_price, current_max_price ],
 		slide: function( event, ui ) {
-			$('.filter-price-widget [name="min-price"]').val(ui.values[0]);
-			$('.filter-price-widget [name="max-price"]').val(ui.values[1]);
+			$('.filter-price-widget [name="min-size"]').val(ui.values[0]);
+			$('.filter-price-widget [name="max-size"]').val(ui.values[1]);
 
 			$('.filter-price-widget .min-price .amount bdi').html(formatPrice(ui.values[0]));
 			$('.filter-price-widget .max-price .amount bdi').html(formatPrice(ui.values[1]));
 		}
 	});
 
-	$('.filter-price-widget [name="min-price"]').val(current_min_price);
-	$('.filter-price-widget [name="max-price"]').val(current_max_price);
+	$('.filter-price-widget [name="min-size"]').val(current_min_price);
+	$('.filter-price-widget [name="max-size"]').val(current_max_price);
 
 	$('.filter-price-widget .min-price .amount bdi').html(formatPrice(current_min_price));
 	$('.filter-price-widget .max-price .amount bdi').html(formatPrice(current_max_price));

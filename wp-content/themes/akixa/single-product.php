@@ -113,6 +113,11 @@
 							<p class="mb-0">SKU: <span><?= $product->get_sku() ?></span></p>
 						</div>
 					<?php endif ?>
+					<?php if (!empty($product->get_sku())): ?>
+						<div class="product-sku">
+							<p class="mb-0">Kích thước (m): <span><?= $cf_product['size'] ?></span></p>
+						</div>
+					<?php endif ?>
 					<?php if (!empty($category_ids)): ?>
 						<div class="product-category">
 							<p class="mb-0">Danh mục: <?= wc_get_product_category_list($product_id) ?></p>
