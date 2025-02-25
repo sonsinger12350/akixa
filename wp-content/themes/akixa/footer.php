@@ -5,7 +5,7 @@
 	<footer>
 		<div class="footer-content">
 			<div class="logo">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/logo-white.png?v=1" alt="">
+				<img src="<?= get_template_directory_uri(); ?>/assets/images/logo-white.jpg?v=1" alt="">
 				<?= get_template_part('template-parts/btn-explore', null, ['type' => 'register']); ?>
 			</div>
 			<div class="content">

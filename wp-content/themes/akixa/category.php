@@ -39,7 +39,7 @@
 
 	get_header();
 	$websiteName = get_bloginfo('name');
-	$default_img = get_template_directory_uri().'/assets/images/new-default.png';
+	$default_img = get_template_directory_uri().'/assets/images/new-default.jpg';
 
 	$args = [
 		'orderby'    => 'id',
@@ -88,7 +88,7 @@
 ?>
 <style>
 	.banner .bg-banner {
-		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/news-header.png");
+		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/news-header.jpg");
 	}
 </style>
 <div class="banner">
@@ -160,7 +160,7 @@
 					</div>
 					<div class="right">
 						<div class="ads-banner">
-							<img src="<?= get_template_directory_uri(); ?>/assets/images/ads-bg.png" alt="ads">
+							<img src="<?= get_template_directory_uri(); ?>/assets/images/ads-bg.jpg" alt="ads">
 						</div>
 						<div class="form-contact">
 							<h5 class="title">Cập nhật tin tức<br>mới nhất từ <?= $websiteName ?></h5>

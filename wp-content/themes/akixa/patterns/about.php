@@ -21,16 +21,16 @@
 
 <style>
 	.banner .content {
-		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/about-banner.png");
+		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/about-banner.jpg");
 	}
 
 	.founder-message {
-		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/founder-message-bg.png");
+		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/founder-message-bg.jpg");
 	}
 
 	@media (max-width: 576px) {
 		.banner .content {
-			background-image: url("<?= get_template_directory_uri(); ?>/assets/images/about-banner-mobile.png");
+			background-image: url("<?= get_template_directory_uri(); ?>/assets/images/about-banner-mobile.jpg");
 		}
 	}
 </style>
@@ -112,7 +112,7 @@
 				<p class="quote">"Chỉ có những trái tim yêu thương, thấu cảm, một tâm hồn rộng mở, hoà hợp với thiên nhiên mới có thể kết nối con người với con người và đem đến những giá trị tốt đẹp cho thế giới."</p>
 				<p class="quote">Chỉ có sự trải nghiệm tuyệt vời giữa bạn - những người cộng sự yêu quý của tôi tại <?= $websiteName ?> mới có thể lan toả trải nghiệm đó với khách hàng của chúng ta"</p>
 			</div>
-			<img src="<?= get_template_directory_uri(); ?>/assets/images/about-person.png" alt="person">
+			<img src="<?= get_template_directory_uri(); ?>/assets/images/about-person.jpg" alt="person">
 		</div>
 		<div class="hr"></div>
 	</div>

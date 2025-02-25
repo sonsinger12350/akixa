@@ -4,7 +4,7 @@
 	$article = $args['article'];
 	$article_img = get_the_post_thumbnail_url($article->ID, 'full');
 	$cat = get_the_category($article->ID);
-	$default_img = get_template_directory_uri().'/assets/images/new-default.png';
+	$default_img = get_template_directory_uri().'/assets/images/new-default.jpg';
 ?>
 
 <a class="new" href="<?= $article->post_name ?>">

@@ -46,15 +46,15 @@
 ?>
 <style>
 	.banner .content {
-		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/career-banner.png");
+		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/career-banner.jpg");
 	}
 
 	.increase {
-		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/career-increase-bg.png");
+		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/career-increase-bg.jpg");
 	}
 
 	.increase .body .content {
-		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/career-increase.png");
+		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/career-increase.jpg");
 	}
 </style>
 
@@ -113,7 +113,7 @@
 	</div>
 	<div class="list">
 		<div class="item">
-			<img src="<?= get_template_directory_uri(); ?>/assets/images/career-policy-1.png" alt="policy-1">
+			<img src="<?= get_template_directory_uri(); ?>/assets/images/career-policy-1.jpg" alt="policy-1">
 			<div class="content">
 				<p class="title">đào tạo phát triển</p>
 				<div class="desc">
@@ -123,7 +123,7 @@
 			</div>
 		</div>
 		<div class="item">
-			<img src="<?= get_template_directory_uri(); ?>/assets/images/career-policy-2.png" alt="policy-2">
+			<img src="<?= get_template_directory_uri(); ?>/assets/images/career-policy-2.jpg" alt="policy-2">
 			<div class="content">
 				<p class="title">cùng xây dựng mục tiêu</p>
 				<div class="desc">
@@ -134,7 +134,7 @@
 			</div>
 		</div>
 		<div class="item">
-			<img src="<?= get_template_directory_uri(); ?>/assets/images/career-policy-3.png" alt="policy-3">
+			<img src="<?= get_template_directory_uri(); ?>/assets/images/career-policy-3.jpg" alt="policy-3">
 			<div class="content">
 				<p class="title">hỗ trợ đạt mục tiêu</p>
 				<div class="desc">
@@ -230,7 +230,7 @@
 </div>
 <div class="step margin-section mb-5">
 	<div class="content">
-		<img src="<?= get_template_directory_uri(); ?>/assets/images/career-step.png" alt="step">
+		<img src="<?= get_template_directory_uri(); ?>/assets/images/career-step.jpg" alt="step">
 		<div class="block">
 			<p class="desc">Dù là một sinh viên mới ra trường hay một ứng viên đã có kinh nghiệm,<br>chúng tôi luôn sẵn sàng tạo điều kiện để bạn phát huy hết khả năng của mình.</p>
 			<svg xmlns="http://www.w3.org/2000/svg" width="73" height="6" viewBox="0 0 73 6" fill="none">
@@ -246,22 +246,22 @@
 	<div class="slide">
 		<div class="owl-carousel owl-theme">
 			<div class="item">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/career-workplace-1.png" alt="career-workplace-1" loading="lazy">
+				<img src="<?= get_template_directory_uri(); ?>/assets/images/career-workplace-1.jpg" alt="career-workplace-1" loading="lazy">
 			</div>
 			<div class="item">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/career-workplace-2.png" alt="career-workplace-2" loading="lazy">
+				<img src="<?= get_template_directory_uri(); ?>/assets/images/career-workplace-2.jpg" alt="career-workplace-2" loading="lazy">
 			</div>
 			<div class="item">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/career-workplace-3.png" alt="career-workplace-3" loading="lazy">
+				<img src="<?= get_template_directory_uri(); ?>/assets/images/career-workplace-3.jpg" alt="career-workplace-3" loading="lazy">
 			</div>
 			<div class="item">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/career-workplace-4.png" alt="career-workplace-4" loading="lazy">
+				<img src="<?= get_template_directory_uri(); ?>/assets/images/career-workplace-4.jpg" alt="career-workplace-4" loading="lazy">
 			</div>
 			<div class="item">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/career-workplace-4.png" alt="career-workplace-4" loading="lazy">
+				<img src="<?= get_template_directory_uri(); ?>/assets/images/career-workplace-4.jpg" alt="career-workplace-4" loading="lazy">
 			</div>
 			<div class="item">
-				<img src="<?= get_template_directory_uri(); ?>/assets/images/career-workplace-4.png" alt="career-workplace-4" loading="lazy">
+				<img src="<?= get_template_directory_uri(); ?>/assets/images/career-workplace-4.jpg" alt="career-workplace-4" loading="lazy">
 			</div>
 		</div>
 	</div>

@@ -56,23 +56,23 @@
 ?>
 <style>
 	.body .seek-tabs .content .seek-tab.tab-1 .left {
-		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/seak-tab-1.png");
+		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/seak-tab-1.jpg");
 	}
 
 	.body .seek-tabs .content .seek-tab.tab-2 .left {
-		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/seak-tab-2.png");
+		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/seak-tab-2.jpg");
 	}
 
 	.body .seek-tabs .content .seek-tab.tab-3 .left {
-		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/seak-tab-3.png");
+		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/seak-tab-3.jpg");
 	}
 
 	.body .seek-tabs .content .seek-tab.tab-4 .left {
-		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/seak-tab-4.png");
+		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/seak-tab-4.jpg");
 	}
 
 	.body .invitation {
-		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/invitation.png");
+		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/invitation.jpg");
 	}
 
 	.body .seek-tabs .bg-gif {

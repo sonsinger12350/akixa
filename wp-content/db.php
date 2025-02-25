@@ -1,0 +1,1 @@
+E:/xampp/htdocs/akixa/wp-content/plugins/query-monitor/wp-content/db.php

@@ -65,8 +65,8 @@
 	];
 
 	$isHeader2 = (in_array($post_name, $pageHeader2) || in_array($post_type, $pageHeader2)) ? true : false;
-	$logoBlack = get_template_directory_uri()."/assets/images/logo.png?v=1";
-	$logoWhite = get_template_directory_uri()."/assets/images/logo-white.png?v=1";
+	$logoBlack = get_template_directory_uri()."/assets/images/logo.jpg?v=1";
+	$logoWhite = get_template_directory_uri()."/assets/images/logo-white.jpg?v=1";
 	$logo = $logoBlack;
 
 	if ($isHeader2) $logo = $logoWhite;

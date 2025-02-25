@@ -21,7 +21,7 @@
 ?>
 <style>
 	.banner .content {
-		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/services-banner.png");
+		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/services-banner.jpg");
 	}
 </style>
 
@@ -64,7 +64,7 @@
 					</div>
 				</div>
 				<div class="image">
-					<img src="<?= get_template_directory_uri(); ?>/assets/images/project-1.png" alt="service-design">
+					<img src="<?= get_template_directory_uri(); ?>/assets/images/project-1.jpg" alt="service-design">
 				</div>
 			</div>
 			<div class="item service-construction">
@@ -79,7 +79,7 @@
 					</div>
 				</div>
 				<div class="image">
-					<img src="<?= get_template_directory_uri(); ?>/assets/images/project-7.png" alt="service-construction">
+					<img src="<?= get_template_directory_uri(); ?>/assets/images/project-7.jpg" alt="service-construction">
 				</div>
 			</div>
 		</div>
@@ -253,7 +253,7 @@
 			<?php endif ?>
 			<?php for ($i = $partnerCount; $i < 12; $i++): ?>
 				<div class="item <?= $i == 1 ? 'active' : '' ?>">
-					<img src="<?= get_template_directory_uri(); ?>/assets/images/partner-google.png" alt="partner-<?= $i ?>">
+					<img src="<?= get_template_directory_uri(); ?>/assets/images/partner-google.jpg" alt="partner-<?= $i ?>">
 				</div>
 			<?php endfor ?>
 		</div>
