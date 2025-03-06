@@ -164,12 +164,10 @@
 			</div>
 		</div> -->
 		<div class="list-product margin-section">
+			<h3 class="title block-title text-center mb-4">Dự án nổi bật</h3>
 			<div class="list row">
 				<?php foreach ($projects as $k => $v): ?>
 					<?php
-						get_template_part('template-parts/project', null, ['index' => $k, 'item' => $v]);
-						get_template_part('template-parts/project', null, ['index' => $k, 'item' => $v]);
-						get_template_part('template-parts/project', null, ['index' => $k, 'item' => $v]);
 						get_template_part('template-parts/project', null, ['index' => $k, 'item' => $v]);
 					?>
 				<?php endforeach ?>
