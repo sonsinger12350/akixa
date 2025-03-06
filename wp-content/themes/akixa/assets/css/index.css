@@ -630,7 +630,7 @@
 	height: 40px;
 	padding: 10px;
 	text-align: center;
-	line-height: 100%;
+	line-height: normal;
 	background: #F7F7F7;
 	color: #7F7F7F;
 	border: 1px solid #DCDCDC;
@@ -701,8 +701,9 @@
 }
 
 @media (max-width: 576px) {
-	.body .list-product {
-		padding-left: 12px;
+	.body .list-product .list {
+		width: 100%;
+    	margin: 0;
 	}
 
 	.body .list-product .btn-load-more {
