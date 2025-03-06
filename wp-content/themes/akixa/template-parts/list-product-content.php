@@ -8,14 +8,28 @@
 						<div class="d-flex justify-content-between">
 							<a href="<?= $cat['link'] ?>" class="link-parent"><?= $cat['name'] ?> (<?= $cat['count'] ?>)</a>
 							<?php if (!empty($cat['children'])): ?>
-								<span class="toggle-category"><i class="fa-solid fa-angle-down"></i></span>
+								<span class="toggle-category parent"><i class="fa-solid fa-angle-down"></i></span>
 							<?php endif ?>
 						</div>
 						<?php if (!empty($cat['children'])): ?>
 							<ul class="children-categories">
 								<?php foreach ($cat['children'] as $child): ?>
 									<li class="cat-item cat-children <?= $child['id'] == $category ? 'active' : '' ?>">
-										<a href="<?= $child['link'] ?>" class="link-children"><?= $child['name'] ?> (<?= $child['count'] ?>)</a>
+										<div class="d-flex justify-content-between">
+											<a href="<?= $child['link'] ?>" class="link-children"><?= $child['name'] ?> (<?= $child['count'] ?>)</a>
+											<?php if (!empty($child['children'])): ?>
+												<span class="toggle-category children"><i class="fa-solid fa-angle-down"></i></span>
+											<?php endif ?>
+										</div>
+										<?php if (!empty($child['children'])): ?>
+											<ul class="grandchildren-categories">
+												<?php foreach ($child['children'] as $grandchild): ?>
+													<li class="cat-item cat-grandchildren <?= $grandchild['id'] == $category ? 'active' : '' ?>">
+														<a href="<?= $grandchild['link'] ?>" class="link-grandchildren"><?= $grandchild['name'] ?> (<?= $grandchild['count'] ?>)</a>
+													</li>
+												<?php endforeach ?>
+											</ul>
+										<?php endif ?>
 									</li>
 								<?php endforeach ?>
 							</ul>
@@ -26,12 +40,12 @@
 		</ul>
 	</div>
 	<form class="filter filter-price">
-		<p class="title">Giá</p>
+		<p class="title">Diện tích</p>
 		<div class="widget-area filter-price-widget mb-3">
 			<input type="hidden" name="min-size">
 			<input type="hidden" name="max-size">
 			<div id="slider-range"></div>
-			<div class="range-price-show"><p>Kích thước (m):</p> <span class="min-size"><?= $priceRange['min'] ?></span> - <span class="max-size"><?= $priceRange['max'] ?></span></div>
+			<div class="range-price-show"><p>Diện tích (m):</p> <span class="min-size"><?= $priceRange['min'] ?></span> - <span class="max-size"><?= $priceRange['max'] ?></span></div>
 		</div>
 		<div class="text-end">
 			<a class="btn btn-outline-dark me-3" href="<?= home_url('shop') ?>">Xóa bộ lọc</a>

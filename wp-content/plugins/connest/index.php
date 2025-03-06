@@ -236,12 +236,17 @@
 		$table = "wp_connest_config";
 
 		if (!empty($_POST['submit-config-form'])) {
+			$department_1 = json_encode($_POST['department_1'], JSON_UNESCAPED_UNICODE);
+			$department_1 = str_replace('\r\n', "<br>", $department_1);
+			$department_2 = json_encode($_POST['department_2'], JSON_UNESCAPED_UNICODE);
+			$department_2 = str_replace('\r\n', "<br>", $department_2);
+
 			$inputs = [
 				'social'  =>  sanitize_text_field(json_encode($_POST['social'])),
 				'hotline'  =>  sanitize_text_field($_POST['hotline']),
-				'email'  =>  sanitize_text_field($_POST['email']),
-				'department_1'  =>  sanitize_text_field(json_encode($_POST['department_1'], JSON_UNESCAPED_UNICODE)),
-				'department_2'  =>  sanitize_text_field(json_encode($_POST['department_2'], JSON_UNESCAPED_UNICODE)),
+				'email'  =>  sanitize_text_field($_POST['email']),	
+				'department_1'  =>  $department_1,
+				'department_2'  =>  $department_2,
 			];
 
 			foreach ($inputs as $k => $v) {
@@ -393,6 +398,9 @@
 		$data['social'] = json_decode($data['social'], true);
 		$data['department_1'] = json_decode($data['department_1'], true);
 		$data['department_2'] = json_decode($data['department_2'], true);
+
+		$data['department_1']['address'] = str_replace('<br>', "\r\n", $data['department_1']['address']);
+		$data['department_2']['address'] = str_replace('<br>', "\r\n", $data['department_2']['address']);
 
 		return $data;
 	}

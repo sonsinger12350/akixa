@@ -1,5 +1,4 @@
 <style>
-
 	.wrap h1.wp-heading-inline {
 		font-size: 36px;
 		width: 100%;
@@ -114,7 +113,7 @@
 				</div>
 				<div class="item">
 					<label for="department_1_address">Địa chỉ chi nhánh:</label>
-					<input name="department_1[address]" id="department_1_address" value="<?= @$config['department_1']['address'] ?>" type="text">
+					<textarea name="department_1[address]" id="department_1_address"><?= @$config['department_1']['address'] ?></textarea>
 				</div>
 				<div class="item">
 					<label for="phone">Điện thoại:</label>
@@ -131,9 +130,9 @@
 					<label for="department_2_name">Tên chi nhánh:</label>
 					<input name="department_2[name]" id="department_2_name" value="<?= @$config['department_2']['name'] ?>" type="text">
 				</div>
-				<div class="item group">
+				<div class="item">
 					<label for="department_2_address">Địa chỉ chi nhánh:</label>
-					<input name="department_2[address]" id="department_2_address" value="<?= @$config['department_2']['address'] ?>" type="text">
+					<textarea name="department_2[address]" id="department_2_address"><?= @$config['department_2']['address'] ?></textarea>
 				</div>
 				<div class="item">
 					<label for="phone">Điện thoại:</label>

@@ -21,6 +21,7 @@
 							<div class="col-lg-3 col-6">
 								<p class="fw-bold">Dịch vụ</p>
 								<a href="<?= home_url( '/dich-vu' ) ?>">Thiết kế vi khi hậu</a>
+								<a href="<?= home_url( '/dich-vu' ) ?>">Thiết kế nhanh</a>
 							</div>
 							<div class="col-lg-3 col-6">
 								<p class="fw-bold">Dự án</p>
@@ -46,11 +47,11 @@
 							</div>
 							<div class="col-lg-3 col-6">
 								<p class="fw-bold"><?= !empty($config['department_1']) ? $config['department_1']['name'] : '' ?></p>
-								<a href="#"><?= !empty($config['department_1']) ? $config['department_1']['address'] : '' ?></a>
+								<a href="#"><?= !empty($config['department_1']) ? nl2br($config['department_1']['address']) : '' ?></a>
 							</div>
 							<div class="col-lg-3 col-6">
 							<p class="fw-bold"><?= !empty($config['department_2']) ? $config['department_2']['name'] : '' ?></p>
-								<a href="#"><?= !empty($config['department_2']) ? $config['department_2']['address'] : '' ?></a>
+								<a href="#"><?= !empty($config['department_2']) ? nl2br($config['department_2']['address']) : '' ?></a>
 							</div>
 							<div class="col-lg-3 col-6">
 								<p class="fw-bold">Kết nối với chúng tôi</p>

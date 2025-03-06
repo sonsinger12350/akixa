@@ -36,22 +36,25 @@ $(document).ready(function () {
 
 	$('body').on('click','.toggle-category', function() {
 		let parent = $(this).closest('.cat-item');
+		let ul = $(this).hasClass('parent') ? parent.find('.children-categories') : parent.find('.grandchildren-categories');
 
 		parent.toggleClass('active');
 
-		if (parent.hasClass('active')) {
-			parent.find('.children-categories').slideDown();
-		}
-		else {
-			parent.find('.children-categories').slideUp();
-		}
+		if (parent.hasClass('active')) ul.slideDown();
+		else ul.slideUp();
 	});
 
 	$('.product-categories .cat-parent').each(function() {
 		if ($(this).hasClass('active')) {
 			$(this).find('.children-categories').slideDown();
 		}
-	})
+	});
+
+	$('.product-categories .cat-children').each(function() {
+		if ($(this).hasClass('active')) {
+			$(this).find('.grandchildren-categories').slideDown();
+		}
+	});
 
 	let minPrice = Number(priceRange.min);
 	let maxPrice = Number(priceRange.max);

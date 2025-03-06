@@ -67,7 +67,8 @@ header .logo img {
 	transition: 0.5s ease-out;
 }
 
-.product-categories .cat-parent .children-categories {
+.product-categories .cat-parent .children-categories,
+.product-categories .cat-parent .grandchildren-categories {
 	display: none;
 }
 
@@ -76,12 +77,13 @@ header .logo img {
 	font-weight: 600;
 }
 
-.product-categories .cat-children.active a {
+.product-categories .cat-children.active .link-children {
 	color: #000;
 	font-weight: 600;
 }
 
-.product-categories .cat-parent.active .toggle-category {
+.product-categories .cat-parent.active .toggle-category.parent,
+.product-categories .cat-children.active .toggle-category.children {
 	transform: rotate(180deg);
 }
 

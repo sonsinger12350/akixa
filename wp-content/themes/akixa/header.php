@@ -125,8 +125,17 @@
 		</a>
 		<div class="center">
 			<div class="main-menu">
+				<?php
+					wp_nav_menu(
+						array(
+							'container'  => '',
+							'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+							'theme_location' => 'primary',
+						)
+					);
+				?>
 				<?php if (!empty($categories_tree)): ?>
-					<h5 class="title-category"><span>Danh mục sản phẩm</span> <i class="fa-solid fa-cubes"></i></h5>
+					<h5 class="title-category"><span>Danh mục sản phẩm</span> <i class="fa-solid fa-bars"></i></h5>
 					<div class="category-tree">
 						<ul class="parent-element">
 							<?php foreach ($categories_tree as $cat): ?>
@@ -148,15 +157,6 @@
 						</ul>
 					</div>
 				<?php endif ?>
-				<?php
-					wp_nav_menu(
-						array(
-							'container'  => '',
-							'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-							'theme_location' => 'primary',
-						)
-					);
-				?>
 			</div>
 			<?php if (!$isHeader2): ?>
 				<div class="content">

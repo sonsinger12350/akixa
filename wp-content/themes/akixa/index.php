@@ -121,7 +121,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="seek-tabs margin-section d-none d-md-block">
+		<!-- <div class="seek-tabs margin-section d-none d-md-block">
 			<div class="bg-blur-gif"></div>
 			<div class="bg-gif"></div>
 			<div class="head d-flex justify-content-between">
@@ -161,6 +161,21 @@
 					</div>
 					<div class="bg-overlay"></div>
 				</div>
+			</div>
+		</div> -->
+		<div class="list-product margin-section">
+			<div class="list row">
+				<?php foreach ($projects as $k => $v): ?>
+					<?php
+						get_template_part('template-parts/project', null, ['index' => $k, 'item' => $v]);
+						get_template_part('template-parts/project', null, ['index' => $k, 'item' => $v]);
+						get_template_part('template-parts/project', null, ['index' => $k, 'item' => $v]);
+						get_template_part('template-parts/project', null, ['index' => $k, 'item' => $v]);
+					?>
+				<?php endforeach ?>
+			</div>
+			<div class="text-center mt-4 mb-4">
+				<a class="btn btn-load-more" href="<?= home_url('du-an') ?>">XEM THÊM DỰ ÁN</a>
 			</div>
 		</div>
 		<div class="invitation margin-section">
