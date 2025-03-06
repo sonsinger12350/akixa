@@ -53,6 +53,15 @@
 	);
 	$projects = new WP_Query($args);
 	$projects = !empty($projects->posts) ? $projects->posts : [];
+
+	$args = array(
+		'fields' => 'ids',
+		'post_type' => 'product',
+		'posts_per_page' => 8,
+		'post_status' => 'publish',
+	);
+	$query = new WP_Query($args);
+	$products = $query->posts ?? [];
 ?>
 <style>
 	.body .seek-tabs .content .seek-tab.tab-1 .left {
@@ -163,17 +172,17 @@
 				</div>
 			</div>
 		</div> -->
-		<div class="list-product margin-section">
-			<h3 class="title block-title text-center mb-4">Dự án nổi bật</h3>
+		<div class="container list-product margin-section">
+			<h3 class="title block-title text-center mb-4">Mẫu nhà vườn</h3>
 			<div class="list row">
-				<?php foreach ($projects as $k => $v): ?>
+				<?php foreach ($products as $k => $product): ?>
 					<?php
-						get_template_part('template-parts/project', null, ['index' => $k, 'item' => $v]);
+						get_template_part('template-parts/product', null, ['index' => $k, 'product' => $product, 'cols' => 'col-xxl-3 col-lg-6 col-sm-6']);
 					?>
 				<?php endforeach ?>
 			</div>
 			<div class="text-center mt-4 mb-4">
-				<a class="btn btn-load-more" href="<?= home_url('du-an') ?>">XEM THÊM DỰ ÁN</a>
+				<a class="btn btn-load-more" href="<?= home_url('shop') ?>">XEM THÊM</a>
 			</div>
 		</div>
 		<div class="invitation margin-section">

@@ -7,9 +7,10 @@
 	$product_id = $product->get_id();
 	$categories = get_the_terms($product_id, 'product_cat');
 	$cf_product = get_post_meta($product_id);
+	$cols = !empty($args['cols']) ? $args['cols'] : 'col-xxl-4 col-lg-6 col-sm-6';
 ?>
 
-<div class="item col-xxl-4 col-lg-6 col-sm-6 product">
+<div class="item product <?= $cols ?>">
 	<a class="image" href="<?= $product->get_permalink() ?>">
 		<?= $product->get_image('full') ?>
 	</a>

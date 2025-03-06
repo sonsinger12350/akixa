@@ -274,12 +274,16 @@ header .logo img {
 }
 
 .product .content .btn-buy {
-	min-height: 59px;
+	min-height: 82px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	gap: 12px;
+}
+
+.product .category-list {
+	min-height: 48px;
 }
 
 .list-product .btn-load-more {
