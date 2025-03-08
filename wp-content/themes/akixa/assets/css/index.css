@@ -614,7 +614,7 @@
 	height: 40px;
 	padding: 10px;
 	text-align: center;
-	line-height: 100%;
+	line-height: normal;
 	background: #F7F7F7;
 	color: #7F7F7F;
 	border: 1px solid #DCDCDC;
