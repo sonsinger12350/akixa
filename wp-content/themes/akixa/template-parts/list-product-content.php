@@ -4,7 +4,17 @@
 		<ul class="product-categories">
 			<?php if (!empty($categories_tree)): ?>
 				<?php foreach ($categories_tree as $cat): ?>
-					<li class="cat-item cat-parent <?= ($cat['id'] == $category || (!empty($current_cat) && $cat['id'] == $current_cat->parent)) ? 'active' : '' ?>">
+					<?php
+						$isActiveCat = '';
+
+						if (
+							$cat['id'] == $category || 
+							(!empty($current_cat) && ($cat['id'] == $current_cat->parent || !empty($cat['children'][$current_cat->parent])))
+						) {
+							$isActiveCat = 'active';
+						}
+					?>
+					<li class="cat-item cat-parent <?= $isActiveCat ?>">
 						<div class="d-flex justify-content-between">
 							<a href="<?= $cat['link'] ?>" class="link-parent"><?= $cat['name'] ?> (<?= $cat['count'] ?>)</a>
 							<?php if (!empty($cat['children'])): ?>
@@ -14,7 +24,14 @@
 						<?php if (!empty($cat['children'])): ?>
 							<ul class="children-categories">
 								<?php foreach ($cat['children'] as $child): ?>
-									<li class="cat-item cat-children <?= $child['id'] == $category ? 'active' : '' ?>">
+									<?php
+										$isActiveChildCat = '';
+
+										if ($child['id'] == $category || (!empty($current_cat) && $child['id'] == $current_cat->parent)) {
+											$isActiveChildCat = 'active';
+										}
+									?>
+									<li class="cat-item cat-children <?= $isActiveChildCat ?>">
 										<div class="d-flex justify-content-between">
 											<a href="<?= $child['link'] ?>" class="link-children"><?= $child['name'] ?> (<?= $child['count'] ?>)</a>
 											<?php if (!empty($child['children'])): ?>
@@ -78,7 +95,7 @@
 			<?php if (!empty($keyword)): ?>
 				<h4 class="text-center mb-0 mt-4">Không tìm thấy kết quả. Vui lòng sử dụng từ khóa khác</h4>
 			<?php else: ?>
-				<h4 class="text-center mb-0 mt-4">Chưa có dự án</h4>
+				<h4 class="text-center mb-0 mt-4">Dữ liệu đang cập nhật</h4>
 			<?php endif ?>
 		<?php endif ?>
 	</div>

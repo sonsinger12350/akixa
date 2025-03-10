@@ -112,7 +112,7 @@
 	$showBtnLoadMore = 0;
 	if (count($products) >= $limit) $showBtnLoadMore = 1;
 
-	$slides = get_post_gallery($post->ID, false);
+	$slides = !empty($post) ? get_post_gallery($post->ID, false) : [];
 	if (!empty($slides)) $slides = $slides['src'];
 
 	$categories_tree = get_product_categories_tree();

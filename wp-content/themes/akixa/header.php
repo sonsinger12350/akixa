@@ -47,6 +47,7 @@
 		'category' => get_template_directory_uri().'/assets/css/blog.css?v='.time(),
 		'lien-he' => get_template_directory_uri().'/assets/css/contact.css?v='.time(),
 		'product' => get_template_directory_uri().'/assets/css/archive-product.css?v='.time(),
+		'product_cat' => get_template_directory_uri().'/assets/css/archive-product.css?v='.time(),
 		'single-product' => get_template_directory_uri().'/assets/css/single-product.css?v='.time(),
 	];
 
@@ -61,6 +62,7 @@
 		'category',
 		'lien-he',
 		'product',
+		'product_cat',
 		'single-product',
 	];
 

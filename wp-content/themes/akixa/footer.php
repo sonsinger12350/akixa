@@ -115,6 +115,7 @@
 		'tuyen-dung' => get_template_directory_uri().'/assets/js/career.js?v='.time(),
 		'lien-he' => get_template_directory_uri().'/assets/js/contact.js?v='.time(),
 		'product' => get_template_directory_uri().'/assets/js/archive-product.js?v='.time(),
+		'product_cat' => get_template_directory_uri().'/assets/js/archive-product.js?v='.time(),
 		'single-product' => get_template_directory_uri().'/assets/js/single-product.js?v='.time(),
 	];
 ?>
