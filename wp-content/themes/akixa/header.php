@@ -172,13 +172,8 @@
 				<i class="fa-solid fa-bars"></i>
 				<i class="fa-solid fa-xmark"></i>
 			</a>
-			<a href="javascript:void(0)" class="open-category-mobile d-md-none">
-				<i class="fa-solid fa-cubes"></i>
-			</a>
-			<a href="javascript:void(0)" class="open-menu-mobile d-md-none">
-				<i class="fa-solid fa-bars"></i>
-				<i class="fa-solid fa-xmark"></i>
-			</a>
+			<a href="javascript:void(0)" class="open-category-mobile d-md-none">Mẫu thiết kế <i class="fa-solid fa-bars"></i></a>
+			<a href="javascript:void(0)" class="open-menu-mobile d-md-none">Menu <i class="fa-solid fa-bars"></i><i class="fa-solid fa-xmark"></i></a>
 		</div>
 
 		<div class="menu-collapse-mobile d-md-none">
