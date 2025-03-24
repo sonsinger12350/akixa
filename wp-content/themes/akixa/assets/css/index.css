@@ -705,6 +705,10 @@
 	min-height: 48px;
 }
 
+.list-product {
+	display: none !important;
+}
+
 @media (max-width: 1399px) {
 	.list-product .first-product .image img {
 		height: 435px;
