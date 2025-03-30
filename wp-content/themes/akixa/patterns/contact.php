@@ -11,7 +11,7 @@
 
 <style>
 	.banner .content {
-		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/contact-banner.jpeg");
+		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/contact-banner.jpg");
 	}
 </style>
 

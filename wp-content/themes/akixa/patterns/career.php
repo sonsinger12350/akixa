@@ -54,7 +54,7 @@
 	}
 
 	.increase .body .content {
-		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/career-increase.jpg");
+		background-image: url("<?= get_template_directory_uri(); ?>/assets/images/career-increase.png");
 	}
 </style>
 
