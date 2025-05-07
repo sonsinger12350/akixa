@@ -83,4 +83,10 @@ $(document).ready(function() {
 
 		return false;
 	});
+
+	let now = new Date();
+	let day = String(now.getDate()).padStart(2,'0');
+	let month = String(now.getMonth()+1).padStart(2,'0');
+
+	$('[name="ngay-gui"]').val(`${day}-${month}-${now.getFullYear()}`);
 });
