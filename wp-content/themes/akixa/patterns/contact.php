@@ -58,7 +58,7 @@
 		</div>
 	</div>
 </div>
-<div class="contact">
+<!-- <div class="contact">
 	<p class="title">Liên hệ với chúng tôi</p>
 	<div class="alert alert-danger d-none"></div>
 	<form class="form-contact" enctype="multipart/form-data" novalidate>
@@ -146,5 +146,13 @@
 			<button type="submit" class="btn btn-success btn-sm btn-explore d-block d-xl-none">Gửi <?= $websiteName ?> <i class="fa-solid fa-angle-right"></i></button>
 		</div>
 	</form>
+</div> -->
+<div class="contact-form mb-4">
+	<h1 class="text-center mb-4">Liên hệ với chúng tôi</h1>
+	<div class="form">
+		<?php
+			echo do_shortcode('[contact-form-7 id="7f647ad" title="Form Liên Hệ"]');
+		?>
+	</div>
 </div>
 <?php get_footer(); ?>

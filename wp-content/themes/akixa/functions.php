@@ -118,4 +118,13 @@
 	// 	return $template;
 	// });
 	
+	// add_filter('wpcf7_skip_mail', '__return_true');
+
+	add_action('wpcf7_before_send_mail', function($contact_form) {
+		$submission = WPCF7_Submission::get_instance();
+		if ($submission) {
+			$posted_data = $submission->get_posted_data();
+			error_log('Contact Form Sent:' .json_encode($posted_data));
+		}
+	});
 	

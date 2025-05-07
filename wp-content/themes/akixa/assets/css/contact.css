@@ -433,6 +433,18 @@ input[type=number] {
 	height: 16px;
 }
 
+.contact-form .form {
+	border-radius: 8px;
+    padding: 16px 32px;
+    background-color: #e7e7e7;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.contact-form .form label {
+	display: block;
+}
+
 @media (max-width: 1300px) {
 	.contact {
 		width: 95%;
