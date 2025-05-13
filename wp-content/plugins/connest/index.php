@@ -30,15 +30,15 @@
 			'career_create'  // Hàm callback để hiển thị trang con
 		);
 
-		add_menu_page(
-			'',     // Tiêu đề của mục menu
-			'Liên hệ',     // Tiêu đề của menu
-			'manage_options',        // Quyền truy cập cần thiết để thấy mục menu
-			'contact',     // Slug của menu
-			'contact_list', // Hàm callback để hiển thị trang của menu
-			'dashicons-email',
-			11
-		);
+		// add_menu_page(
+		// 	'',     // Tiêu đề của mục menu
+		// 	'Liên hệ',     // Tiêu đề của menu
+		// 	'manage_options',        // Quyền truy cập cần thiết để thấy mục menu
+		// 	'contact',     // Slug của menu
+		// 	'contact_list', // Hàm callback để hiển thị trang của menu
+		// 	'dashicons-email',
+		// 	11
+		// );
 
 		add_menu_page(
 			'',     // Tiêu đề của mục menu
