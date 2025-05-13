@@ -149,10 +149,15 @@
 </div> -->
 <div class="contact-form mb-4">
 	<h1 class="text-center mb-4">Liên hệ với chúng tôi</h1>
-	<div class="form">
+	<div class="form-content">
 		<?php
-			echo do_shortcode('[contact-form-7 id="7f647ad" title="Form Liên Hệ"]');
+			if (!empty($config['iframe_map'])) echo $config['iframe_map'];
 		?>
+		<div class="form">
+			<?php
+				echo do_shortcode('[contact-form-7 id="7f647ad" title="Form Liên Hệ"]');
+			?>
+		</div>
 	</div>
 </div>
 <?php get_footer(); ?>

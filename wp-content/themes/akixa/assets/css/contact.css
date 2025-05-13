@@ -433,16 +433,30 @@ input[type=number] {
 	height: 16px;
 }
 
+.contact-form .form-content {
+	display: flex;
+	justify-content: center;
+	gap: 80px;
+}
+
+.contact-form .form-content iframe {
+	height: 600px;
+	width: 600px;
+}
+
 .contact-form .form {
 	border-radius: 8px;
     padding: 16px 32px;
     background-color: #e7e7e7;
     width: 500px;
-    margin: 0 auto;
 }
 
 .contact-form .form label {
 	display: block;
+}
+
+.contact-form .form [name="yeu-cau-khac"] {
+	height: 100px;
 }
 
 @media (max-width: 1300px) {
@@ -484,6 +498,15 @@ input[type=number] {
 		flex-direction: row;
     	flex-wrap: wrap;
 	}
+
+	.contact-form .form-content {
+		gap: 40px;
+	}
+	
+	.contact-form .form-content iframe {
+		height: 400px;
+		width: 400px;
+	}
 }
 
 @media (max-width: 991px) {
@@ -495,6 +518,14 @@ input[type=number] {
 		padding: 30px;
 	}
 
+	.contact-form .form-content {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.contact-form .form-content iframe {
+        width: 500px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -555,6 +586,11 @@ input[type=number] {
 		padding-left: 16px;
 		padding-right: 16px;
     }
+
+	.contact-form .form-content iframe,
+	.contact-form .form {
+		width: 90%;
+    }
 }
 
 @media (max-width: 450px) {
@@ -564,6 +600,10 @@ input[type=number] {
 
 	.contact .form-contact .right .upload-image label {
 		width: 100%;
+	}
+
+	.contact-form .form-content iframe {
+		height: 300px;
 	}
 }
 

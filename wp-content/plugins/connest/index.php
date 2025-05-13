@@ -245,6 +245,7 @@
 				'social'  =>  sanitize_text_field(json_encode($_POST['social'])),
 				'hotline'  =>  sanitize_text_field($_POST['hotline']),
 				'email'  =>  sanitize_text_field($_POST['email']),	
+				'iframe_map'  =>  $_POST['iframe_map'],	
 				'department_1'  =>  $department_1,
 				'department_2'  =>  $department_2,
 			];

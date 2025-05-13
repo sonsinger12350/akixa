@@ -105,6 +105,10 @@
 				<label for="email">Email:</label>
 				<input name="email" id="email" value="<?= @$config['email'] ?>" type="text">
 			</div>
+			<div class="item">
+				<label for="iframe_map">Nhúng bản đồ:</label>
+				<input name="iframe_map" id="iframe_map" value='<?= @$config['iframe_map'] ?>' type="text">
+			</div>
 			<h3>Chi nhánh 1:</h3>
 			<div class="group">
 				<div class="item">
